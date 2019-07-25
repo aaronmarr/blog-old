@@ -20,6 +20,11 @@
    * Colors (https://yeun.github.io/open-color/)
    */
 
+  --oc-white: #ffffff;
+  --oc-white-rgb: 255, 255, 255;
+  --oc-black: #000000;
+  --oc-black-rgb: 0, 0, 0;
+
   --gray-0: #f8f9fa;
   --gray-1: #f1f3f5;
   --gray-2: #e9ecef;
@@ -33,24 +38,55 @@
 
 
   /**
-   * Fonts 
+   * Fonts
    */
-  
-  --sans: "Untitled Sans Test";
-  --mono: "Pitch Sans Test";
+
+  --serif: "Hoefler Titling A", "Hoefler Titling B";
+  --sans: "Whitney SSm A", "Whitney SSm B";;
+  --mono: "Operator Mono SSm A", "Operator Mono SSm B";
+
+  --font-bold: 700;
+  --font-semi-bold: 600;
+  --font-medium: 500;
+  --font-normal: 400;
+
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
 
   /**
-   * Measurements 
+   * Measurements
    */
+
+  --modular-scale-0: 0;
+  --modular-scale-1: 0.25rem;
+  --modular-scale-2: 0.5rem;
+  --modular-scale-3: 0.75rem;
+  --modular-scale-4: 1rem;
+  --modular-scale-5: 1.25rem;
+  --modular-scale-6: 1.5rem;
+  --modular-scale-8: 2rem;
+  --modular-scale-10: 2.5rem;
+  --modular-scale-12: 3rem;
+  --modular-scale-16: 4rem;
+  --modular-scale-20: 5rem;
+  --modular-scale-24: 6rem;
+  --modular-scale-32: 8rem;
+  --modular-scale-64: 16rem;
 
   --max-width: 34rem;
 }
 
 html {
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-family: "Whitney SSm A"
+,
+"Whitney SSm B";
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .header {
@@ -76,10 +112,18 @@ html {
 .site-name__link {
   text-decoration: none;
   align-self: center;
-  font-weight: 400;
   color: #212529;
   color: #212529;
   color: var(--gray-9);
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1rem;
+  font-size: 1rem;
+  font-size: var(--theta);
 }
 
 .nav {
@@ -98,6 +142,24 @@ html {
 
 .nav__link {
   text-decoration: none;
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 1rem;
+  font-size: 1rem;
+  font-size: var(--theta);
+  color: #212529;
+  color: #212529;
+  color: var(--gray-9);
+}
+
+.post__title {
+  font-size: 1.728rem;
+  font-size: 1.728rem;
+  font-size: var(--epsilon);
 }
 
 .main {
@@ -107,14 +169,198 @@ html {
 }
 
 pre {
-  font-family: "Pitch Sans Test";
-  font-family: "Pitch Sans Test";
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
   font-family: var(--mono);
 }
 
+.typeset h1 {
+  font-size: 1.728rem;
+  font-size: 1.728rem;
+  font-size: var(--epsilon);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+}
+
+.typeset h2 {
+  font-size: 1.44rem;
+  font-size: 1.44rem;
+  font-size: var(--zeta);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+}
+
+.typeset h2 + p {
+  margin-top: 0.65rem;
+}
+
+.typeset h3 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  font-weight: 600;
+  font-weight: 600;
+  font-weight: var(--font-semi-bold);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+}
+
+.typeset h3 + p {
+  margin-top: 0.8rem;
+}
+
+.typeset h4 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+}
+
+.typeset h5 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+}
+
+.typeset h6 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  font-family: "Hoefler Titling A", "Hoefler Titling B";
+  font-family: "Hoefler Titling A"
+,
+"Hoefler Titling B";
+  font-family: var(--serif);
+  margin: 0;
+  padding: 0;
+}
+
 .typeset p {
-    line-height: 1.5;
-    font-size: 1rem;
-    font-size: 1rem;
-    font-size: var(--theta);
-  }
+  font-size: 1rem;
+  font-size: 1rem;
+  font-size: var(--theta);
+  line-height: 1.67;
+  margin: 0;
+  padding: 0;
+}
+
+
+.typeset p + p {
+  margin-top: 1.15rem;
+}
+
+.typeset p + .highlight {
+  margin-top: 1.7rem;
+}
+
+.typeset p + img {
+  margin-top: 2rem;
+}
+
+.typeset p + h2 {
+  margin-top: 1.4rem;
+}
+
+.typeset p + h3 {
+  margin-top: 1.4rem;
+}
+
+.typeset a {
+  color: var(--oc-blue-6);
+}
+
+.typeset a:hover,
+.typeset a:active,
+.typeset a:visited {
+  color: var(--oc-blue-9);
+}
+
+.typeset em {
+  letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
+  letter-spacing: var(--tracking-tight);
+}
+
+.typeset code {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  background: var(--oc-gray-1);
+}
+
+.typeset > figure:not(.highlight) {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  text-align: center;
+}
+
+.typeset > figure:not(.highlight) > img {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.typeset img + p {
+  margin-top: 2rem;
+}
+
+.typeset .highlight {
+  padding: 0;
+  margin: 0;
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  font-size: 1.2rem;
+  font-size: var(--eta);
+  line-height: 1.75;
+}
+
+.typeset .highlight + p {
+  margin-top: 1.64rem;
+}
+
+.typeset .highlight + h2 {
+  margin-top: 1.87rem;
+}
