@@ -41,8 +41,8 @@
    * Fonts
    */
 
-  --serif: "Hoefler Titling A", "Hoefler Titling B";
-  --sans: "Whitney SSm A", "Whitney SSm B";;
+  --serif: "Hoefler Text A", "Hoefler Text B";
+  --sans: "Whitney SSm A", "Whitney SSm B";
   --mono: "Operator Mono SSm A", "Operator Mono SSm B";
 
   --font-bold: 700;
@@ -77,20 +77,26 @@
   --modular-scale-32: 8rem;
   --modular-scale-64: 16rem;
 
-  --max-width: 34rem;
+  --max-width: 32rem;
 }
 
 html {
   font-family: var(--sans);
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.direct-link {
+  display: none;
 }
 
 .header {
-  padding: 0.5rem 0 0.4rem;
+  padding: 0.9rem 0 0.45rem;
 }
 
 .header__content {
   max-width: var(--max-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
 }
 
@@ -105,8 +111,8 @@ html {
   text-decoration: none;
   align-self: center;
   color: var(--gray-9);
-  font-family: var(--mono);
-  font-weight: 700;
+  font-family: var(--sans);
+  font-weight: 400;
   font-size: var(--theta);
 }
 
@@ -126,8 +132,8 @@ html {
 
 .nav__link {
   text-decoration: none;
-  font-family: var(--mono);
-  font-weight: 700;
+  font-family: var(--sans);
+  font-weight: 400;
   font-size: var(--theta);
   color: var(--gray-9);
 }
@@ -138,6 +144,9 @@ html {
 
 .main {
   max-width: var(--max-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.2rem;
 }
 
 pre {
@@ -149,6 +158,12 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.typeset h1 + p {
+  margin-top: 1.15rem;
 }
 
 .typeset h2 {
@@ -157,6 +172,7 @@ pre {
   line-height: 1.3;
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h2 + p {
@@ -169,6 +185,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h3 + p {
@@ -180,6 +197,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h5 {
@@ -187,6 +205,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h6 {
@@ -194,6 +213,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset p {
@@ -205,11 +225,12 @@ pre {
 
 
 .typeset p + p {
-  margin-top: 1.15rem;
+  margin-top: 1.14rem;
 }
 
-.typeset p + .highlight {
-  margin-top: 1.7rem;
+.typeset p + pre,
+.typeset p + code {
+  margin-top: 1.15rem;
 }
 
 .typeset p + img {
@@ -236,6 +257,22 @@ pre {
 
 .typeset em {
   letter-spacing: var(--tracking-tight);
+}
+
+.typeset pre[class*="language-"] {
+  width: calc(100vw - 6rem);
+  padding: 1.2rem;
+}
+
+.typeset pre[class*="language-"] + p {
+  margin-top: 1.05rem;
+}
+
+.typeset code[class*="language-"], 
+.typeset pre[class*="language-"] {
+  font-family: var(--mono);
+  font-size: var(--iota);
+  line-height: 1.7;
 }
 
 .typeset code {
@@ -277,4 +314,8 @@ pre {
 
 .typeset .highlight + h2 {
   margin-top: 1.87rem;
+}
+
+.template-post h1 {
+  margin-top: 0.17rem;
 }

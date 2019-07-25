@@ -41,8 +41,8 @@
    * Fonts
    */
 
-  --serif: "Hoefler Titling A", "Hoefler Titling B";
-  --sans: "Whitney SSm A", "Whitney SSm B";;
+  --serif: "Hoefler Text A", "Hoefler Text B";
+  --sans: "Whitney SSm A", "Whitney SSm B";
   --mono: "Operator Mono SSm A", "Operator Mono SSm B";
 
   --font-bold: 700;
@@ -77,7 +77,7 @@
   --modular-scale-32: 8rem;
   --modular-scale-64: 16rem;
 
-  --max-width: 34rem;
+  --max-width: 32rem;
 }
 
 html {
@@ -86,17 +86,23 @@ html {
 ,
 "Whitney SSm B";
   font-family: var(--sans);
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.direct-link {
+  display: none;
 }
 
 .header {
-  padding: 0.5rem 0 0.4rem;
+  padding: 0.9rem 0 0.45rem;
 }
 
 .header__content {
-  max-width: 34rem;
-  max-width: 34rem;
+  max-width: 32rem;
+  max-width: 32rem;
   max-width: var(--max-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: flex;
 }
 
@@ -115,12 +121,12 @@ html {
   color: #212529;
   color: #212529;
   color: var(--gray-9);
-  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
-  font-family: "Operator Mono SSm A"
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-family: "Whitney SSm A"
 ,
-"Operator Mono SSm B";
-  font-family: var(--mono);
-  font-weight: 700;
+"Whitney SSm B";
+  font-family: var(--sans);
+  font-weight: 400;
   font-size: 1rem;
   font-size: 1rem;
   font-size: var(--theta);
@@ -142,12 +148,12 @@ html {
 
 .nav__link {
   text-decoration: none;
-  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
-  font-family: "Operator Mono SSm A"
+  font-family: "Whitney SSm A", "Whitney SSm B";
+  font-family: "Whitney SSm A"
 ,
-"Operator Mono SSm B";
-  font-family: var(--mono);
-  font-weight: 700;
+"Whitney SSm B";
+  font-family: var(--sans);
+  font-weight: 400;
   font-size: 1rem;
   font-size: 1rem;
   font-size: var(--theta);
@@ -163,9 +169,12 @@ html {
 }
 
 .main {
-  max-width: 34rem;
-  max-width: 34rem;
+  max-width: 32rem;
+  max-width: 32rem;
   max-width: var(--max-width);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 2.2rem;
 }
 
 pre {
@@ -180,27 +189,34 @@ pre {
   font-size: 1.728rem;
   font-size: 1.728rem;
   font-size: var(--epsilon);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.typeset h1 + p {
+  margin-top: 1.15rem;
 }
 
 .typeset h2 {
   font-size: 1.44rem;
   font-size: 1.44rem;
   font-size: var(--zeta);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   line-height: 1.3;
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h2 + p {
@@ -214,13 +230,14 @@ pre {
   font-weight: 600;
   font-weight: 600;
   font-weight: var(--font-semi-bold);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h3 + p {
@@ -231,39 +248,42 @@ pre {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h5 {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset h6 {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Hoefler Titling A", "Hoefler Titling B";
-  font-family: "Hoefler Titling A"
+  font-family: "Hoefler Text A", "Hoefler Text B";
+  font-family: "Hoefler Text A"
 ,
-"Hoefler Titling B";
+"Hoefler Text B";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
+  font-weight: 400;
 }
 
 .typeset p {
@@ -277,11 +297,12 @@ pre {
 
 
 .typeset p + p {
-  margin-top: 1.15rem;
+  margin-top: 1.14rem;
 }
 
-.typeset p + .highlight {
-  margin-top: 1.7rem;
+.typeset p + pre,
+.typeset p + code {
+  margin-top: 1.15rem;
 }
 
 .typeset p + img {
@@ -310,6 +331,28 @@ pre {
   letter-spacing: -0.025em;
   letter-spacing: -0.025em;
   letter-spacing: var(--tracking-tight);
+}
+
+.typeset pre[class*="language-"] {
+  width: calc(100vw - 6rem);
+  padding: 1.2rem;
+}
+
+.typeset pre[class*="language-"] + p {
+  margin-top: 1.05rem;
+}
+
+.typeset code[class*="language-"], 
+.typeset pre[class*="language-"] {
+  font-family: "Operator Mono SSm A", "Operator Mono SSm B";
+  font-family: "Operator Mono SSm A"
+,
+"Operator Mono SSm B";
+  font-family: var(--mono);
+  font-size: 0.833rem;
+  font-size: 0.833rem;
+  font-size: var(--iota);
+  line-height: 1.7;
 }
 
 .typeset code {
@@ -363,4 +406,8 @@ pre {
 
 .typeset .highlight + h2 {
   margin-top: 1.87rem;
+}
+
+.template-post h1 {
+  margin-top: 0.17rem;
 }
