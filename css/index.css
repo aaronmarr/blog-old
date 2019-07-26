@@ -36,14 +36,36 @@
   --gray-8: #343a40;
   --gray-9: #212529;
 
+  --blue-0: #e7f5ff;
+  --blue-1: #d0ebff;
+  --blue-2: #a5d8ff;
+  --blue-3: #74c0fc;
+  --blue-4: #4dabf7;
+  --blue-5: #339af0;
+  --blue-6: #228be6;
+  --blue-7: #1c7ed6;
+  --blue-8: #1971c2;
+  --blue-9: #1864ab;
+
+  --teal-0: #e6fcf5;
+  --teal-1: #c3fae8;
+  --teal-2: #96f2d7;
+  --teal-3: #63e6be;
+  --teal-4: #38d9a9;
+  --teal-5: #20c997;
+  --teal-6: #12b886;
+  --teal-7: #0ca678;
+  --teal-8: #099268;
+  --teal-9: #087f5b;
+
 
   /**
    * Fonts
    */
 
-  --serif: "Hoefler Text A", "Hoefler Text B";
-  --sans: "Whitney SSm A", "Whitney SSm B";
-  --mono: "Operator Mono SSm A", "Operator Mono SSm B";
+  --serif: "Untitled Sans Test";
+  --sans: "Untitled Sans Test";
+  --mono: "Pitch Sans Test";
 
   --font-bold: 700;
   --font-semi-bold: 600;
@@ -82,7 +104,7 @@
 
 html {
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .direct-link {
@@ -90,7 +112,9 @@ html {
 }
 
 .header {
-  padding: 0.9rem 0 0.45rem;
+  padding: 0.9rem 0 0.4rem;
+  /* border-bottom: 1px solid var(--gray-3); */
+  /* background: var(--gray-0); */
 }
 
 .header__content {
@@ -98,6 +122,7 @@ html {
   padding-left: 2rem;
   padding-right: 2rem;
   display: flex;
+  margin: 0 auto;
 }
 
 .site-name {
@@ -147,6 +172,7 @@ html {
   padding-left: 2rem;
   padding-right: 2rem;
   padding-top: 2.2rem;
+  margin: 0 auto;
 }
 
 pre {
@@ -159,7 +185,8 @@ pre {
   margin: 0;
   padding: 0;
   line-height: 1.15;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset h1 + p {
@@ -169,14 +196,15 @@ pre {
 .typeset h2 {
   font-size: var(--zeta);
   font-family: var(--serif);
-  line-height: 1.3;
+  line-height: 1.36;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset h2 + p {
-  margin-top: 0.65rem;
+  margin-top: 0.85rem;
 }
 
 .typeset h3 {
@@ -185,7 +213,8 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset h3 + p {
@@ -197,7 +226,8 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset h5 {
@@ -205,7 +235,8 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset h6 {
@@ -213,7 +244,8 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gray-9);
 }
 
 .typeset p {
@@ -221,6 +253,7 @@ pre {
   line-height: 1.67;
   margin: 0;
   padding: 0;
+  color: var(--gray-7);
 }
 
 
@@ -245,14 +278,47 @@ pre {
   margin-top: 1.4rem;
 }
 
+.typeset p + blockquote {
+  margin-top: 1.2rem;
+}
+
 .typeset a {
-  color: var(--oc-blue-6);
+  color: var(--teal-6);
+}
+
+.typeset blockquote {
+  padding: 0;
+  margin: 0;
+  border-left: var(--modular-scale-1) solid var(--teal-5);
+  /* background: var(--teal-0); */
+  padding: var(--modular-scale-4);
+  /* padding: 1rem 1rem 0.7rem; */
+}
+
+.typeset blockquote + h2 {
+  margin-top: 1.95rem;
+}
+
+/* .typeset blockquote p {
+  color: var(--teal-9);
+} */
+
+/* .typeset blockquote p code {
+  background: var(--teal-2);
+} */
+
+.typeset blockquote + p {
+  margin-top: 1.05rem;
+}
+
+.typeset a:hover {
+  text-decoration: none;
 }
 
 .typeset a:hover,
 .typeset a:active,
 .typeset a:visited {
-  color: var(--oc-blue-9);
+  color: var(--teal-9);
 }
 
 .typeset em {
@@ -260,7 +326,7 @@ pre {
 }
 
 .typeset pre[class*="language-"] {
-  width: calc(100vw - 6rem);
+  /* width: calc(100vw - 6rem); */
   padding: 1.2rem;
 }
 
@@ -268,17 +334,18 @@ pre {
   margin-top: 1.05rem;
 }
 
-.typeset code[class*="language-"], 
+.typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
   font-family: var(--mono);
   font-size: var(--iota);
   line-height: 1.7;
 }
 
-.typeset code {
+.typeset p code {
   font-family: var(--mono);
-  font-size: var(--eta);
-  background: var(--oc-gray-1);
+  font-size: var(--iota);
+  /* background: var(--gray-1);
+  padding: var(--modular-scale-1); */
 }
 
 .typeset > figure:not(.highlight) {
