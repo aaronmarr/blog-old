@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploying Eleventy to Github Pages using Travis CI</title>
+    <meta name="Description" content="Taking a look at deploying an 11ty site to Github Pages Travis">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link type="text/css" rel="stylesheet" href="/build/index.css">
+    <link rel="stylesheet" href="/build/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
+    
+    <!-- <link rel="stylesheet" href="//basehold.it/8"> -->    
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <h1 class="site-name">
+          <a class="site-name__link" href="/">
+            Aaron Marr
+          </a>
+        </h1>
+        <nav class="nav">
+          <ul class="nav__list"><li class="nav__item">
+              <a class="nav__link" href="/feed/feed.xml">
+                RSS
+              </a>
+            </li><li class="nav__item">
+              <a class="nav__link" href="/posts/">
+                Blog
+              </a>
+            </li></ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main typeset template-post">
+      <h1>Deploying Eleventy to Github Pages using Travis CI</h1>
+
+<p>I've recently redesigned my website using the excellent 11ty static site generator. In this post, I'll take a look at setting up a deployment pipeline to Github Pages (Pages) using Travis CI (Travis).</p>
+<p>The <a href="https://github.com/11ty/eleventy-base-blog">11ty blog starter template</a> comes with a <a href="https://github.com/11ty/eleventy-base-blog/blob/master/.travis.yml">Travis configuration file</a>. I figured it was worth giving Travis a try for deployment. There are a few steps involved in getting Travis talking to Pages, but it's overall a relatively straightforward process.</p>
+<blockquote>
+<p>Github forces you to use the master branch for the deployment branch for [username].github.io repositories. In my case, I wanted to specify the build branch as <code>master</code>, and the deploy branch as <code>gh-pages</code>, so my repository name is simply <code>blog</code>.</p>
+</blockquote>
+<p>Inside the new repository, enable Pages. I'm using a custom domain name, so I set that in the settings, too.</p>
+<blockquote>
+<p>I already had my DNS pointing to Github servers, but you should set up DNS too for your custom domain if you are using one. I won't cover that here, so please consult the <a href="https://help.github.com/en/articles/using-a-custom-domain-with-github-pages">Github documentation</a>.</p>
+</blockquote>
+<h2 id="set-up-travis">Set up Travis <a class="direct-link" href="#set-up-travis" aria-hidden="true">#</a></h2>
+<p>Travis is used to pull code from the Git repository, build it, and then push back to the Pages branch.</p>
+<p>Sign up to Travis CI (if you're not signed up already) and grant it access to your Github account. You can specify which repositories it has access to once signed up.</p>
+<p>As part of the authorisation/deployment process, Github requires that Travis sends an auth token. You can create the token via the <code>develop menu</code> in Github. You should then add this token to Travis under Travis's repository settings by creating a new environment. The only requirement here is that the name of the variable should match what's in the Travis yml file in your repository. In our case it's <code>$GITHUB_SECRET</code>.</p>
+<p>Let's take a look at the <code>travis.yml</code> configuration file now. Notice that I've set my build and deployment branches to <code>master</code> and <code>gh-pages</code>. I'm using a custom domain, and this is set using the <code>fqdn</code> property. I also want to deploy without a <code>pathprefix</code>, so I updated that accordingly.</p>
+<pre class="language-ruby"><code class="language-ruby"><span class="highlight-line">language<span class="token punctuation">:</span> node_js</span><br><span class="highlight-line">node_js<span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token operator">-</span> <span class="token number">8</span></span><br><span class="highlight-line">before_script<span class="token punctuation">:</span></span><br><span class="highlight-line">  <span class="token operator">-</span> npm install @<span class="token number">11</span>ty<span class="token operator">/</span>eleventy <span class="token operator">-</span>g</span><br><span class="highlight-line">script<span class="token punctuation">:</span> eleventy <span class="token operator">--</span>pathprefix<span class="token operator">=</span><span class="token string">"/"</span></span><br><span class="highlight-line">deploy<span class="token punctuation">:</span></span><br><span class="highlight-line">  fqdn<span class="token punctuation">:</span> aaronmarr<span class="token punctuation">.</span>co<span class="token punctuation">.</span>uk</span><br><span class="highlight-line">  local<span class="token operator">-</span>dir<span class="token punctuation">:</span> _site</span><br><span class="highlight-line">  provider<span class="token punctuation">:</span> pages</span><br><span class="highlight-line">  skip<span class="token operator">-</span>cleanup<span class="token punctuation">:</span> <span class="token keyword">true</span></span><br><span class="highlight-line">  github<span class="token operator">-</span>token<span class="token punctuation">:</span> <span class="token variable">$GITHUB_TOKEN</span>  <span class="token comment"># Set in travis-ci.org dashboard, marked secure</span></span><br><span class="highlight-line">  keep<span class="token operator">-</span>history<span class="token punctuation">:</span> <span class="token keyword">true</span></span><br><span class="highlight-line">  target_branch<span class="token punctuation">:</span> gh<span class="token operator">-</span>pages</span><br><span class="highlight-line">  on<span class="token punctuation">:</span></span><br><span class="highlight-line">    branch<span class="token punctuation">:</span> master</span></code></pre>
+<p>At this point, you should be able to build and deploy to Github. In Travis, select &quot;Build Now&quot; and wait a minute or two for Travis to do it's thing.</p>
+
+
+<p><a href="/">← Home</a></p>
+
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content">
+        <p>&copy Aaron Marr 2019</p>
+      </div>
+    </footer>
+
+    <!-- Current page: /posts/eleventy-travis-ci/ -->
+  </body>
+</html>

@@ -3,45 +3,56 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Blog Name</title>
-    <meta name="Description" content="I am writing about my experiences as a naval navel-gazer.">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
-    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Your Blog Name">
+    <title>Aaron Marr</title>
+    <meta name="Description" content="I&#39;m a frontend developer based in Cornwall, UK.">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link type="text/css" rel="stylesheet" href="/build/index.css">
+    <link rel="stylesheet" href="/build/prism-base16-monokai.dark.css">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
+    
+    <!-- <link rel="stylesheet" href="//basehold.it/8"> -->    
   </head>
   <body>
-    <header>
-      <h1 class="home"><a href="/">Your Blog Name</a></h1>
-      <ul class="nav"><li class="nav-item"><a href="/">Home</a></li><li class="nav-item"><a href="/posts/">Archive</a></li><li class="nav-item"><a href="/about/">About</a></li></ul>
+    <header class="header">
+      <div class="header__content">
+        <h1 class="site-name">
+          <a class="site-name__link" href="/">
+            Aaron Marr
+          </a>
+        </h1>
+        <nav class="nav">
+          <ul class="nav__list"><li class="nav__item">
+              <a class="nav__link" href="/feed/feed.xml">
+                RSS
+              </a>
+            </li><li class="nav__item">
+              <a class="nav__link" href="/posts/">
+                Blog
+              </a>
+            </li></ul>
+        </nav>
+      </div>
     </header>
 
-    <main class="tmpl-home">
-      <div class="warning">
-        <ol>
-          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
-          <li>(Optional) Edit <code>.eleventy.js</code> with your configuration preferences.</li>
-          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
-        </ol>
-        <p><em>This is an <a href="https://www.11ty.io/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
-      </div>
-
+    <main class="main typeset tmpl-home">
       <h1>Tags</h1>
 
 
   
+  <a href="/tags/development/" class="tag">development</a>
+
+  
   <a href="/tags/another-tag/" class="tag">another-tag</a>
-
-  
-  <a href="/tags/second-tag/" class="tag">second-tag</a>
-
-  
-  <a href="/tags/number-2/" class="tag">number-2</a>
 
 
 
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__content">
+        <p>&copy Aaron Marr 2019</p>
+      </div>
+    </footer>
 
     <!-- Current page: /tags/ -->
   </body>

@@ -143,6 +143,8 @@
 }
 
 html {
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--sans);
   font-size: 16px;
 }
@@ -156,6 +158,8 @@ html {
 }
 
 .header__content {
+  max-width: 31rem;
+  max-width: 31rem;
   max-width: var(--max-width);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -175,6 +179,8 @@ html {
 .site-name {
   margin: 0;
   padding: 0;
+  font-size: 1rem;
+  font-size: 1rem;
   font-size: var(--theta);
   display: flex;
 }
@@ -182,9 +188,15 @@ html {
 .site-name__link {
   text-decoration: none;
   align-self: center;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 1rem;
+  font-size: 1rem;
   font-size: var(--theta);
 }
 
@@ -199,14 +211,22 @@ html {
 
 .nav__item {
   display: inline;
+  padding-left: 1rem;
+  padding-left: 1rem;
   padding-left: var(--modular-scale-4)
 }
 
 .nav__link {
   text-decoration: none;
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 1rem;
+  font-size: 1rem;
   font-size: var(--theta);
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -215,6 +235,8 @@ html {
 }
 
 .footer__content {
+  max-width: 31rem;
+  max-width: 31rem;
   max-width: var(--max-width);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -231,14 +253,20 @@ html {
 }
 
 .footer__content p {
+  font-size: 0.833rem;
+  font-size: 0.833rem;
   font-size: var(--iota);
 }
 
 .post__title {
+  font-size: 1.728rem;
+  font-size: 1.728rem;
   font-size: var(--epsilon);
 }
 
 .main {
+  max-width: 31rem;
+  max-width: 31rem;
   max-width: var(--max-width);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -255,17 +283,25 @@ html {
 }
 
 pre {
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
 }
 
 .typeset h1 {
+  font-size: 1.44rem;
+  font-size: 1.44rem;
   font-size: var(--zeta);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
   line-height: 1.31;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -274,12 +310,18 @@ pre {
 }
 
 .typeset h2 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   line-height: 1.36;
   margin: 0;
   padding: 0;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -288,12 +330,20 @@ pre {
 }
 
 .typeset h3 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
+  font-weight: 600;
+  font-weight: 600;
   font-weight: var(--font-semi-bold);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -302,37 +352,59 @@ pre {
 }
 
 .typeset h4 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
 .typeset h5 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
 .typeset h6 {
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
   font-weight: 400;
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
 .typeset p {
+  font-size: 1rem;
+  font-size: 1rem;
   font-size: var(--theta);
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  color: #343a40;
+  color: #343a40;
   color: var(--gray-8);
 }
 
@@ -364,6 +436,8 @@ pre {
 }
 
 .typeset a {
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -374,6 +448,8 @@ pre {
 .typeset a:hover,
 .typeset a:active,
 .typeset a:visited {
+  color: #212529;
+  color: #212529;
   color: var(--gray-9);
 }
 
@@ -400,16 +476,24 @@ pre {
 
 .typeset ul li,
 .typeset ol li {
+  font-size: 1rem;
+  font-size: 1rem;
   font-size: var(--theta);
   line-height: 1.67;
   margin: 0;
   padding: 0;
+  color: #495057;
+  color: #495057;
   color: var(--gray-7);
 }
 
 .typeset ul li time {
+  font-size: 0.833rem;
+  font-size: 0.833rem;
   font-size: var(--iota);
   font-style: italic;
+  letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
   letter-spacing: var(--tracking-tight);
 }
 
@@ -422,6 +506,8 @@ pre {
 
 .typeset blockquote p {
   font-style: italic;
+  letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
   letter-spacing: var(--tracking-tight);
 }
 
@@ -434,12 +520,16 @@ pre {
 }
 
 .typeset em {
+  letter-spacing: -0.025em;
+  letter-spacing: -0.025em;
   letter-spacing: var(--tracking-tight);
 }
 
 .typeset pre[class*="language-"] {
   width: calc(100vw - 4.5rem);
   padding: 1.05rem;
+  border: 1px solid #e9ecef;
+  border: 1px solid #e9ecef;
   border: 1px solid var(--gray-2);
   /* background: var(--gray-0) */
 }
@@ -460,15 +550,23 @@ pre {
 
 .typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 0.833rem;
+  font-size: 0.833rem;
   font-size: var(--iota);
   line-height: 1.7;
 }
 
 .typeset p code {
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 0.833rem;
+  font-size: 0.833rem;
   font-size: var(--iota);
   /* background: var(--gray-1);
   padding: var(--modular-scale-1); */
@@ -496,8 +594,12 @@ pre {
 .typeset .highlight {
   padding: 0;
   margin: 0;
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
+  font-size: 1.2rem;
+  font-size: 1.2rem;
   font-size: var(--eta);
   line-height: 1.75;
 }

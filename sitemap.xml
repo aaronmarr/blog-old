@@ -2,62 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://myurl.com/posts/firstpost/</loc>
-    <lastmod>2018-05-01</lastmod>
+    <loc>https://aaronmarr.co.uk/posts/setting-up-rails-dev-environment/</loc>
+    <lastmod>2019-07-01</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/posts/secondpost/</loc>
-    <lastmod>2018-07-04</lastmod>
+    <loc>https://aaronmarr.co.uk/posts/eleventy-travis-ci/</loc>
+    <lastmod>2019-07-25</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/posts/thirdpost/</loc>
-    <lastmod>2018-08-24</lastmod>
+    <loc>https://aaronmarr.co.uk/about/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/posts/fourthpost/</loc>
-    <lastmod>2018-09-30</lastmod>
+    <loc>https://aaronmarr.co.uk/posts/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/about/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/feed/feed.xml</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/posts/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/page-list/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/page-list/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/tags/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/tags/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/tags/development/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
   
   <url>
-    <loc>https://myurl.com/tags/another-tag/</loc>
-    <lastmod>2019-07-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://myurl.com/tags/second-tag/</loc>
-    <lastmod>2019-07-23</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://myurl.com/tags/number-2/</loc>
-    <lastmod>2019-07-23</lastmod>
+    <loc>https://aaronmarr.co.uk/tags/another-tag/</loc>
+    <lastmod>2019-07-27</lastmod>
   </url>
 </urlset>
