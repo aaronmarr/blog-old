@@ -105,7 +105,7 @@
 /**
  * Font face
  */
-
+/* 
 @font-face {
   font-family: "Pitch Sans";
   font-weight: 600;
@@ -122,6 +122,20 @@
   src: url("../fonts/PitchSansWeb-SemiboldItalic.woff2") format("woff2"),
        url("../fonts/PitchSansWeb-SemiboldItalic.woff") format("woff"),
        url("../fonts/PitchSansWeb-SemiboldItalic.eot") format("eot");
+} */
+
+@font-face {
+  font-family: "Pitch Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/test/PitchSansTest-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Pitch Sans";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/test/PitchSansTest-RegularItalic.woff") format("woff");
 }
 
 @font-face {
@@ -184,7 +198,7 @@ html {
   align-self: center;
   color: var(--gray-9);
   font-family: var(--mono);
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--theta);
 }
 
@@ -205,7 +219,7 @@ html {
 .nav__link {
   text-decoration: none;
   font-family: var(--mono);
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--theta);
   color: var(--gray-9);
 }
@@ -231,7 +245,9 @@ html {
 }
 
 .footer__content p {
-  font-size: var(--iota);
+  font-family: var(--mono);
+  font-weight: 400;
+  font-size: var(--theta);
 }
 
 .post__title {
@@ -256,7 +272,7 @@ html {
 
 pre {
   font-family: var(--mono);
-  font-weight: 600;
+  font-weight:theta
 }
 
 .typeset h1 {
@@ -336,10 +352,22 @@ pre {
   color: var(--gray-8);
 }
 
+.typeset p img {
+  width: calc(100vw - 2rem);
+  box-sizing: border-box;
+}
+
+@media (min-width: 50rem) {
+  .typeset p img {
+    width: calc(100vw - 4rem);
+    box-sizing: border-box;
+  }
+}
+
 
 .typeset p + p,
 .typeset p + ul {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .typeset p + pre,
@@ -416,8 +444,9 @@ pre {
 .typeset blockquote {
   padding: 0;
   margin: 0;
-  /* border-left: 2px solid var(--gray-4); */
-  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--gray-4);
+  background: var(--gray-0);
+  padding: 1rem 1.5rem;
 }
 
 .typeset blockquote p {
@@ -438,15 +467,18 @@ pre {
 }
 
 .typeset pre[class*="language-"] {
-  width: calc(100vw - 4.5rem);
+  width: calc(100vw - 2rem);
+  box-sizing: border-box;
   padding: 1.05rem;
-  border: 1px solid var(--gray-2);
-  /* background: var(--gray-0) */
+  padding: 1rem 1.5rem 1rem;
+  border: 0;
+  background: var(--gray-0)
 }
 
 @media (min-width: 50rem) {
   .typeset pre[class*="language-"] {
-    width: calc(100vw - 6rem);
+    width: calc(100vw - 4rem);
+    box-sizing: border-box;
   }
 }
 
@@ -461,15 +493,15 @@ pre {
 .typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
   font-family: var(--mono);
-  font-weight: 600;
-  font-size: var(--iota);
-  line-height: 1.7;
+  font-weight: 400;
+  font-size: var(--theta);
+  line-height: 1.5;
 }
 
 .typeset p code {
   font-family: var(--mono);
-  font-weight: 600;
-  font-size: var(--iota);
+  font-weight: 400;
+  font-size: var(-theta);
   /* background: var(--gray-1);
   padding: var(--modular-scale-1); */
 }
@@ -497,8 +529,8 @@ pre {
   padding: 0;
   margin: 0;
   font-family: var(--mono);
-  font-weight: 600;
-  font-size: var(--eta);
+  font-weight: 400;
+  font-size: var(theta);
   line-height: 1.75;
 }
 
