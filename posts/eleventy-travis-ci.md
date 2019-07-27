@@ -21,7 +21,7 @@ Travis is used to pull code from the Git repository, build it, and then push bac
 
 Sign up to Travis CI (if you're not signed up already) and grant it access to your Github account. You can specify which repositories it has access to once signed up.
 
-As part of the authorisation/deployment process, Github requires that Travis sends an auth token. You can create the token via the `develop menu` in Github. You should then add this token to Travis under Travis's repository settings by creating a new environment. The only requirement here is that the name of the variable should match what's in the Travis yml file in your repository. In our case it's `$GITHUB_SECRET`.
+As part of the authorisation/deployment process, Github requires that Travis sends an auth token. You can create the token via the `develop menu` in Github. You should then add this token to Travis under Travis's repository settings by creating a new environment variable. The only requirement here is that the name of the variable should match what's in the Travis yml file in your repository. In our case it's `$GITHUB_SECRET`.
 
 Let's take a look at the `travis.yml` configuration file now. Notice that I've set my build and deployment branches to `master` and `gh-pages`. I'm using a custom domain, and this is set using the `fqdn` property. I also want to deploy without a `pathprefix`, so I updated that accordingly.
 
