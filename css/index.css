@@ -1,6 +1,5 @@
 :root {
 
-
   /**
    * Font sizes (https://www.modularscale.com/?1&em&1.2)
    */
@@ -63,9 +62,9 @@
    * Fonts
    */
 
-  --serif: "Untitled Sans Test";
-  --sans: "Untitled Sans Test";
-  --mono: "Pitch Sans Test";
+  --serif: "Tiempos Text";
+  --sans: "Tiempos Text";
+  --mono: "Pitch Sans";
 
   --font-bold: 700;
   --font-semi-bold: 600;
@@ -99,12 +98,53 @@
   --modular-scale-32: 8rem;
   --modular-scale-64: 16rem;
 
-  --max-width: 32rem;
+  --max-width: 31rem;
+}
+
+
+/**
+ * Font face
+ */
+
+@font-face {
+  font-family: "Pitch Sans";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/PitchSansWeb-Semibold.woff2") format("woff2"),
+       url("../fonts/PitchSansWeb-Semibold.woff") format("woff"),
+       url("../fonts/PitchSansWeb-Semibold.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Pitch Sans";
+  font-weight: 600;
+  font-style: italic;
+  src: url("../fonts/PitchSansWeb-SemiboldItalic.woff2") format("woff2"),
+       url("../fonts/PitchSansWeb-SemiboldItalic.woff") format("woff"),
+       url("../fonts/PitchSansWeb-SemiboldItalic.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/TiemposTextWeb-Regular.woff2") format("woff2"),
+       url("../fonts/TiemposTextWeb-Regular.woff") format("woff"),
+       url("../fonts/TiemposTextWeb-Regular.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/TiemposTextWeb-RegularItalic.woff2") format("woff2"),
+       url("../fonts/TiemposTextWeb-RegularItalic.woff") format("woff"),
+       url("../fonts/TiemposTextWeb-RegularItalic.eot") format("eot");
 }
 
 html {
   font-family: var(--sans);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .direct-link {
@@ -112,17 +152,24 @@ html {
 }
 
 .header {
-  padding: 0.9rem 0 0.4rem;
-  /* border-bottom: 1px solid var(--gray-3); */
-  /* background: var(--gray-0); */
+  padding: 1.1rem 0 0.65rem;
 }
 
 .header__content {
   max-width: var(--max-width);
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
-  margin: 0 auto;
+
+  /* margin: 0 auto; */
+}
+
+
+@media (min-width: 50rem) {
+  .header__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 .site-name {
@@ -136,8 +183,8 @@ html {
   text-decoration: none;
   align-self: center;
   color: var(--gray-9);
-  font-family: var(--sans);
-  font-weight: 400;
+  font-family: var(--mono);
+  font-weight: 600;
   font-size: var(--theta);
 }
 
@@ -152,15 +199,39 @@ html {
 
 .nav__item {
   display: inline;
-  padding-left: 0.5rem;
+  padding-left: var(--modular-scale-4)
 }
 
 .nav__link {
   text-decoration: none;
-  font-family: var(--sans);
-  font-weight: 400;
+  font-family: var(--mono);
+  font-weight: 600;
   font-size: var(--theta);
   color: var(--gray-9);
+}
+
+.footer {
+  padding: 3.9rem 0 1.4rem;
+}
+
+.footer__content {
+  max-width: var(--max-width);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+
+  /* margin: 0 auto; */
+}
+
+@media (min-width: 50rem) {
+  .footer__content {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.footer__content p {
+  font-size: var(--iota);
 }
 
 .post__title {
@@ -169,42 +240,51 @@ html {
 
 .main {
   max-width: var(--max-width);
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 2.2rem;
-  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 3.5rem;
+
+  /* margin: 0 auto; */
+}
+
+@media (min-width: 50rem) {
+  .main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 pre {
   font-family: var(--mono);
+  font-weight: 600;
 }
 
 .typeset h1 {
-  font-size: var(--epsilon);
+  font-size: var(--zeta);
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  line-height: 1.15;
-  font-weight: 700;
+  line-height: 1.31;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
 .typeset h1 + p {
-  margin-top: 1.15rem;
+  margin-top: 1rem;
 }
 
 .typeset h2 {
-  font-size: var(--zeta);
+  font-size: var(--eta);
   font-family: var(--serif);
   line-height: 1.36;
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
 .typeset h2 + p {
-  margin-top: 0.85rem;
+  margin-top: 1rem;
 }
 
 .typeset h3 {
@@ -213,7 +293,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
@@ -226,7 +306,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
@@ -235,7 +315,7 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
@@ -244,26 +324,27 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--gray-9);
 }
 
 .typeset p {
   font-size: var(--theta);
-  line-height: 1.67;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
-  color: var(--gray-7);
+  color: var(--gray-8);
 }
 
 
-.typeset p + p {
-  margin-top: 1.14rem;
+.typeset p + p,
+.typeset p + ul {
+  margin-top: 1.5rem;
 }
 
 .typeset p + pre,
 .typeset p + code {
-  margin-top: 1.15rem;
+  margin-top: 1.65rem;
 }
 
 .typeset p + img {
@@ -279,36 +360,11 @@ pre {
 }
 
 .typeset p + blockquote {
-  margin-top: 1.2rem;
+  margin-top: 1.1rem;
 }
 
 .typeset a {
-  color: var(--teal-6);
-}
-
-.typeset blockquote {
-  padding: 0;
-  margin: 0;
-  border-left: var(--modular-scale-1) solid var(--teal-5);
-  /* background: var(--teal-0); */
-  padding: var(--modular-scale-4);
-  /* padding: 1rem 1rem 0.7rem; */
-}
-
-.typeset blockquote + h2 {
-  margin-top: 1.95rem;
-}
-
-/* .typeset blockquote p {
-  color: var(--teal-9);
-} */
-
-/* .typeset blockquote p code {
-  background: var(--teal-2);
-} */
-
-.typeset blockquote + p {
-  margin-top: 1.05rem;
+  color: var(--gray-9);
 }
 
 .typeset a:hover {
@@ -318,7 +374,63 @@ pre {
 .typeset a:hover,
 .typeset a:active,
 .typeset a:visited {
-  color: var(--teal-9);
+  color: var(--gray-9);
+}
+
+.typeset ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.typeset ul + p {
+  margin-top: 1.14rem;
+}
+
+
+.typeset ul > li {
+  text-indent: -0.7rem;
+}
+
+.typeset ul > li:before {
+  content: "-";
+  text-indent: -0.7rem;
+}
+
+
+.typeset ul li,
+.typeset ol li {
+  font-size: var(--theta);
+  line-height: 1.67;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-7);
+}
+
+.typeset ul li time {
+  font-size: var(--iota);
+  font-style: italic;
+  letter-spacing: var(--tracking-tight);
+}
+
+.typeset blockquote {
+  padding: 0;
+  margin: 0;
+  /* border-left: 2px solid var(--gray-4); */
+  padding: 0.9rem 1rem;
+}
+
+.typeset blockquote p {
+  font-style: italic;
+  letter-spacing: var(--tracking-tight);
+}
+
+.typeset blockquote + h2 {
+  margin-top: 2.2rem;
+}
+
+.typeset blockquote + p {
+  margin-top: 1.35rem;
 }
 
 .typeset em {
@@ -326,23 +438,37 @@ pre {
 }
 
 .typeset pre[class*="language-"] {
-  /* width: calc(100vw - 6rem); */
-  padding: 1.2rem;
+  width: calc(100vw - 4.5rem);
+  padding: 1.05rem;
+  border: 1px solid var(--gray-2);
+  /* background: var(--gray-0) */
+}
+
+@media (min-width: 50rem) {
+  .typeset pre[class*="language-"] {
+    width: calc(100vw - 6rem);
+  }
 }
 
 .typeset pre[class*="language-"] + p {
-  margin-top: 1.05rem;
+  margin-top: 1.4rem;
+}
+
+.typeset pre[class*="language-"] + h2 {
+  margin-top: 1.8rem;
 }
 
 .typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
   font-family: var(--mono);
+  font-weight: 600;
   font-size: var(--iota);
   line-height: 1.7;
 }
 
 .typeset p code {
   font-family: var(--mono);
+  font-weight: 600;
   font-size: var(--iota);
   /* background: var(--gray-1);
   padding: var(--modular-scale-1); */
@@ -359,7 +485,7 @@ pre {
 }
 
 .typeset > figure:not(.highlight) > img {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   max-width: 100%;
 }
 
@@ -371,6 +497,7 @@ pre {
   padding: 0;
   margin: 0;
   font-family: var(--mono);
+  font-weight: 600;
   font-size: var(--eta);
   line-height: 1.75;
 }
@@ -384,5 +511,5 @@ pre {
 }
 
 .template-post h1 {
-  margin-top: 0.17rem;
+  margin-top: 0rem;
 }
