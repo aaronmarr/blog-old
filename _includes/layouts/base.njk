@@ -12,10 +12,13 @@
     <!-- <link rel="stylesheet" href="//basehold.it/8">     -->
   </head>
   <body class="line-numbers">
+    <!-- Current page: {{ page.url | url }} -->
+    {% set postslist = collections.posts | head(-3) %}
+
     <header class="header">
       <div class="header__content">
         <h1 class="site-name">
-          <a class="site-name__link" href="{{ '/' | url }}">
+          <a class="site-name__link" href="{{ postslist[0].url | url }}">
             {{ metadata.title }}
           </a>
         </h1>
@@ -43,6 +46,7 @@
       </div>
     </footer>
 
-    <!-- Current page: {{ page.url | url }} -->
+
+    <div id="redirect" data-redirect-url="{{ postslist[0].url | url }}"</div>
   </body>
 </html>

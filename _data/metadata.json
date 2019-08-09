@@ -1,9 +1,9 @@
 {
   "title": "Aaron Marr",
   "url": "https://aaronmarr.co.uk/",
-  "description": "I'm a frontend developer based in Cornwall, UK.",
+  "description": "I'm a web developer based in Cornwall, UK.",
   "feed": {
-    "subtitle": "I'm a frontend developer based in Cornwall, UK.",
+    "subtitle": "I'm a web developer based in Cornwall, UK.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "url": "https://aaronmarr.co.uk/feed/feed.xml",
