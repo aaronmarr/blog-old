@@ -1,6 +1,6 @@
 ---
-title: Deploying 11ty to Github Pages using Travis
-description: Taking a look at deploying an 11ty site to Github Pages Travis
+title: Deploying Eleventy to Github Pages using Travis CI
+description: Taking a look at deploying an 11ty site to Github Pages Travis CI
 date: 2019-07-25
 tags: development
 layout: layouts/post.njk
@@ -13,7 +13,7 @@ One of the benefits of Jekyll is that it has first-class integration with Github
 
 The first thing you will need is an Eleventy installation pushed to a repository on Github. I used the [Eleventy base blog](https://github.com/11ty/eleventy-base-blog) "starter" template for my site. This contains a base installation of 11ty, set up with a couple of static pages to get you going. I also created a repo on Github with the name "blog" and pushed my local 11ty site to the `master` branch. 
 
-<aside>Github does provide a way for you to auto-publish from a master branch at [username].github.io, but this does remove some of the flexibility of build and deploy branches. I want total control over which branches are built and deployed, so I chose "blog" for my repository name, instead of opting for the standard [username].github.io one.</aside>
+<aside>Github does provide a way for you to auto-publish from a master branch at [username].github.io, but this does remove some of the flexibility of build and deploy branches.</aside>
 
 There are a few settings in Github which I also adjusted. In the repository settings, there's a section for Github Pages. In here, I selected "enable pages" and also set up my custom domain name. If you're using a custom domain, you'll need to point your DNS to the Github Pages IPs, and also create a CNAME file in the base of your repository. More details about that can be found in the [Github documentation](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages).
 

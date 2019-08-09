@@ -6,4 +6,6 @@ templateClass: template-post
 
 {{ content | safe }}
 
-<p><a href="{{ '/' | url }}">← Home</a></p>
+<time datetime="{{ date | htmlDateString }}">– {{ date | readableDate }} –</time>
+
+{# <p><a href="{{ '/' | url }}">← Home</a></p> #}
