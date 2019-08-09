@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 	<title>Aaron Marr</title>
-	<subtitle>I&#39;m a frontend developer based in Cornwall, UK.</subtitle>
+	<subtitle>I&#39;m a web developer based in Cornwall, UK.</subtitle>
 	<link href="https://aaronmarr.co.uk/feed/feed.xml" rel="self"/>
 	<link href="https://aaronmarr.co.uk/"/>
 	<updated>2019-07-25T00:00:00+00:00</updated>
@@ -12,7 +12,7 @@
 	</author>
 	
 	<entry>
-		<title>Deploying 11ty to Github Pages using Travis</title>
+		<title>Deploying Eleventy to Github Pages using Travis CI</title>
 		<link href="https://aaronmarr.co.uk/posts/eleventy-travis-ci/"/>
 		<updated>2019-07-25T00:00:00+00:00</updated>
 		<id>https://aaronmarr.co.uk/posts/eleventy-travis-ci/</id>
@@ -20,7 +20,7 @@
 &lt;p&gt;One of the benefits of Jekyll is that it has first-class integration with Github Pages. You simply push to a &lt;code&gt;gh-pages&lt;/code&gt; branch, and Github looks after building and deploying your site to a live URL for you. With 11ty, you are responsible for building and deploying. In this post, I&#39;ll look at deploying 11ty to Github Pages using Travis CI.&lt;/p&gt;
 &lt;h2 id=&quot;create-a-repository-on-github&quot;&gt;Create a repository on Github &lt;a class=&quot;direct-link&quot; href=&quot;#create-a-repository-on-github&quot; aria-hidden=&quot;true&quot;&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;The first thing you will need is an Eleventy installation pushed to a repository on Github. I used the &lt;a href=&quot;https://github.com/11ty/eleventy-base-blog&quot;&gt;Eleventy base blog&lt;/a&gt; &amp;quot;starter&amp;quot; template for my site. This contains a base installation of 11ty, set up with a couple of static pages to get you going. I also created a repo on Github with the name &amp;quot;blog&amp;quot; and pushed my local 11ty site to the &lt;code&gt;master&lt;/code&gt; branch.&lt;/p&gt;
-&lt;aside&gt;Github does provide a way for you to auto-publish from a master branch at [username].github.io, but this does remove some of the flexibility of build and deploy branches. I want total control over which branches are built and deployed, so I chose &quot;blog&quot; for my repository name, instead of opting for the standard [username].github.io one.&lt;/aside&gt;
+&lt;aside&gt;Github does provide a way for you to auto-publish from a master branch at [username].github.io, but this does remove some of the flexibility of build and deploy branches.&lt;/aside&gt;
 &lt;p&gt;There are a few settings in Github which I also adjusted. In the repository settings, there&#39;s a section for Github Pages. In here, I selected &amp;quot;enable pages&amp;quot; and also set up my custom domain name. If you&#39;re using a custom domain, you&#39;ll need to point your DNS to the Github Pages IPs, and also create a CNAME file in the base of your repository. More details about that can be found in the &lt;a href=&quot;https://help.github.com/en/articles/using-a-custom-domain-with-github-pages&quot;&gt;Github documentation&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://aaronmarr.co.uk/img/gh-pages-setup.png&quot; alt=&quot;alt text&quot; title=&quot;Github Pages settings screenshot&quot;&gt;&lt;/p&gt;
 &lt;p&gt;One final step you will need to do is create a Github authentication key, which will be used by Travis to authenticate. In the developer menu, set up a new key, and copy to your clipboard. You will use this key once Travis has been set up.&lt;/p&gt;
