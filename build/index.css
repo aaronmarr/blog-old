@@ -187,6 +187,24 @@
 }
 
 @font-face {
+  font-family: "Tiempos Text";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/TiemposTextWeb-Bold.woff2") format("woff2"),
+       url("../fonts/TiemposTextWeb-Bold.woff") format("woff"),
+       url("../fonts/TiemposTextWeb-Bold.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Tiempos Text";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/TiemposTextWeb-BoldItalic.woff2") format("woff2"),
+       url("../fonts/TiemposTextWeb-BoldItalic.woff") format("woff"),
+       url("../fonts/TiemposTextWeb-BoldItalic.eot") format("eot");
+}
+
+@font-face {
   font-family: "Adieu";
   font-weight: 400;
   font-style: normal;
@@ -196,10 +214,11 @@
 }
 
 html {
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
-  font-family: var(--sans);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
+  font-family: var(--serif);
   font-size: 16px;
+  font-weight: 400;
 }
 
 body {
@@ -234,9 +253,9 @@ body {
   padding: 0.5rem 1rem 0.5rem;
   padding: 0.5rem 1rem 0.5rem;
   padding: var(--modular-scale-2) var(--modular-scale-4) var(--modular-scale-2);
-  background: #212529;
-  background: #212529;
-  background: var(--gray-9);
+  background: #dee2e6;
+  background: #dee2e6;
+  background: var(--gray-3);
 }
 
 @media (min-width: 50rem) {
@@ -286,9 +305,9 @@ body {
 .site-name__link {
   text-decoration: none;
   align-self: center;
-  color: #ced4da;
-  color: #ced4da;
-  color: var(--gray-4);
+  color: #212529;
+  color: #212529;
+  color: var(--gray-9);
   font-family: "Untitled Sans";
   font-family: "Untitled Sans";
   font-family: var(--sans);
@@ -327,9 +346,9 @@ body {
   font-size: 0.833rem;
   font-size: 0.833rem;
   font-size: var(--iota);
-  color: #ced4da;
-  color: #ced4da;
-  color: var(--gray-4);
+  color: #212529;
+  color: #212529;
+  color: var(--gray-9);
 }
 
 .footer {
@@ -436,19 +455,25 @@ pre {
   font-family: var(--serif);
   margin: 0;
   padding: 0;
-  line-height: 1.1;
-  font-weight: 400;
-  font-style: italic;
-  text-align: center;
+  line-height: 1.3;
+  font-weight: 700;
+  font-style: normal;
+  
 
   letter-spacing: -0.02em;
+  
 
   letter-spacing: -0.02em;
+  
 
   letter-spacing: var(--tracking-tight);
   color: #212529;
   color: #212529;
   color: var(--gray-9);
+}
+
+.text-center {
+  text-align: center;
 }
 
 @media (min-width: 40rem) {
@@ -461,19 +486,21 @@ pre {
 }
 
 @media (min-width: 50rem) {
-  .typeset h1 {
+  .typeset .post-title {
     margin-left: -13%;
     margin-right: -13%;
   }
 }
 
-.typeset h1 + p {
+.typeset h1 + p,
+.typeset h1 + ul {
   margin-top: 2.15rem;
 }
 
 @media (min-width: 40rem) {
-  .typeset h1 + p {
-    margin-top: 2.4rem;
+  .typeset h1 + p,
+  .typeset h1 + ul {
+    margin-top: 2.9rem;
   }
 }
 
@@ -488,8 +515,8 @@ pre {
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 700;
+  font-style: normal;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
   letter-spacing: var(--tracking-tight);
@@ -607,12 +634,15 @@ pre {
   width: 100%;
   text-align: center;
   display: block;
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
+  font-family: var(--sans);
   margin-top: 2rem;
   margin-top: 2rem;
   margin-top: var(--modular-scale-8);
-  font-size: 1rem;
-  font-size: 1rem;
-  font-size: var(--theta);
+  font-size: 0.833rem;
+  font-size: 0.833rem;
+  font-size: var(--iota);
 }
 
 .typeset p + p,
@@ -697,10 +727,22 @@ pre {
   color: var(--gray-7);
 }
 
+.typeset ul li a,
+.typeset ul li a:hover,
+.typeset ul li a:active,
+.typeset ul li a:visited {
+  color: #212529;
+  color: #212529;
+  color: var(--gray-9);
+}
+
 .typeset ul li time {
   font-size: 0.833rem;
   font-size: 0.833rem;
   font-size: var(--iota);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
+  font-family: var(--serif);
   font-style: italic;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
@@ -887,12 +929,14 @@ pre {
   margin-top: 1.87rem;
 }
 
-.template-post h1 {
-  margin-top: 0.35rem;
+.template-post h1,
+.template-archive h1 {
+  margin-top: 0;
 }
 
 @media (min-width: 40rem) {
-  .template-post h1 {
+  .template-post h1,
+  .template-archive h1  {
     margin-top: 1.5rem;
     margin-top: 1.5rem;
     margin-top: var(--modular-scale-6)

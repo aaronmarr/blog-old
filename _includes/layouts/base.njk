@@ -24,7 +24,7 @@
         </h1>
         <nav class="nav">
           <ul class="nav__list">
-            {%- for nav in collections.nav | reverse -%}
+            {%- for nav in collections.nav -%}
             <li class="nav__item{% if nav.url == page.url %} nav__item--active{% endif %}">
               <a class="nav__link" href="{{ nav.url | url }}">
                 {{ nav.data.navtitle }}
