@@ -515,6 +515,7 @@ pre {
 .typeset p img {
   width: 100%;
   box-sizing: border-box;
+  padding: var(--modular-scale-2) 0 var(--modular-scale-1);
 }
 
 /* @media (min-width: 50rem) {
