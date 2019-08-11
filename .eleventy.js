@@ -45,7 +45,7 @@ module.exports = function(eleventyConfig) {
   };
   let opts = {
     permalink: true,
-    permalinkClass: "direct-link",
+    permalinkClass: "hidden",
     permalinkSymbol: "#"
   };
 

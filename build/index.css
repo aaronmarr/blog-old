@@ -154,20 +154,6 @@
        url("../fonts/PitchSansWeb-SemiboldItalic.eot") format("eot");
 }
 
-/* @font-face {
-  font-family: "Pitch Sans";
-  font-weight: 400;
-  font-style: normal;
-  src: url("../fonts/test/PitchSansTest-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Pitch Sans";
-  font-weight: 400;
-  font-style: italic;
-  src: url("../fonts/test/PitchSansTest-RegularItalic.woff") format("woff");
-} */
-
 @font-face {
   font-family: "Tiempos Text";
   font-weight: 400;
@@ -213,6 +199,11 @@
        url("../fonts/Adieu-Regular.eot") format("eot");
 }
 
+
+/**
+ * Base
+ */
+
 html {
   font-family: "Tiempos Text";
   font-family: "Tiempos Text";
@@ -225,29 +216,17 @@ body {
   min-height: 100vh;
 }
 
-/* @media (min-width: 33rem) {
-  html {
-    font-size: 17px;
-  }
+pre {
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
+  font-family: var(--mono);
+  font-weight: 600;
 }
 
 
-@media (min-width: 40rem) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 60rem) {
-  html {
-    font-size: 20px;
-  }
-} */
-
-
-.direct-link {
-  display: none;
-}
+/**
+ * Components
+ */
 
 .header {
   padding: 0.5rem 1rem 0.5rem;
@@ -266,7 +245,6 @@ body {
     padding-right: 2rem;
     padding-right: 2rem;
     padding-right: var(--modular-scale-8); 
-    
   }
 }
 
@@ -274,20 +252,9 @@ body {
   max-width: 37rem;
   max-width: 37rem;
   max-width: var(--max-width);
-  /* padding-left: 1rem;
-  padding-right: 1rem; */
   display: flex;
-  /* border-bottom: 2px solid var(--gray-9); */
   margin: 0 auto;
   padding-bottom: 0rem;
-}
-
-
-@media (min-width: 50rem) {
-  .header__content {
-    /* padding-left: 2rem;
-    padding-right: 2rem; */
-  }
 }
 
 .site-name {
@@ -426,25 +393,10 @@ body {
   }
 }
 
-pre {
-  font-family: "Pitch Sans";
-  font-family: "Pitch Sans";
-  font-family: var(--mono);
-  font-weight: 600;
-}
 
-/* .typeset h1 {
-  font-size: var(--gamma);
-  font-family: var(--headline);
-  margin: 0;
-  padding: 0;
-  line-height: 1.21;
-  font-weight: 400;
-  font-style: normal;
-  text-align: left;
-  letter-spacing: var(--tracking-tight);
-  color: var(--gray-9);
-} */
+/**
+ * Typesetting
+ */
 
 .typeset h1 {
   font-size: 2.074rem;
@@ -458,14 +410,8 @@ pre {
   line-height: 1.3;
   font-weight: 700;
   font-style: normal;
-  
-
   letter-spacing: -0.02em;
-  
-
   letter-spacing: -0.02em;
-  
-
   letter-spacing: var(--tracking-tight);
   color: #212529;
   color: #212529;
@@ -504,7 +450,6 @@ pre {
   }
 }
 
-
 .typeset h2 {
   font-size: 1.44rem;
   font-size: 1.44rem;
@@ -533,7 +478,6 @@ pre {
     line-height: 1.25;
   }
 }
-
 
 .typeset h2 + p {
   margin-top: 1rem;
@@ -626,13 +570,6 @@ pre {
   padding: var(--modular-scale-2) 0 var(--modular-scale-1);
 }
 
-/* @media (min-width: 50rem) {
-  .typeset p img {
-    width: calc(100vw - 4rem);
-    box-sizing: border-box;
-  }
-} */
-
 .typeset > .post-date {
   width: 100%;
   text-align: center;
@@ -705,7 +642,6 @@ pre {
 .typeset ul + p {
   margin-top: 1rem;
 }
-
 
 .typeset ul > li {
   text-indent: -0.7rem;
@@ -798,9 +734,6 @@ pre {
   font-size: var(--theta);
   line-height: 1.5;
   color: var(--grey-9);
-  /* margin: 0;
-  padding: 0; */
-
 }
 
 .typeset aside a {
@@ -826,11 +759,6 @@ pre {
   font-weight: 600;
 }
 
-/* .typeset aside p {
-  font-style: italic;
-  letter-spacing: var(--tracking-tight);
-} */
-
 .typeset aside + h2 {
   margin-top: 2.2rem;
 }
@@ -846,7 +774,6 @@ pre {
 }
 
 .typeset pre[class*="language-"] {
-  /* width: calc(100vw - 2rem); */
   box-sizing: border-box;
   padding: 1.05rem;
   padding: 1rem 1.5rem 1rem;
@@ -854,13 +781,6 @@ pre {
   background: #f8f9fa;
   background: #f8f9fa;
   background: var(--gray-0)
-}
-
-@media (min-width: 50rem) {
-  .typeset pre[class*="language-"] {
-    /* width: calc(100vw - 4rem);
-    box-sizing: border-box; */
-  }
 }
 
 .typeset pre[class*="language-"] + p {
@@ -888,9 +808,6 @@ pre {
   font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 600;
-  font-size: var(-theta);
-  /* background: var(--gray-1);
-  padding: var(--modular-scale-1); */
   line-height: 1.3;
 }
 
@@ -932,6 +849,11 @@ pre {
   margin-top: 1.87rem;
 }
 
+
+/**
+ * Template-specific tweaks
+ */
+
 .template-post h1,
 .template-archive h1 {
   margin-top: 0;
@@ -948,4 +870,13 @@ pre {
 
 .template-home {
   padding-top: 3.4rem;
+}
+
+
+/**
+ * Utilities
+ */
+
+.hidden {
+  display: none;
 }

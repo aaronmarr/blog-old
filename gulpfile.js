@@ -4,7 +4,6 @@ gulp.task("css", () => (
   gulp
     .src("./css/*.css")
     .pipe(require("gulp-postcss")([ 
-      require('autoprefixer')(),
       require('postcss-preset-env')(),
       require('postcss-nesting')(),
       require('postcss-custom-media')(),
