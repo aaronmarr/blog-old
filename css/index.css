@@ -19,10 +19,10 @@
    * Colors (https://yeun.github.io/open-color/)
    */
 
-  --oc-white: #ffffff;
-  --oc-white-rgb: 255, 255, 255;
-  --oc-black: #000000;
-  --oc-black-rgb: 0, 0, 0;
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+  --black: #000000;
+  --black-rgb: 0, 0, 0;
 
   --gray-0: #f8f9fa;
   --gray-1: #f1f3f5;
@@ -110,7 +110,7 @@
   --modular-scale-32: 8rem;
   --modular-scale-64: 16rem;
 
-  --max-width: 37rem;
+  --max-width: 39rem;
 }
 
 
@@ -206,12 +206,17 @@
 
 html {
   font-family: var(--serif);
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
 }
 
 body {
   min-height: 100vh;
+}
+
+body.dark {
+  background: var(--black);
+  color: var(--white);
 }
 
 pre {
@@ -226,7 +231,11 @@ pre {
 
 .header {
   padding: var(--modular-scale-2) var(--modular-scale-4) var(--modular-scale-2);
-  background: var(--gray-3);
+  background: var(--gray-2);
+}
+
+.dark .header {
+  background: var(--gray-9);
 }
 
 @media (min-width: 50rem) {
@@ -257,7 +266,10 @@ pre {
   color: var(--gray-9);
   font-family: var(--sans);
   font-weight: 400;
-  font-size: var(--iota);
+}
+
+.dark .site-name__link {
+  color: var(--gray-0);
 }
 
 .nav {
@@ -282,8 +294,12 @@ pre {
   text-decoration: none;
   font-family: var(--sans);
   font-weight: 400;
-  font-size: var(--iota);
+  font-size: var(--theta);
   color: var(--gray-9);
+}
+
+.dark .nav__link {
+  color: var(--gray-0);
 }
 
 .footer {
@@ -348,33 +364,37 @@ pre {
 
 .typeset h1 {
   font-size: var(--delta);
-  font-family: var(--serif);
+  font-family: var(--sans);
   margin: 0;
   padding: 0;
   line-height: 1.3;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 400;
+  font-style: normal;
   letter-spacing: var(--tracking-tight);
   color: var(--gray-9);
+}
+
+.dark .typeset h1 {
+  color: var(--gray-0);
 }
 
 .text-center {
   text-align: center;
 }
 
-@media (min-width: 40rem) {
+/* @media (min-width: 40rem) {
   .typeset h1 {
     font-size: var(--gamma);
     line-height: 1.21;
   }
-}
+} */
 
-@media (min-width: 50rem) {
+/* @media (min-width: 50rem) {
   .typeset .post-title {
     margin-left: -13%;
     margin-right: -13%;
   }
-}
+} */
 
 .typeset h1 + p,
 .typeset h1 + ul {
@@ -390,14 +410,18 @@ pre {
 
 .typeset h2 {
   font-size: var(--zeta);
-  font-family: var(--serif);
+  font-family: var(--sans);
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
   color: var(--gray-9);
+}
+
+.dark .typeset h2 {
+  color: var(--gray-0);
 }
 
 @media (min-width: 40rem) {
@@ -421,6 +445,10 @@ pre {
   color: var(--gray-9);
 }
 
+.dark .typeset h3 {
+  color: var(--gray-0);
+}
+
 .typeset h3 + p {
   margin-top: 0.8rem;
 }
@@ -434,6 +462,10 @@ pre {
   color: var(--gray-9);
 }
 
+.dark .typeset h4 {
+  color: var(--gray-0);
+}
+
 .typeset h5 {
   font-size: var(--eta);
   font-family: var(--serif);
@@ -441,6 +473,10 @@ pre {
   padding: 0;
   font-weight: 400;
   color: var(--gray-9);
+}
+
+.dark .typeset h5 {
+  color: var(--gray-0);
 }
 
 .typeset h6 {
@@ -452,12 +488,20 @@ pre {
   color: var(--gray-9);
 }
 
+.dark .typeset h6 {
+  color: var(--gray-0);
+}
+
 .typeset p {
   font-size: var(--theta);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: var(--gray-9);
+  color: var(--gray-8);
+}
+
+.dark .typeset p {
+  color: var(--gray-3);
 }
 
 .typeset p img {
@@ -586,14 +630,14 @@ pre {
 .typeset aside {
   padding: 0;
   margin: 0;
-  border-left: 2px solid var(--green-5);
-  background: var(--green-0);
+  border-left: 4px solid var(--green-4);
+  background: var(--green-9);
   padding: 1rem 1.5rem;
   font-style: italic;
   letter-spacing: var(--tracking-tight);
   font-size: var(--theta);
   line-height: 1.5;
-  color: var(--grey-9);
+  color: var(--grey-0);
 }
 
 .typeset aside a {
@@ -630,7 +674,7 @@ pre {
   padding: 1.05rem;
   padding: 1rem 1.5rem 1rem;
   border: 0;
-  background: var(--gray-0)
+  /* background: var(--gray-0) */
 }
 
 .typeset pre[class*="language-"] + p {

@@ -30,13 +30,18 @@
               <a class="nav__link" href="/feed/feed.xml">
                 RSS
               </a>
-            </li></ul>
+            </li><li class="nav__item">
+              <a href="#" class="nav__link" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                <svg style="top: 0.1rem; position: relative;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" width="1rem" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+              </a>
+            </li>
+          </ul>
         </nav>
       </div>
     </header>
 
     <main class="main typeset template-post">
-      <h1 class="post-title text-center">Deploying Eleventy to Github Pages using Travis CI</h1>
+      <h1 class="post-title">Deploying Eleventy to Github Pages using Travis CI</h1>
 
 <p>Eleventy is a brilliant static site generator built on JavaScript. I've always been a huge fan of Jekyll, but 11ty does provide some enhancements over Jekyll in terms of greater flexibility and a more vibrant community behind it.</p>
 <p>One of the benefits of Jekyll is that it has first-class integration with Github Pages. You simply push to a <code>gh-pages</code> branch, and Github looks after building and deploying your site to a live URL for you. With 11ty, you are responsible for building and deploying. In this post, I'll look at deploying 11ty to Github Pages using Travis CI.</p>
@@ -69,5 +74,9 @@
     </footer>
 
     <div id="redirect" data-redirect-url="/posts/eleventy-travis-ci/"</div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function(event) {
+        ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
+      })</script>
   </body>
 </html>
