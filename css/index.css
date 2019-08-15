@@ -74,7 +74,7 @@
    */
 
   --serif: "Tiempos Text";
-  --sans: "Untitled Sans";
+  --sans: "Untitled Sans Test";
   --headline: "Adieu";
   --mono: "Pitch Sans";
 
@@ -205,7 +205,7 @@
  */
 
 html {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: 18px;
   font-weight: 400;
 }
@@ -218,12 +218,12 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--white);
+  background: var(--gray-0);
   color: var(--gray-9);
 }
 
 body.dark {
-  background: var(--black);
+  background: var(--gray-9);
   color: var(--gray-0);
 }
 
@@ -239,11 +239,11 @@ pre {
 
 .header {
   padding: var(--modular-scale-2) var(--modular-scale-4) var(--modular-scale-2);
-  background: var(--gray-1);
+  background: var(--gray-2);
 }
 
 .dark .header {
-  background: var(--gray-9);
+  background: var(--gray-8);
 }
 
 @media (min-width: 50rem) {
@@ -313,11 +313,11 @@ pre {
 .footer {
   margin-top: var(--modular-scale-16);
   padding: var(--modular-scale-4) 0 var(--modular-scale-4);
-  background: var(--gray-0);
+  background: var(--gray-1);
 }
 
 .dark .footer {
-  background: var(--gray-9);
+  background: var(--gray-8);
 }
 
 .footer__content {
@@ -379,12 +379,12 @@ pre {
  */
 
 .typeset h1 {
-  font-size: var(--delta);
-  font-family: var(--sans);
+  font-size: var(--epsilon);
+  font-family: var(--serif);
   margin: 0;
   padding: 0;
   line-height: 1.22;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
   color: var(--gray-9);
@@ -398,12 +398,12 @@ pre {
   text-align: center;
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h1 {
-    font-size: var(--gamma);
-    line-height: 1.21;
+    font-size: var(--delta);
+    line-height: 1.22;
   }
-} */
+}
 
 /* @media (min-width: 50rem) {
   .typeset .post-title {
@@ -426,11 +426,11 @@ pre {
 
 .typeset h2 {
   font-size: var(--zeta);
-  font-family: var(--sans);
+  font-family: var(--serif);
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
   color: var(--gray-9);
@@ -764,10 +764,10 @@ pre {
 
 .template-post h1,
 .template-archive h1 {
-  margin-top: 0;
+  margin-top: 1.1rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 50rem) {
   .template-post h1,
   .template-archive h1  {
     margin-top: var(--modular-scale-6)
@@ -825,12 +825,12 @@ pre {
 
  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background-color: var(--gray-0);
+  background-color: var(--gray-1);
  }
 
  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
  code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background-color: var(--gray-0);
+  background-color: var(--gray-1);
  }
 
  /* Code blocks */
@@ -839,7 +839,7 @@ pre {
      margin: .5em 0;
      overflow: auto;
      /* border: 1px solid #dddddd; */
-     background-color: var(--gray-0);
+     background-color: var(--gray-1);
  }
 
  /* Inline code */
@@ -1020,7 +1020,7 @@ pre {
 
  .dark :not(pre) > code[class*="language-"],
  .dark pre[class*="language-"] {
-	 background: var(--gray-9)
+	 background: var(--gray-8)
  }
 
  /* Inline code */
