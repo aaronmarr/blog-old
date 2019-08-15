@@ -67,7 +67,7 @@
   --green-7: #37b24d;
   --green-8: #2f9e44;
   --green-9: #2b8a3e;
-
+  
 
   /**
    * Fonts
@@ -373,6 +373,24 @@ pre {
   }
 }
 
+.postlist {
+
+}
+
+.postlist-item {
+
+}
+
+.dark .typeset .postlist-item a,
+.dark .typeset .postlist-item a:hover,
+.dark .typeset .postlist-item a:active,
+.dark .typeset .postlist-item a:visited {
+  color: var(--gray-4);
+}
+
+.dark .typeset ul li time {
+  color: var(--gray-4);
+}
 
 /**
  * Typesetting
@@ -567,10 +585,15 @@ pre {
 
 .typeset a {
   color: var(--blue-4);
+  text-decoration: none;
+}
+
+.dark .typeset a {
+  color: var(--blue-5);
 }
 
 .typeset a:hover {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .typeset a:hover,
@@ -578,6 +601,13 @@ pre {
 .typeset a:visited {
   color: var(--blue-7);
 }
+
+.dark .typeset a:hover,
+.dark .typeset a:active,
+.dark .typeset a:visited {
+  color: var(--blue-5);
+}
+
 
 .typeset ul {
   padding: 0;
