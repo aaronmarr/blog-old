@@ -74,7 +74,7 @@
    */
 
   --serif: "Tiempos Text";
-  --sans: "Untitled Sans Test";
+  --sans: "Untitled Sans";
   --headline: "Adieu";
   --mono: "Pitch Sans";
 
@@ -205,8 +205,8 @@
  */
 
 html {
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-size: 18px;
   font-weight: 400;
@@ -302,8 +302,8 @@ pre {
   color: #212529;
   color: #212529;
   color: var(--gray-9);
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 400;
 }
@@ -336,8 +336,8 @@ pre {
 
 .nav__link {
   text-decoration: none;
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 1rem;
@@ -391,8 +391,8 @@ pre {
 }
 
 .footer__content p {
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 0.833rem;
@@ -664,8 +664,8 @@ pre {
   width: 100%;
   text-align: center;
   display: block;
-  font-family: "Untitled Sans Test";
-  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   margin-top: 2rem;
   margin-top: 2rem;
