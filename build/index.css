@@ -940,7 +940,7 @@ pre {
   font-size: 1rem;
   font-size: 1rem;
   font-size: var(--theta);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .typeset p code {
@@ -1240,7 +1240,7 @@ pre {
 	 white-space: pre;
 	 word-spacing: normal;
 	 word-break: normal;
-	 line-height: 1.5;
+	 line-height: 1.6;
 
 	 -moz-tab-size: 4;
 	 -o-tab-size: 4;
