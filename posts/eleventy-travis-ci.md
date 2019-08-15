@@ -17,8 +17,6 @@ The first thing you will need is an Eleventy installation pushed to a repository
 
 There are a few settings in Github which I also adjusted. In the repository settings, there's a section for Github Pages. In here, I selected "enable pages" and also set up my custom domain name. If you're using a custom domain, you'll need to point your DNS to the Github Pages IPs, and also create a CNAME file in the base of your repository. More details about that can be found in the [Github documentation](https://help.github.com/en/articles/using-a-custom-domain-with-github-pages).
 
-![alt text](../../img/gh-pages-setup-crop.png "Github Pages settings screenshot")
-
 One final step you will need to do is create a Github authentication key, which will be used by Travis to authenticate. In the developer menu, set up a new key, and copy to your clipboard. You will use this key once Travis has been set up.
 
 ## Set up Travis
@@ -26,8 +24,6 @@ One final step you will need to do is create a Github authentication key, which 
 At this point, I signed up for Travis. On signing up, you should follow the on-screen instructions to integrate Travis with your Github account. There will be several steps and you will be asked to grant permissions to Travis so that it can access any repositories you want to build and deploy.
 
 Once the setup process is complete, you should see your 11ty repository in Travis. In the settings, you should add a new authentication key and paste in the key from the previous step. You should call this key `$GITHUB_TOKEN` – if you look inside the `travis.yml` file in your repo, you'll see there's a property called `github-toke`n which matches this key. This is what Travis uses to authenticate with Github when building and deploying.
-
-![alt text](../../img/travis-ci-env-vars-crop.png "Travis CI environment variables settings screenshot")
 
 Whilst inside the `travis.yml` file, there are a few other settings which should be updated. I set the path prefix to "/". I want to deploy my site without a prefix – i.e. https://aaronmarr.co.uk – and I also added my custom domain under the `fqdn` setting.  I also set up my build and deploy branches. These are set to `master` and `gh-pages`, respectively. Here's what my finalised `travis.yml` file looks like.
 
@@ -51,8 +47,6 @@ deploy:
 ```
 
 At this point, you should be able to build and deploy to Github. In Travis, select "Build Now" and wait a minute or two for Travis to do its thing. Once Travis has finished building, you'll see a success message in the console indicating that your site is deployed.
-
-![alt text](../../img/travis-ci-build-ok-crop.png "Travis CI build success screenshot")
 
 One thing to bear in mind is Travis will conveniently deploy whatever you push to your `master` branch. For development, I set up a `develop` branch on Github, so that I only push/merge to `master` when I want to trigger a deployment.
 

@@ -74,7 +74,7 @@
    */
 
   --serif: "Tiempos Text";
-  --sans: "Untitled Sans";
+  --sans: "Untitled Sans Test";
   --headline: "Adieu";
   --mono: "Pitch Sans";
 
@@ -205,9 +205,9 @@
  */
 
 html {
-  font-family: "Tiempos Text";
-  font-family: "Tiempos Text";
-  font-family: var(--serif);
+  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans Test";
+  font-family: var(--sans);
   font-size: 18px;
   font-weight: 400;
 }
@@ -220,18 +220,18 @@ html {
 
 body {
   min-height: 100vh;
-  background: #ffffff;
-  background: #ffffff;
-  background: var(--white);
+  background: #f8f9fa;
+  background: #f8f9fa;
+  background: var(--gray-0);
   color: #212529;
   color: #212529;
   color: var(--gray-9);
 }
 
 body.dark {
-  background: #000000;
-  background: #000000;
-  background: var(--black);
+  background: #212529;
+  background: #212529;
+  background: var(--gray-9);
   color: #f8f9fa;
   color: #f8f9fa;
   color: var(--gray-0);
@@ -253,15 +253,15 @@ pre {
   padding: 0.5rem 1rem 0.5rem;
   padding: 0.5rem 1rem 0.5rem;
   padding: var(--modular-scale-2) var(--modular-scale-4) var(--modular-scale-2);
-  background: #f1f3f5;
-  background: #f1f3f5;
-  background: var(--gray-1);
+  background: #e9ecef;
+  background: #e9ecef;
+  background: var(--gray-2);
 }
 
 .dark .header {
-  background: #212529;
-  background: #212529;
-  background: var(--gray-9);
+  background: #343a40;
+  background: #343a40;
+  background: var(--gray-8);
 }
 
 @media (min-width: 50rem) {
@@ -302,8 +302,8 @@ pre {
   color: #212529;
   color: #212529;
   color: var(--gray-9);
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
+  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans Test";
   font-family: var(--sans);
   font-weight: 400;
 }
@@ -336,8 +336,8 @@ pre {
 
 .nav__link {
   text-decoration: none;
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
+  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans Test";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 1rem;
@@ -361,15 +361,15 @@ pre {
   padding: 1rem 0 1rem;
   padding: 1rem 0 1rem;
   padding: var(--modular-scale-4) 0 var(--modular-scale-4);
-  background: #f8f9fa;
-  background: #f8f9fa;
-  background: var(--gray-0);
+  background: #f1f3f5;
+  background: #f1f3f5;
+  background: var(--gray-1);
 }
 
 .dark .footer {
-  background: #212529;
-  background: #212529;
-  background: var(--gray-9);
+  background: #343a40;
+  background: #343a40;
+  background: var(--gray-8);
 }
 
 .footer__content {
@@ -391,8 +391,8 @@ pre {
 }
 
 .footer__content p {
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
+  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans Test";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 0.833rem;
@@ -447,16 +447,16 @@ pre {
  */
 
 .typeset h1 {
-  font-size: 2.074rem;
-  font-size: 2.074rem;
-  font-size: var(--delta);
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
-  font-family: var(--sans);
+  font-size: 1.728rem;
+  font-size: 1.728rem;
+  font-size: var(--epsilon);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
+  font-family: var(--serif);
   margin: 0;
   padding: 0;
   line-height: 1.22;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
@@ -476,12 +476,14 @@ pre {
   text-align: center;
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h1 {
-    font-size: var(--gamma);
-    line-height: 1.21;
+    font-size: 2.074rem;
+    font-size: 2.074rem;
+    font-size: var(--delta);
+    line-height: 1.22;
   }
-} */
+}
 
 /* @media (min-width: 50rem) {
   .typeset .post-title {
@@ -506,13 +508,13 @@ pre {
   font-size: 1.44rem;
   font-size: 1.44rem;
   font-size: var(--zeta);
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
-  font-family: var(--sans);
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
+  font-family: var(--serif);
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
@@ -662,8 +664,8 @@ pre {
   width: 100%;
   text-align: center;
   display: block;
-  font-family: "Untitled Sans";
-  font-family: "Untitled Sans";
+  font-family: "Untitled Sans Test";
+  font-family: "Untitled Sans Test";
   font-family: var(--sans);
   margin-top: 2rem;
   margin-top: 2rem;
@@ -956,10 +958,10 @@ pre {
 
 .template-post h1,
 .template-archive h1 {
-  margin-top: 0;
+  margin-top: 1.1rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 50rem) {
   .template-post h1,
   .template-archive h1  {
     margin-top: 1.5rem;
@@ -1020,16 +1022,16 @@ pre {
 
  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  background-color: #f8f9fa;
-  background-color: #f8f9fa;
-  background-color: var(--gray-0);
+  background-color: #f1f3f5;
+  background-color: #f1f3f5;
+  background-color: var(--gray-1);
  }
 
  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
  code[class*="language-"]::selection, code[class*="language-"] ::selection {
-  background-color: #f8f9fa;
-  background-color: #f8f9fa;
-  background-color: var(--gray-0);
+  background-color: #f1f3f5;
+  background-color: #f1f3f5;
+  background-color: var(--gray-1);
  }
 
  /* Code blocks */
@@ -1038,9 +1040,9 @@ pre {
      margin: .5em 0;
      overflow: auto;
      /* border: 1px solid #dddddd; */
-     background-color: #f8f9fa;
-     background-color: #f8f9fa;
-     background-color: var(--gray-0);
+     background-color: #f1f3f5;
+     background-color: #f1f3f5;
+     background-color: var(--gray-1);
  }
 
  /* Inline code */
@@ -1221,9 +1223,9 @@ pre {
 
  .dark :not(pre) > code[class*="language-"],
  .dark pre[class*="language-"] {
-	 background: #212529;
-	 background: #212529;
-	 background: var(--gray-9)
+	 background: #343a40;
+	 background: #343a40;
+	 background: var(--gray-8)
  }
 
  /* Inline code */
