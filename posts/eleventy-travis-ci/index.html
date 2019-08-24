@@ -32,7 +32,7 @@
               </a>
             </li><li class="nav__item">
               <a href="#" class="nav__link" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                <svg style="top: 0.1rem; position: relative;" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="adjust" class="svg-inline--fa fa-adjust fa-w-16" width="1rem" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705 0 184 82.311 184 184 0 101.705-82.311 184-184 184z"></path></svg>
+                Light|Dark
               </a>
             </li>
           </ul>
@@ -42,7 +42,7 @@
 
     <main class="main typeset template-post">
       <h1 class="post-title">Deploying Eleventy to Github Pages using Travis CI</h1>
-
+<time class="post-date" datetime="2019-07-25">25 Jul 2019</time>
 <p><a href="https://www.11ty.io">Eleventy</a> is a great tool for building static websites using JavaScript. I've always been a fan of <a href="https://jekyllrb.com">Jekyll</a>, but Eleventy has been my go-to tool recently for static web builds; It's super simple to get started and includes some excellent documentation and starter projects to get you going.</p>
 <p>One of the things I wanted to figure out was how to deploy Eleventy to <a href="https://pages.github.com">Github Pages</a>. A few years ago I might have written a Gulp task to build locally and push to a branch on Github, but it's 2019 and we can do better than that! The <a href="https://github.com/11ty/eleventy-base-blog">Eleventy blog</a> starter project includes a helpful set of config files for setting up CI with either Travis or Netlify. In this post, I'll take a look at setting up a deployment pipeline in Travis.</p>
 <h2 id="create-a-repository-on-github">Create a repository on Github <a class="hidden" href="#create-a-repository-on-github" aria-hidden="true">#</a></h2>
@@ -60,13 +60,13 @@
 <p>If you head back over to Github, you should see that Travis has created a new branch, <code>gh-pages</code>, with the built site inside. You should also now be able to see your site live. I hope you've found this post useful, please get in touch if you have any questions or comments. Thanks for reading.</p>
 
 
-<time class="post-date" datetime="2019-07-25">– 25 Jul 2019 –</time>
+
 
     </main>
 
     <footer class="footer">
       <div class="footer__content">
-        <p>Made in <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cloud-showers-heavy" class="svg-inline--fa fa-cloud-showers-heavy fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M183.9 370.1c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-192 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm384 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zm-96 0c-7.6-4.4-17.4-1.8-21.8 6l-64 112c-4.4 7.7-1.7 17.5 6 21.8 2.5 1.4 5.2 2.1 7.9 2.1 5.5 0 10.9-2.9 13.9-8.1l64-112c4.4-7.6 1.7-17.4-6-21.8zM416 128c-.6 0-1.1.2-1.6.2 1.1-5.2 1.6-10.6 1.6-16.2 0-44.2-35.8-80-80-80-24.6 0-46.3 11.3-61 28.8C256.4 24.8 219.3 0 176 0 114.2 0 64 50.1 64 112c0 7.3.8 14.3 2.1 21.2C27.8 145.8 0 181.5 0 224c0 53 43 96 96 96h320c53 0 96-43 96-96s-43-96-96-96z"></path></svg> Cornwall.</p>
+        <p>&copy; Aaron Marr 2019.</p>
       </div>
     </footer>
 
