@@ -67,16 +67,17 @@
   --green-7: #37b24d;
   --green-8: #2f9e44;
   --green-9: #2b8a3e;
-  
+
 
   /**
    * Fonts
    */
 
-  --serif: "Tiempos Text";
-  --sans: "Untitled Sans";
+
+  --serif: "Geomanist";
+  --sans: "Geomanist";
   --headline: "Adieu";
-  --mono: "Pitch Sans";
+  --mono: "Basier";
 
   --font-bold: 700;
   --font-semi-bold: 600;
@@ -110,8 +111,8 @@
   --modular-scale-32: 8rem;
   --modular-scale-64: 16rem;
 
-  
-  --max-width: 38rem;
+
+  --max-width: 34rem;
   --max-width-wide: 57rem;
 }
 
@@ -201,6 +202,80 @@
        url("../fonts/Adieu-Regular.eot") format("eot");
 }
 
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/geomanist-regular-webfont.eot") format("eot"),
+       url("../fonts/geomanist-regular-webfont.woff") format("woff"),
+       url("../fonts/geomanist-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/geomanist-regular-italic-webfont.eot") format("eot"),
+       url("../fonts/geomanist-regular-italic-webfont.woff") format("woff"),
+       url("../fonts/geomanist-regular-italic-webfont.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/geomanist-bold-webfont.eot") format("eot"),
+       url("../fonts/geomanist-bold-webfont.woff") format("woff"),
+       url("../fonts/geomanist-bold-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/geomanist-bold-italic-webfont.eot") format("eot"),
+       url("../fonts/geomanist-bold-italic-webfont.woff") format("woff"),
+       url("../fonts/geomanist-bold-italic-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Basier";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/basiercirclemono-regular-webfont.eot") format("eot"),
+       url("../fonts/basiercirclemono-regular-webfont.woff") format("woff"),
+       url("../fonts/basiercirclemono-regular-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Basier";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/basiercirclemono-regularitalic-webfont.eot") format("eot"),
+       url("../fonts/basiercirclemono-regularitalic-webfont.woff") format("woff"),
+       url("../fonts/basiercirclemono-regularitalic-webfont.woff2") format("woff2");
+}
+
+
+@font-face {
+  font-family: "Basier";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/basiercirclemono-bold-webfont.eot") format("eot"),
+       url("../fonts/basiercirclemono-bold-webfont.woff") format("woff"),
+       url("../fonts/basiercirclemono-bold-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Basier";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/basiercirclemono-bolditalic-webfont.eot") format("eot"),
+       url("../fonts/basiercirclemono-bolditalic-webfont.woff") format("woff"),
+       url("../fonts/basiercirclemono-bolditalic-webfont.woff2") format("woff2");
+}
+
 
 /**
  * Base
@@ -214,7 +289,7 @@ html {
 
 @media (min-width: 50rem) {
   html {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -547,6 +622,7 @@ pre {
   margin: 0;
   padding: 0;
   color: var(--gray-8);
+  letter-spacing: .01em;
 }
 
 .dark .typeset p {
@@ -612,7 +688,7 @@ pre {
 
 .dark .typeset a {
   color: var(--blue-4);
-  
+
 }
 
 .typeset a:hover {
@@ -763,11 +839,11 @@ pre {
 .typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
   font-family: var(--mono);
-  font-weight: 600;
+  font-weight: 400;
   font-size: var(--iota);
   border-radius: 0.25rem;
   line-height: 1.6;
-  
+
 }
 
 .typeset p code {
