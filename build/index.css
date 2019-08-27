@@ -220,6 +220,23 @@
        url("../fonts/geomanist-regular-italic-webfont.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/geomanist-medium-webfont.eot") format("eot"),
+       url("../fonts/geomanist-medium-webfont.woff") format("woff"),
+       url("../fonts/geomanist-medium-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Geomanist";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/geomanist-medium-italic-webfont.eot") format("eot"),
+       url("../fonts/geomanist-medium-italic-webfont.woff") format("woff"),
+       url("../fonts/geomanist-medium-italic-webfont.woff2") format("woff2");
+}
 
 @font-face {
   font-family: "Geomanist";
@@ -562,7 +579,8 @@ pre {
   margin: 0;
   padding: 0;
   line-height: 1.22;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: .01em;
   font-style: normal;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
@@ -618,7 +636,8 @@ pre {
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 700;
+  font-weight: 500;
+  letter-spacing: .01em;
   font-style: normal;
   letter-spacing: -0.02em;
   letter-spacing: -0.02em;
