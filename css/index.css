@@ -74,10 +74,10 @@
    */
 
 
-  --serif: "Geomanist";
-  --sans: "Geomanist";
+  --serif: "Tiempos Text";
+  --sans: "Untitled Sans";
   --headline: "Adieu";
-  --mono: "Basier";
+  --mono: "Pitch Sans";
 
   --font-bold: 700;
   --font-semi-bold: 600;
@@ -112,7 +112,7 @@
   --modular-scale-64: 16rem;
 
 
-  --max-width: 34rem;
+  --max-width: 40rem;
   --max-width-wide: 57rem;
 }
 
@@ -124,7 +124,7 @@
 
 @font-face {
   font-family: "Untitled Sans";
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   src: url("../fonts/UntitledSansWeb-Regular.woff2") format("woff2"),
        url("../fonts/UntitledSansWeb-Regular.woff") format("woff"),
@@ -133,11 +133,26 @@
 
 @font-face {
   font-family: "Untitled Sans";
-  font-weight: 600;
+  font-weight: 400;
   font-style: italic;
   src: url("../fonts/UntitledSansWeb-RegularItalic.woff2") format("woff2"),
        url("../fonts/UntitledSansWeb-RegularItalic.woff") format("woff"),
        url("../fonts/UntitledSansWeb-RegularItalic.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/UntitledSansTest-Bold.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Untitled Sans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/UntitledSansTest-BoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -307,7 +322,7 @@ html {
 
 @media (min-width: 50rem) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -506,11 +521,11 @@ pre {
 
 .typeset h1 {
   font-size: var(--epsilon);
-  font-family: var(--serif);
+  font-family: var(--sans);
   margin: 0;
   padding: 0;
   line-height: 1.22;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
@@ -525,12 +540,12 @@ pre {
   text-align: center;
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h1 {
     font-size: var(--delta);
     line-height: 1.22;
   }
-} */
+}
 
 /* @media (min-width: 50rem) {
   .typeset .post-title {
@@ -553,11 +568,11 @@ pre {
 
 .typeset h2 {
   font-size: var(--zeta);
-  font-family: var(--serif);
+  font-family: var(--sans);
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
@@ -568,12 +583,12 @@ pre {
   color: var(--gray-0);
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h2 {
     font-size: var(--epsilon);
     line-height: 1.24;
   }
-} */
+}
 
 .typeset h2 + p {
   margin-top: 1.2rem;
@@ -860,7 +875,7 @@ pre {
 .typeset pre[class*="language-"] {
   font-family: var(--mono);
   font-weight: 400;
-  font-size: var(--iota);
+  font-size: var(--theta);
   border-radius: 0.25rem;
   line-height: 1.6;
 
