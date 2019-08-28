@@ -74,10 +74,10 @@
    */
 
 
-  --serif: "Geomanist";
-  --sans: "Geomanist";
+  --serif: "Tiempos Text";
+  --sans: "Untitled Sans";
   --headline: "Adieu";
-  --mono: "Basier";
+  --mono: "Pitch Sans";
 
   --font-bold: 700;
   --font-semi-bold: 600;
@@ -112,7 +112,7 @@
   --modular-scale-64: 16rem;
 
 
-  --max-width: 34rem;
+  --max-width: 40rem;
   --max-width-wide: 57rem;
 }
 
@@ -124,7 +124,7 @@
 
 @font-face {
   font-family: "Untitled Sans";
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   src: url("../fonts/UntitledSansWeb-Regular.woff2") format("woff2"),
        url("../fonts/UntitledSansWeb-Regular.woff") format("woff"),
@@ -133,11 +133,26 @@
 
 @font-face {
   font-family: "Untitled Sans";
-  font-weight: 600;
+  font-weight: 400;
   font-style: italic;
   src: url("../fonts/UntitledSansWeb-RegularItalic.woff2") format("woff2"),
        url("../fonts/UntitledSansWeb-RegularItalic.woff") format("woff"),
        url("../fonts/UntitledSansWeb-RegularItalic.eot") format("eot");
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/UntitledSansTest-Bold.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Untitled Sans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/UntitledSansTest-BoldItalic.woff") format("woff");
 }
 
 @font-face {
@@ -300,8 +315,8 @@
  */
 
 html {
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-size: 16px;
   font-weight: 400;
@@ -309,7 +324,7 @@ html {
 
 @media (min-width: 50rem) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -333,8 +348,8 @@ body.dark {
 }
 
 pre {
-  font-family: "Basier";
-  font-family: "Basier";
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 400;
 }
@@ -368,8 +383,8 @@ pre {
 }
 
 .header__content {
-  max-width: 34rem;
-  max-width: 34rem;
+  max-width: 40rem;
+  max-width: 40rem;
   max-width: var(--max-width);
   display: flex;
   margin: 0 auto;
@@ -394,8 +409,8 @@ pre {
   color: #343a40;
   color: #343a40;
   color: var(--gray-8);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 700;
 }
@@ -428,8 +443,8 @@ pre {
 
 .nav__link {
   text-decoration: none;
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 1rem;
@@ -462,8 +477,8 @@ pre {
 } */
 
 .footer__content {
-  max-width: 34rem;
-  max-width: 34rem;
+  max-width: 40rem;
+  max-width: 40rem;
   max-width: var(--max-width);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -480,8 +495,8 @@ pre {
 }
 
 .footer__content p {
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   font-weight: 400;
   font-size: 0.833rem;
@@ -511,8 +526,8 @@ pre {
 }
 
 .main {
-  max-width: 34rem;
-  max-width: 34rem;
+  max-width: 40rem;
+  max-width: 40rem;
   max-width: var(--max-width);
   padding-left: 1rem;
   padding-right: 1rem;
@@ -574,13 +589,13 @@ pre {
   font-size: 1.728rem;
   font-size: 1.728rem;
   font-size: var(--epsilon);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
-  font-family: var(--serif);
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
+  font-family: var(--sans);
   margin: 0;
   padding: 0;
   line-height: 1.22;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: -0.02em;
@@ -601,12 +616,14 @@ pre {
   text-align: center;
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h1 {
+    font-size: 2.074rem;
+    font-size: 2.074rem;
     font-size: var(--delta);
     line-height: 1.22;
   }
-} */
+}
 
 /* @media (min-width: 50rem) {
   .typeset .post-title {
@@ -631,13 +648,13 @@ pre {
   font-size: 1.44rem;
   font-size: 1.44rem;
   font-size: var(--zeta);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
-  font-family: var(--serif);
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
+  font-family: var(--sans);
   line-height: 1.25;
   margin: 0;
   padding: 0;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: -0.02em;
@@ -654,12 +671,14 @@ pre {
   color: var(--gray-0);
 }
 
-/* @media (min-width: 40rem) {
+@media (min-width: 40rem) {
   .typeset h2 {
+    font-size: 1.728rem;
+    font-size: 1.728rem;
     font-size: var(--epsilon);
     line-height: 1.24;
   }
-} */
+}
 
 .typeset h2 + p {
   margin-top: 1.2rem;
@@ -672,8 +691,8 @@ pre {
   font-weight: 600;
   font-weight: 600;
   font-weight: var(--font-semi-bold);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
@@ -697,8 +716,8 @@ pre {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
@@ -718,8 +737,8 @@ pre {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
@@ -739,8 +758,8 @@ pre {
   font-size: 1.2rem;
   font-size: 1.2rem;
   font-size: var(--eta);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   margin: 0;
   padding: 0;
@@ -787,8 +806,8 @@ pre {
   width: 100%;
   text-align: left;
   display: block;
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Untitled Sans";
+  font-family: "Untitled Sans";
   font-family: var(--sans);
   margin-top: 1rem;
   margin-top: 1rem;
@@ -922,8 +941,8 @@ pre {
   font-size: 0.833rem;
   font-size: 0.833rem;
   font-size: var(--iota);
-  font-family: "Geomanist";
-  font-family: "Geomanist";
+  font-family: "Tiempos Text";
+  font-family: "Tiempos Text";
   font-family: var(--serif);
   font-style: italic;
   letter-spacing: -0.02em;
@@ -1010,8 +1029,8 @@ pre {
 }
 
 .typeset aside code {
-  font-family: "Basier";
-  font-family: "Basier";
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 400;
 }
@@ -1050,21 +1069,21 @@ pre {
 
 .typeset code[class*="language-"],
 .typeset pre[class*="language-"] {
-  font-family: "Basier";
-  font-family: "Basier";
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 400;
-  font-size: 0.833rem;
-  font-size: 0.833rem;
-  font-size: var(--iota);
+  font-size: 1rem;
+  font-size: 1rem;
+  font-size: var(--theta);
   border-radius: 0.25rem;
   line-height: 1.6;
 
 }
 
 .typeset p code {
-  font-family: "Basier";
-  font-family: "Basier";
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   background: #e9ecef;
   background: #e9ecef;
@@ -1105,8 +1124,8 @@ pre {
 .typeset .highlight {
   padding: 0;
   margin: 0;
-  font-family: "Basier";
-  font-family: "Basier";
+  font-family: "Pitch Sans";
+  font-family: "Pitch Sans";
   font-family: var(--mono);
   font-weight: 400;
   font-size: var(iota);
