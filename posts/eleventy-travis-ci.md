@@ -27,7 +27,7 @@ Once the setup process is complete, you should see your project repository in Tr
 
 While inside the `travis.yml` file, there are a few other settings which should be updated. I set the path prefix to "/". I also added my custom domain under the `fqdn` setting and set the build and deploy branches. These are set to `master` and `gh-pages`, respectively. Here's what my finalised `travis.yml` file looks like.
 
-```ruby
+```text
 language: node_js
 node_js:
   - 8
