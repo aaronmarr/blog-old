@@ -36,6 +36,7 @@
   --gray-9: #212529;
 
   --warm-gray-0: #FAF9F7;
+  --warm-gray-0-dark: #f3f1ee;
   --warm-gray-1: #E8E6E1;
   --warm-gray-2: #D3CEC4;
   --warm-gray-3: #B8B2A7;
@@ -345,7 +346,6 @@
        url("../fonts/basiercirclemono-bolditalic-webfont.woff2") format("woff2");
 }
 
-
 /**
  * Base
  */
@@ -364,8 +364,8 @@ html {
 
 body {
   min-height: 100vh;
-  background: var(--gray-0);
-  color: var(--gray-9);
+  background: var(--warm-gray-0);
+  color: var(--warm-gray-9);
 }
 
 body.dark {
@@ -420,6 +420,7 @@ pre {
   align-self: center;
   font-family: var(--serif);
   font-weight: 700;
+  color: var(--warm-gray-8);
 }
 
 .dark .site-name__link {
@@ -449,7 +450,7 @@ pre {
   font-family: var(--sans);
   font-weight: 400;
   font-size: var(--iota);
-  color: var(--gray-8);
+  color: var(--warm-gray-8);
 }
 
 .dark .nav__link {
@@ -487,13 +488,13 @@ pre {
   font-family: var(--sans);
   font-weight: 400;
   font-size: var(--iota);
-  color: var(--gray-8);
+  color: var(--warm-gray-8);
   text-align: left;
   width: 100%;
 }
 
 .dark .footer__content p {
-  color: var(--gray-4);
+  color: var(--warm-gray-4);
 }
 
 .footer__content p svg {
@@ -532,22 +533,22 @@ pre {
 .typeset .postlist-item a:hover,
 .typeset .postlist-item a:active,
 .typeset .postlist-item a:visited {
-  color: var(--gray-8);
+  color: var(--warm-gray-8);
 }
 
 .typeset ul li time {
-  color: var(--gray-8);
+  color: var(--warm-gray-8);
 }
 
 .dark .typeset .postlist-item a,
 .dark .typeset .postlist-item a:hover,
 .dark .typeset .postlist-item a:active,
 .dark .typeset .postlist-item a:visited {
-  color: var(--gray-2);
+  color: var(--warm-gray-2);
 }
 
 .dark .typeset ul li time {
-  color: var(--gray-2);
+  color: var(--warm-gray-2);
 }
 
 /**
@@ -564,7 +565,7 @@ pre {
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h1 {
@@ -611,7 +612,7 @@ pre {
   letter-spacing: .01em;
   font-style: normal;
   letter-spacing: var(--tracking-tight);
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h2 {
@@ -636,11 +637,11 @@ pre {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h3 {
-  color: var(--gray-0);
+  color: var(--warm-gray-0);
 }
 
 .typeset h3 + p {
@@ -653,11 +654,11 @@ pre {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h4 {
-  color: var(--gray-0);
+  color: var(--warm-gray-0);
 }
 
 .typeset h5 {
@@ -666,11 +667,11 @@ pre {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h5 {
-  color: var(--gray-0);
+  color: var(--warm-gray-0);
 }
 
 .typeset h6 {
@@ -679,11 +680,11 @@ pre {
   margin: 0;
   padding: 0;
   font-weight: 400;
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .dark .typeset h6 {
-  color: var(--gray-0);
+  color: var(--warm-gray-0);
 }
 
 .typeset p {
@@ -691,7 +692,7 @@ pre {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  color: var(--gray-8);
+  color: var(--warm-gray-8);
   letter-spacing: .01em;
 }
 
@@ -713,7 +714,7 @@ pre {
   margin-top: var(--modular-scale-4);
   margin-bottom: var(--modular-scale-8);
   font-size: var(--iota);
-  color: var(--gray-7);
+  color: var(--warm-gray-5);
 }
 
 .dark .typeset > .post-date {
@@ -751,7 +752,7 @@ pre {
 }
 
 .typeset a {
-  color: var(--blue-5);
+  color: var(--red-5);
   text-decoration: none;
   text-decoration: underline;
 }
@@ -768,7 +769,7 @@ pre {
 .typeset a:hover,
 .typeset a:active,
 .typeset a:visited {
-  color: var(--blue-5);
+  color: var(--red-5);
 }
 
 .dark .typeset a:hover,
@@ -804,14 +805,14 @@ pre {
   line-height: 1.5;
   margin: 0;
   padding: 0;
-  color: var(--gray-7);
+  color: var(--warm-gray-7);
 }
 
 .typeset ul li a,
 .typeset ul li a:hover,
 .typeset ul li a:active,
 .typeset ul li a:visited {
-  color: var(--gray-9);
+  color: var(--warm-gray-9);
 }
 
 .typeset ul li time {
@@ -824,8 +825,8 @@ pre {
 .typeset blockquote {
   padding: 0;
   margin: 0;
-  border-left: 2px solid var(--gray-4);
-  background: var(--gray-0);
+  border-left: 2px solid var(--warm-gray-4);
+  background: var(--warm-gray-0);
   padding: 1rem 1.5rem;
 }
 
@@ -845,14 +846,14 @@ pre {
 .typeset aside {
   padding: 0;
   margin: 0;
-  border-left: 4px solid var(--green-5);
-  background: var(--green-1);
+  border-left: 4px solid var(--yellow-5);
+  background: var(--yellow-1);
   padding: 1rem 1.5rem 1.15rem 1.5rem;
   font-style: italic;
   letter-spacing: var(--tracking-tight);
   font-size: var(--theta);
   line-height: 1.5;
-  color: var(--gray-8);
+  color: var(--yellow-9);
 }
 
 .dark .typeset aside {
@@ -863,14 +864,26 @@ pre {
 
 .typeset aside a {
   font-style: italic;
-  color: var(--blue-9);
+  color: var(--yellow-9);
 }
 
 .typeset aside a:hover,
 .typeset aside a:active,
 .typeset aside a:visited {
   font-style: italic;
-  color: var(--blue-9);
+  color: var(--yellow-9);
+}
+
+.dark .typeset aside a {
+  font-style: italic;
+  color: var(--yellow-0);
+}
+
+.dark .typeset aside a:hover,
+.dark .typeset aside a:active,
+.dark .typeset aside a:visited {
+  font-style: italic;
+  color: var(--yellow-0);
 }
 
 .typeset aside code {
@@ -895,7 +908,7 @@ pre {
   padding: 1.05rem;
   padding: 1rem 1.5rem 1rem;
   border: 0;
-  background: var(--gray-1);
+  background: var(--warm-gray-0-dark);
 }
 
 .typeset pre[class*="language-"] + p {
@@ -918,8 +931,8 @@ pre {
 
 .typeset p code {
   font-family: var(--mono);
-  background: var(--gray-2);
-  border-bottom: 2px solid var(--gray-3);
+  background: var(--warm-gray-0-dark);
+  border-bottom: 2px solid var(--warm-gray-1);
   font-weight: 400;
   line-height: 1.3;
   font-size: var(--iota);
@@ -929,7 +942,7 @@ pre {
 
 .dark .typeset p code {
   background: var(--warm-gray-9-dark);
-  color: var(--gray-1);
+  color: var(--warm-gray-1);
   border-bottom: 2px solid var(--warm-gray-8);
 }
 
@@ -1015,7 +1028,7 @@ pre {
 
  code[class*="language-"],
  pre[class*="language-"] {
-     color: var(--gray-7);
+     color: var(--warm-gray-7);
      font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
      direction: ltr;
      text-align: left;
@@ -1052,7 +1065,7 @@ pre {
      overflow: auto;
      /* border: 1px solid #dddddd; */
      background-color: var(--gray-0);
-     box-shadow: 0 1px 4px 0px rgba(0,0,0,0.1);
+     /* box-shadow: 0 1px 4px 0px rgba(0,0,0,0.1); */
  }
 
  /* Inline code */
