@@ -45,7 +45,7 @@
   --warm-gray-7: #504A40;
   --warm-gray-8: #423D33;
   --warm-gray-9: #27241D;
-  --warm-gray-9-dark: #1d1a15;
+  --warm-gray-9-dark: #1a1713;
   --warm-gray-9-darker: #100f0d;
 
   --blue-0: #e7f5ff;
@@ -364,6 +364,12 @@ html {
   }
 }
 
+@media (min-width: 80rem) {
+  html {
+    font-size: 20px;
+  }
+}
+
 body {
   min-height: 100vh;
   background: #f8f9fa;
@@ -449,9 +455,9 @@ pre {
 }
 
 .dark .site-name__link {
-  color: #857F72;
-  color: #857F72;
-  color: var(--warm-gray-5);
+  color: #E8E6E1;
+  color: #E8E6E1;
+  color: var(--warm-gray-1);
 }
 
 .nav {
@@ -489,9 +495,9 @@ pre {
 }
 
 .dark .nav__link {
-  color: #857F72;
-  color: #857F72;
-  color: var(--warm-gray-5);
+  color: #E8E6E1;
+  color: #E8E6E1;
+  color: var(--warm-gray-1);
 }
 
 .footer {
@@ -857,9 +863,9 @@ pre {
 }
 
 .dark .typeset > .post-date {
-  color: #857F72;
-  color: #857F72;
-  color: var(--warm-gray-5);
+  color: #E8E6E1;
+  color: #E8E6E1;
+  color: var(--warm-gray-1);
 }
 
 .typeset p + p,
@@ -901,9 +907,9 @@ pre {
 }
 
 .dark .typeset a {
-  color: #E66A6A;
-  color: #E66A6A;
-  color: var(--red-3);
+  color: #F29B9B;
+  color: #F29B9B;
+  color: var(--red-2);
 
 }
 
@@ -922,9 +928,9 @@ pre {
 .dark .typeset a:hover,
 .dark .typeset a:active,
 .dark .typeset a:visited {
-  color: #E66A6A;
-  color: #E66A6A;
-  color: var(--red-3);
+  color: #F29B9B;
+  color: #F29B9B;
+  color: var(--red-2);
 }
 
 
@@ -1136,15 +1142,15 @@ pre {
 }
 
 .dark .typeset p code {
-  background: #1d1a15;
-  background: #1d1a15;
+  background: #1a1713;
+  background: #1a1713;
   background: var(--warm-gray-9-dark);
   color: #f1f3f5;
   color: #f1f3f5;
   color: var(--gray-1);
-  border-bottom: 2px solid #423D33;
-  border-bottom: 2px solid #423D33;
-  border-bottom: 2px solid var(--warm-gray-8);
+  border-bottom: 0.1rem solid #423D33;
+  border-bottom: 0.1rem solid #423D33;
+  border-bottom: 0.1rem solid var(--warm-gray-8);
 }
 
 .typeset > figure:not(.highlight) {
@@ -1458,9 +1464,12 @@ pre {
 
  .dark :not(pre) > code[class*="language-"],
  .dark pre[class*="language-"] {
-	 background: #1d1a15;
-	 background: #1d1a15;
-	 background: var(--warm-gray-9-dark)
+   background: #1a1713;
+   background: #1a1713;
+   background: var(--warm-gray-9-dark);
+   border-bottom: 0.1rem solid #423D33;
+   border-bottom: 0.1rem solid #423D33;
+   border-bottom: 0.1rem solid var(--warm-gray-8);
  }
 
  /* Inline code */
