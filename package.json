@@ -6,8 +6,8 @@
     "build": "npx eleventy",
     "watch": "npx eleventy --watch",
     "debug": "DEBUG=* npx eleventy",
-    "postcss": "gulp css",
-    "postcss-watch": "gulp watch"
+    "postcss-watch": "npx postcss --watch -d ./build ./css/**/*.css",
+    "build:css": "postcss src/css/tailwind.src.css -o src/tailwind.css --env production" 
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,10 @@
     "postcss-custom-media": "^7.0.8",
     "postcss-custom-properties": "^9.0.2",
     "postcss-nesting": "^7.0.0",
-    "postcss-preset-env": "^6.7.0"
+    "postcss-preset-env": "^6.7.0",
+    "postcss-cli": "^6.0.1",
+    "postcss-import": "^12.0.1",
+    "purgecss": "^1.1.0",
+    "tailwindcss": "^1.0.0"
   }
 }

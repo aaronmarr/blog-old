@@ -2,8 +2,14 @@
 layout: layouts/base.njk
 templateClass: template-post
 ---
-<h1 class="post-title">{{ title }}</h1>
-<time class="post-date" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+<div class="[ topo ]  border-t py-8">
+  <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
+    <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-3xl md:text-4xl tracking-tight mt-0 mb-2 ]">{{ title }}</h2>
+    <time class="[ banner__strapline ] font-sans text-sm" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+  </div>
+</div>
+<main{% if templateClass %} class="[ typeset {{ templateClass }} ] [ max-w-xl ml-auto mr-auto ]"{% endif %}>
 {{ content | safe }}
+</main>
 
 

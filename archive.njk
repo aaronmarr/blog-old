@@ -6,6 +6,16 @@ navtitle: Blog
 permalink: /posts/
 templateClass: template-archive
 ---
-<h1>Blog</h1>
+<div class="[ topo ]  border-t py-8">
+  <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
+    <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-3xl md:text-4xl tracking-tight mt-0 mb-2 ]">
+      Blog
+    </h2>
+    <p class="[ banner__strapline ] font-sans text-lg leading-snug text-sm">
+      Subscribe via <a class="underline hover:no-underline" href="/feed/feed.xml">RSS</a>
+    </p>
+  </div>
+</div>
+
 {% set postslist = collections.posts %}
 {% include "postslist.njk" %}

@@ -1,33 +1,73 @@
 ---
-title: Deploying Eleventy to Github Pages using Travis CI
-description: Taking a look at deploying an 11ty site to Github Pages Travis CI
+title: Statically Deploy Eleventy to Github Pages using Travis
+description: Taking a look at deploying an Eleventy static site to Github Pages using Travis CI
 date: 2019-07-25
 tags: development
 layout: layouts/post.njk
 ---
-[Eleventy](https://www.11ty.io) is a great tool for building static websites using JavaScript. I've always been a fan of [Jekyll](https://jekyllrb.com), but Eleventy has been my go-to tool recently for static web builds; It's super simple to get started and includes some excellent documentation and starter projects to get you going.
+In this post I'll look at deploying a static website built using [Eleventy](https://www.11ty.io/) to [Github Pages](https://pages.github.com/) using [Travis CI](https://travis-ci.com/).
 
-One of the things I wanted to figure out was how to deploy Eleventy to [Github Pages](https://pages.github.com). A few years ago I might have written a Gulp task to build locally and push to a branch on Github, but it's 2019 and we can do better than that! The [Eleventy blog](https://github.com/11ty/eleventy-base-blog) starter project includes a helpful set of config files for setting up CI with either Travis or Netlify. In this post, I'll take a look at setting up a deployment pipeline in Travis.
+### Set up Eleventy
 
-## Create a repository on Github
+The first thing you will need is an Eleventy site running on your local machine. There are some brilliant [starter projects](https://www.11ty.io/docs/starter/) provided by the community. In this post, I'll use [Eleventy base blog](https://github.com/11ty/eleventy-base-blog) as a starting point. Clone the repository and then change into the directory:
 
-The first thing you will need is an Eleventy installation pushed to a repository on Github. I used the [Eleventy blog](https://github.com/11ty/eleventy-base-blog) starter project for my site, which includes the helpful Travis settings file I mentioned. I called my repository `blog` and pushed the project code to the `master` branch. 
+``` bash
+git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
+cd my-blog-name
+```
 
-There are a few settings in Github which I also adjusted. In the repository settings, there's a section for Github Pages. In here, I selected "enable pages" and set up my custom domain name. 
+Inside the project directory, `npm install` dependencies and then run `eleventy` – this will compile the starter project locally into a new `_site` directory. The `_site` folder contains the static markup and assets which we'll deploy to Github Pages using Travis:
 
-<aside>If you're using a custom domain, you'll need to point your DNS to the Github Pages IPs, and also create a CNAME file in the base of your repository. More details about that can be found in the Github documentation.</aside>
+``` bash
+npm install
+npx eleventy
+```
 
-One final step you will need to do is create a Github authentication key, which will be used by Travis to authenticate. In the developer menu in Github, set up a new key, and copy to your clipboard. You will use this key once Travis has been set up.
+You should see output like the following, indicating the compilation was successful:
 
-## Set up Travis
+``` bash
+...
+Writing _site/about/index.html from ./about/index.md.
+Writing _site/tags/another-tag/index.html from ./tags.njk.
+Writing _site/tags/number-2/index.html from ./tags.njk.
+Copied 2 items and Processed 16 files in 0.34 seconds (21.3ms each, v0.9.0)
+```
 
-At this point, I signed up for Travis. On signing up, you should follow the on-screen instructions to integrate Travis with your Github account. There will be several steps and you will be asked to grant permissions to Travis so that it can access any repositories you want to build and deploy.
+### Set up Git
 
-Once the setup process is complete, you should see your project repository in Travis. In the settings, you should add a new authentication key and paste in the key from the previous step. You should call this key `$GITHUB_TOKEN`. If you look inside the `travis.yml` file in your repo, you'll see there's a property called `github-token` which matches this key. This is what Travis uses to authenticate with Github when building and deploying.
+Next, we'll push the Eleventy code to Github. You'll need to create a new repository on github (e.g., in this example the repository name is `my-blog-name`).
 
-While inside the `travis.yml` file, there are a few other settings which should be updated. I set the path prefix to "/". I also added my custom domain under the `fqdn` setting and set the build and deploy branches. These are set to `master` and `gh-pages`, respectively. Here's what my finalised `travis.yml` file looks like.
+Once the repository is set up on Github, create a new repository locally and then push the code.
 
-```text
+``` bash
+# First, remove the existing Eleventy repo
+rm -rf .git
+
+# Next, create a new repo and push to Github
+git init
+git add .
+git commit -m "first commit"
+git remote add origin https://github.com/[your git username]/my-blog-name.git
+git push -u origin master
+```
+
+Now we'll set up Github Pages. Create a new branch called `gh-pages` in Github, and enable Pages by going to Settings / Github Pages and selecting `gh-pages` as the source branch.
+
+We'll also need to create a new access token so Travis can push your site to the `gh-pages` branch. In Settings / Developer Settings / Personal Access Tokens select "Generate new token." When prompted, provide a note for this key (e.g., Travis key) and then grant access to your public repositories by checking `public_repo`. 
+
+Next, select "Generate token." On the next page you will be able to see you new token. Copy / paste this to a safe place (you'll need this handy in the next step).
+
+### Set up Travis
+
+Now we'll set up Travis. If you don't have an account, sign up for one now on the [Travis website](https://travis-ci.com). Follow the on-screen instructions to integrate Travis with your Github account. There will be several steps and you will be asked to grant permissions to Travis so that it can access any repositories you want to build and deploy.
+
+Once the setup process is complete, head back to Github and configure the [Github Travis app](https://github.com/apps/travis-ci). Scroll down to the Repositories section, and select your Eleventy repository (e.g., `my-blog-name`). Once this is complete, you'll be redirected back to Travis, where you'll see your repository listed under your account.
+
+Next, in the repository settings in Travis, you should add a new authentication key. Paste in the GitHub key you created earlier, name it `$GITHUB_TOKEN`. This will then be populated by Travis when it reads the `travis.yml` file in your Git repository. If you take a look at that file you'll see a property named `github-token`, the value of which matches the variable name we just created in Travis.
+
+Let's take a quick look at the `travis.yml` file now. I've set the path prefix to "/". I also set the build and deploy branches to `master` and `gh-pages`, respectively. Here's what my finalised `travis.yml` file looks like.
+
+``` yaml
 language: node_js
 node_js:
   - 8
@@ -35,19 +75,23 @@ before_script:
   - npm install @11ty/eleventy -g
 script: eleventy --pathprefix="/"
 deploy:
-  fqdn: aaronmarr.co.uk
   local-dir: _site
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  # Set in travis-ci.org dashboard
+  github-token: $GITHUB_TOKEN  
   keep-history: true
+  # Deploy branch
   target_branch: gh-pages
   on:
+    # Build branch
     branch: master
 ```
 
-At this point, you should be able to build and deploy to Github. In Travis, select "Build Now" and wait a minute or two for Travis to do its thing. Once Travis has finished building, you'll see a success message in the console indicating that your site is deployed.
+Now you can build and deploy. In Travis, select "Build Now", waiting a moment for Travis to build and deploy. On Completion, you'll notice a success message in the console indicating that your site has been deployed.
 
 One thing to bear in mind is Travis will conveniently deploy whatever you push to your `master` branch. For development, I set up a `develop` branch on Github, so that I only push/merge to `master` when I want to trigger a deployment.
 
-If you head back over to Github, you should see that Travis has created a new branch, `gh-pages`, with the built site inside. You should also now be able to see your site live. I hope you've found this post useful, please get in touch if you have any questions or comments. Thanks for reading.
+If you head back over to Github, you should see that Travis has populated the `gh-pages` branch with the built site. You should also now be able to see your site live at `https://[your user name].github.com/my-blog-name`. 
+
+I hope you've found this post useful. Please get in touch if you have any questions or comments. Thanks for reading.
