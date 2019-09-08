@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="text-base sm:text-base md:text-lg lg:text-xl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,38 +10,45 @@
     <link rel="stylesheet" href="/build/prism-base16-monokai.dark.css?v=17">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
     <!-- <link rel="stylesheet" href="//basehold.it/8">     -->
+    <link rel="stylesheet" href="https://use.typekit.net/vpn3zsm.css">
   </head>
-  <body class="line-numbers dark">
+  <body class="font-sans px-4">
     
 
-    <header class="header">
-      <div class="header__content">
-        <h1 class="site-name">
-          <a class="site-name__link" href="/posts/eleventy-travis-ci/">
-            Aaron Marr
-          </a>
-        </h1>
-        <nav class="nav">
-          <ul class="nav__list"><li class="nav__item">
-              <a class="nav__link" href="/posts/">
-                Blog
-              </a>
-            </li><li class="nav__item">
-              <a class="nav__link" href="/feed/feed.xml">
-                RSS
-              </a>
-            </li><li class="nav__item">
-              <a href="#" class="nav__link" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                Light|Dark
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <header class="[ site-header ] [ my-4 ]">
+      <a href="#content" class="visually-hidden">Skip to main content</a>
+
+      <div class="[ ml-auto mr-auto ]">
+        <div class="[ flex ]">
+          <h1>
+            <a 
+              class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
+              href="/"
+            >
+              Aaron Marr
+            </a>
+          </h1>
+          <nav class="[ pl-4 flex-auto text-right ]">
+              <ul class="[ inline-block w-full ]"><li class="[ ml-3 inline  ]">
+                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
+                    Blog
+                  </a>
+                </li><li class="[ ml-3 inline nav__item ]">
+                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                    <span class="hidden-when-dark">Dark mode</span>
+                    <span class="hidden shown-when-dark">Light mode</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+
+
+      
     </header>
 
-    <main class="main typeset template-home">
-      <h1>Tags</h1>
+      <div id="content">
+          <h1>Tags</h1>
 
 
   
@@ -49,12 +56,13 @@
 
 
 
-    </main>
-
-    <footer class="footer">
-      <div class="footer__content">
-        <p>&copy; Aaron Marr 2019.</p>
       </div>
+      
+
+
+    <footer class="[ py-8 mt-8 max-w-xl ml-auto mr-auto ]">
+      
+        <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
     </footer>
 
     <div id="redirect" data-redirect-url="/posts/eleventy-travis-ci/"</div>
