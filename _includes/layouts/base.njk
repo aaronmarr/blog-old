@@ -6,11 +6,8 @@
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=13">
-    <link rel="stylesheet" href="{{ '/build/prism-base16-monokai.dark.css' | url }}?v=17">
+    <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=14">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
-    <!-- <link rel="stylesheet" href="//basehold.it/8">     -->
-    <link rel="stylesheet" href="https://use.typekit.net/vpn3zsm.css">
   </head>
   <body class="font-sans px-4">
     {% set postslist = collections.posts | head(-3) %}
