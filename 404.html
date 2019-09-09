@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aaron Marr</title>
     <meta name="Description" content="I&#39;m a web developer based in Cornwall, UK.">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/build/index.css?v=15">
+    <link type="text/css" rel="stylesheet" href="/build/index.css?v=16">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
   </head>
   <body class="font-sans px-4">
     
-
     <header class="[ site-header ] [ my-4 ]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
-
-      <div class="[ ml-auto mr-auto ]">
-        <div class="[ flex ]">
+      <div class="ml-auto mr-auto">
+        <div class="flex">
           <h1>
             <a 
               class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
@@ -25,43 +22,36 @@
               Aaron Marr
             </a>
           </h1>
-          <nav class="[ pl-4 flex-auto text-right ]">
-              <ul class="[ inline-block w-full ]"><li class="[ ml-3 inline  ]">
-                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
-                    Blog
-                  </a>
-                </li><li class="[ ml-3 inline nav__item ]">
-                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                    <span class="hidden-when-dark">Dark mode</span>
-                    <span class="hidden shown-when-dark">Light mode</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+          <nav class="pl-4 flex-auto text-right">
+            <ul class="inline-block w-full"><li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
+                  Blog
+                </a>
+              </li><li class="ml-3 inline">
+                <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                  <span class="hidden-when-dark">Dark mode</span>
+                  <span class="hidden shown-when-dark">Light mode</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-
-
-      
-    </header>
-
-      <div id="content">
-          <h1 id="content-not-found.">Content not found. <a class="hidden" href="#content-not-found." aria-hidden="true">#</a></h1>
+      </header>
+      <main id="content">
+        <h1 id="content-not-found.">Content not found. <a class="hidden" href="#content-not-found." aria-hidden="true">#</a></h1>
 <p>Go <a href="/">home</a>.</p>
 
 
-      </div>
-      
-
-
-    <footer class="[ py-8 mt-8 max-w-xl ml-auto mr-auto ]">
-      
-        <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
+      </main>
+    <footer class="py-8 mt-8 max-w-lg ml-auto mr-auto">
+      <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
     </footer>
-
-    <div id="redirect" data-redirect-url="/posts/eleventy-travis-ci/"</div>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
-        ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-      })</script>
+        ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
+          document.querySelector('body').classList.add('dark') : 
+          document.querySelector('body').classList.remove('dark');
+      })
+    </script>
   </body>
 </html>

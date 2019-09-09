@@ -5,18 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statically Deploy Eleventy to Github Pages using Travis</title>
     <meta name="Description" content="Taking a look at deploying an Eleventy static site to Github Pages using Travis CI">
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link type="text/css" rel="stylesheet" href="/build/index.css?v=15">
+    <link type="text/css" rel="stylesheet" href="/build/index.css?v=16">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
   </head>
   <body class="font-sans px-4">
     
-
     <header class="[ site-header ] [ my-4 ]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
-
-      <div class="[ ml-auto mr-auto ]">
-        <div class="[ flex ]">
+      <div class="ml-auto mr-auto">
+        <div class="flex">
           <h1>
             <a 
               class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
@@ -25,34 +22,31 @@
               Aaron Marr
             </a>
           </h1>
-          <nav class="[ pl-4 flex-auto text-right ]">
-              <ul class="[ inline-block w-full ]"><li class="[ ml-3 inline  ]">
-                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
-                    Blog
-                  </a>
-                </li><li class="[ ml-3 inline nav__item ]">
-                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                    <span class="hidden-when-dark">Dark mode</span>
-                    <span class="hidden shown-when-dark">Light mode</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+          <nav class="pl-4 flex-auto text-right">
+            <ul class="inline-block w-full"><li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
+                  Blog
+                </a>
+              </li><li class="ml-3 inline">
+                <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                  <span class="hidden-when-dark">Dark mode</span>
+                  <span class="hidden shown-when-dark">Light mode</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
-
-
-      
-    </header>
-
-      <div id="content">
-          <div class="[ topo ]  border-t py-8">
-  <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
-    <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-3xl md:text-4xl tracking-tight mt-0 mb-2 ]">Statically Deploy Eleventy to Github Pages using Travis</h2>
-    <time class="[ banner__strapline ] font-sans text-sm" datetime="2019-07-25">25 Jul 2019</time>
+      </header>
+      <main id="content">
+        <article>
+  <div class="border-t py-8">
+    <div class="[ banner ] [ py-2 max-w-lg ml-auto mr-auto ]">
+      <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">Statically Deploy Eleventy to Github Pages using Travis</h2>
+      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="2019-07-25">25 Jul 2019</time>
+    </div>
   </div>
-</div>
-<main class="[ typeset template-post ] [ max-w-xl ml-auto mr-auto ]">
-<p>In this post I'll look at deploying a static website built using <a href="https://www.11ty.io/">Eleventy</a> to <a href="https://pages.github.com/">Github Pages</a> using <a href="https://travis-ci.com/">Travis CI</a>.</p>
+  <div class="[ typeset template-post ] [ max-w-lg ml-auto mr-auto ]">
+  <p>In this post I'll look at deploying a static website built using <a href="https://www.11ty.io/">Eleventy</a> to <a href="https://pages.github.com/">Github Pages</a> using <a href="https://travis-ci.com/">Travis CI</a>.</p>
 <h3 id="set-up-eleventy">Set up Eleventy <a class="hidden" href="#set-up-eleventy" aria-hidden="true">#</a></h3>
 <p>The first thing you will need is an Eleventy site running on your local machine. There are some brilliant <a href="https://www.11ty.io/docs/starter/">starter projects</a> provided by the community. In this post, I'll use <a href="https://github.com/11ty/eleventy-base-blog">Eleventy base blog</a> as a starting point. Clone the repository and then change into the directory:</p>
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone https://github.com/11ty/eleventy-base-blog.git my-blog-name</span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> my-blog-name</span></code></pre>
@@ -78,23 +72,21 @@
 <p>If you head back over to Github, you should see that Travis has populated the <code>gh-pages</code> branch with the built site. You should also now be able to see your site live at <code>https://[your user name].github.com/my-blog-name</code>.</p>
 <p>I hope you've found this post useful. Please get in touch if you have any questions or comments. Thanks for reading.</p>
 
-</main>
+  </div>
+</article>
 
 
 
-      </div>
-      
-
-
-    <footer class="[ py-8 mt-8 max-w-xl ml-auto mr-auto ]">
-      
-        <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
+      </main>
+    <footer class="py-8 mt-8 max-w-lg ml-auto mr-auto">
+      <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
     </footer>
-
-    <div id="redirect" data-redirect-url="/posts/eleventy-travis-ci/"</div>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
-        ((localStorage.getItem('mode') || 'dark') === 'dark') ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')
-      })</script>
+        ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
+          document.querySelector('body').classList.add('dark') : 
+          document.querySelector('body').classList.remove('dark');
+      })
+    </script>
   </body>
 </html>
