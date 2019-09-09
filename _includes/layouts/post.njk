@@ -2,14 +2,16 @@
 layout: layouts/base.njk
 templateClass: template-post
 ---
-<div class="[ topo ]  border-t py-8">
-  <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
-    <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-3xl md:text-4xl tracking-tight mt-0 mb-2 ]">{{ title }}</h2>
-    <time class="[ banner__strapline ] font-sans text-sm" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+<article>
+  <div class="border-t py-8">
+    <div class="[ banner ] [ py-2 max-w-lg ml-auto mr-auto ]">
+      <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">{{ title }}</h2>
+      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+    </div>
   </div>
-</div>
-<main{% if templateClass %} class="[ typeset {{ templateClass }} ] [ max-w-xl ml-auto mr-auto ]"{% endif %}>
-{{ content | safe }}
-</main>
+  <div{% if templateClass %} class="[ typeset {{ templateClass }} ] [ max-w-lg ml-auto mr-auto ]"{% endif %}>
+  {{ content | safe }}
+  </div>
+</article>
 
 

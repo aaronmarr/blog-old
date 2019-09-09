@@ -224,19 +224,19 @@ body.dark {
 }
 
 .typeset p + h3 {
-  @apply .mt-6;
+  @apply .mt-8;
 }
 
 .typeset p + pre[class*="language-"] {
-  @apply .mt-4;
+  @apply .mt-6;
 }
 
 .typeset pre[class*="language-"] + p {
-  @apply .mt-4;
+  @apply .mt-6;
 }
 
 .typeset pre[class*="language-"] + h3 {
-  @apply .mt-6;
+  @apply .mt-8;
 }
 
 .typeset a {
@@ -249,10 +249,16 @@ body.dark {
 }
 
 .typeset h3 {
-  @apply .text-2xl;
+  @apply .text-xl;
   @apply .font-bold;
   @apply .font-serif;
   @apply .text-gray-10;
+}
+
+@screen md {
+  .typeset h3 {
+    @apply .text-2xl;
+  }
 }
 
 .dark .typeset h3 {
@@ -260,7 +266,7 @@ body.dark {
 }
 
 .typeset h3 + p {
-  @apply .mt-3;
+  @apply .mt-4;
 }
 
 .topo {

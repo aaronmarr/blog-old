@@ -20,7 +20,7 @@ module.exports = {
       "gray-7": "#3E4C59",
       "gray-8": "#323F4B",
       "gray-9": "#1F2933",
-      "gray-10": "#0e1115",
+      "gray-10": "#161b21",
       // blue vivid
       "blue-0": "#E6F6FF",
       "blue-1": "#BAE3FF",
