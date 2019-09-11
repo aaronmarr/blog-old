@@ -251,7 +251,7 @@ body.dark {
 .typeset h3 {
   @apply .text-xl;
   @apply .font-bold;
-  @apply .font-serif;
+  @apply .font-sans;
   @apply .text-gray-10;
 }
 
@@ -299,11 +299,11 @@ body.dark {
 }
 
 .banner__strapline {
-  @apply .text-gray-6;
+  @apply .text-gray-7;
 }
 
 .dark .banner__strapline {
-  @apply .text-gray-4;
+  @apply .text-gray-3;
 }
 
 .site-header__link {
@@ -334,10 +334,16 @@ body.dark {
   @apply .border-gray-1;
 }
 .dark .postlist__meta {
-  @apply .border-gray-5;
+  @apply .text-gray-3;
 }
 
+/* article > header {
+  @apply .border-gray-4;
+}
 
+.dark article > header {
+  @apply .border-gray-8;
+} */
 
 /*
 Name: Duotone Sea
@@ -391,7 +397,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
 /* Code blocks */
 .dark pre[class*="language-"] {
-  padding: 1em;
+  padding: 1rem 1.5rem;
   /* margin: .5em 0; */
   overflow: auto;
 }
@@ -406,7 +412,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 .dark .token.prolog,
 .dark .token.doctype,
 .dark .token.cdata {
-  @apply .text-gray-5;
+  @apply .text-gray-4;
 }
 
 .dark .token.punctuation {
@@ -420,12 +426,12 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 .dark .token.tag,
 .dark .token.operator,
 .dark .token.number {
-  @apply .text-teal-5;
+  @apply .text-teal-3;
 }
 
 .dark .token.property,
 .dark .token.function {
-  @apply .text-pink-4;
+  @apply .text-pink-2;
 }
 
 .dark .token.tag-id,
@@ -456,7 +462,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 .dark .token.statement,
 .dark .token.regex,
 .dark .token.atrule {
-  @apply .text-yellow-1;
+  @apply .text-yellow-2;
 }
 
 .dark .token.placeholder,
@@ -483,7 +489,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 }
 
 .dark .token.important {
-  @apply .text-blue-3;
+  @apply .text-blue-2;
 }
 
 .dark .token.entity {
@@ -548,7 +554,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  @apply .bg-gray-1;
+  background: #ececec;
   @apply .text-gray-9;
 }
 
@@ -574,7 +580,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 1rem 1.5rem;
   /* margin: .5em 0; */
   overflow: auto;
 }
@@ -589,7 +595,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  @apply .text-gray-5;
+  @apply .text-gray-8;
 }
 
 .token.punctuation {
@@ -603,12 +609,12 @@ pre[class*="language-"] {
 .token.tag,
 .token.operator,
 .token.number {
-  @apply .text-teal-5;
+  @apply .text-teal-8;
 }
 
 .token.property,
 .token.function {
-  @apply .text-pink-4;
+  @apply .text-pink-8;
 }
 
 .token.tag-id,
@@ -639,7 +645,7 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-  @apply .text-yellow-7;
+  @apply .text-yellow-9;
 }
 
 .token.placeholder,
@@ -666,7 +672,7 @@ code.language-scss,
 }
 
 .token.important {
-  @apply .text-blue-3;
+  @apply .text-blue-8;
 }
 
 .token.entity {
