@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ renderData.title or title or metadata.title }}</title>
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
-    <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=16">
+    <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=17">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
-  <body class="font-sans px-4">
+  <body class="font-serif px-4">
     {% set postslist = collections.posts | head(-3) %}
     <header class="[ site-header ] [ my-4 ]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
@@ -19,10 +19,10 @@
               class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
               href="/"
             >
-              {{ metadata.title }}
+              <span class="font-bold">{{ metadata.title }}</span>
             </a>
           </h1>
-          <nav class="pl-4 flex-auto text-right">
+          <nav class="pl-4 flex items-center flex-auto text-right">
             <ul class="inline-block w-full">
               {%- for nav in collections.nav -%}
               <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
@@ -44,7 +44,7 @@
       <main id="content">
         {{ content | safe }}
       </main>
-    <footer class="py-8 mt-8 max-w-lg ml-auto mr-auto">
+    <footer class="py-8 mt-8 max-w-xl ml-auto mr-auto">
       <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
     </footer>
     <script>

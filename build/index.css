@@ -753,13 +753,13 @@ html {
 }
 
 body {
-  background-color: #F5F7FA;
-  color: #161b21;
+  background-color: #F7F7F7;
+  color: #1b1b1b;
 }
 
 body.dark {
-  background-color: #161b21;
-  color: #E4E7EB;
+  background-color: #1b1b1b;
+  color: #E1E1E1;
 }
 
 .typeset p {
@@ -803,8 +803,8 @@ body.dark {
 .typeset h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: "Tiempos Text", serif;
-  color: #161b21;
+  font-family: "Untitled Sans", sans-serif;
+  color: #1b1b1b;
 }
 
 @media (min-width: 768px) {
@@ -814,7 +814,7 @@ body.dark {
 }
 
 .dark .typeset h3 {
-  color: #F5F7FA;
+  color: #F7F7F7;
 }
 
 .typeset h3 + p {
@@ -835,52 +835,60 @@ body.dark {
 } */
 
 .banner__headline {
-  color: #161b21;
+  color: #1b1b1b;
 }
 
 .dark .banner__headline {
-  color: #F5F7FA;
+  color: #F7F7F7;
 }
 
 .banner__strapline {
-  color: #52606D;
+  color: #515151;
 }
 
 .dark .banner__strapline {
-  color: #7B8794;
+  color: #B1B1B1;
 }
 
 .site-header__link {
-  color: #161b21;
+  color: #1b1b1b;
 }
 
 .dark .site-header__link {
-  color: #E4E7EB;
+  color: #E1E1E1;
 }
 
 .site-header__button {
-  border-color: #161b21;
+  border-color: #1b1b1b;
 }
 
 .dark .site-header__button {
-  border-color: #E4E7EB;
+  border-color: #E1E1E1;
 }
 
 .postlist__link {
-  border-color: #161b21;
+  border-color: #1b1b1b;
 }
 
 .postlist__meta {
-  border-color: #52606D;
+  border-color: #626262;
 }
 
 .dark .postlist__link {
-  border-color: #E4E7EB;
+  border-color: #E1E1E1;
 }
 
 .dark .postlist__meta {
-  border-color: #616E7C;
+  color: #B1B1B1;
 }
+
+/* article > header {
+  @apply .border-gray-4;
+}
+
+.dark article > header {
+  @apply .border-gray-8;
+} */
 
 /*
 Name: Duotone Sea
@@ -905,8 +913,8 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background-color: #1F2933;
-  color: #E4E7EB;
+  background-color: #222222;
+  color: #E1E1E1;
 }
 
 .dark .hidden-when-dark {
@@ -932,7 +940,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 /* Code blocks */
 
 .dark pre[class*="language-"] {
-  padding: 1em;
+  padding: 1rem 1.5rem;
   /* margin: .5em 0; */
   overflow: auto;
 }
@@ -946,22 +954,22 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 
 .dark .token.comment,
 .dark .token.doctype {
-  color: #616E7C;
+  color: #9E9E9E;
 }
 
 .dark .token.punctuation {
-  color: #7B8794;
+  color: #9E9E9E;
 }
 
 .dark .token.tag,
 .dark .token.operator,
 .dark .token.number {
-  color: #27AB83;
+  color: #65D6AD;
 }
 
 .dark .token.property,
 .dark .token.function {
-  color: #E8368F;
+  color: #FF8CBA;
 }
 
 
@@ -971,7 +979,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 .dark .token.keyword,
 .dark .token.control,
 .dark .token.atrule {
-  color: #FFF3C4;
+  color: #FCE588;
 }
 
 
@@ -984,7 +992,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 }
 
 .dark .token.important {
-  color: #47A3F3;
+  color: #7CC4FA;
 }
 
 /* overrides color-values for the Line Numbers plugin
@@ -1018,8 +1026,8 @@ pre[class*="language-"] {
   -webkit-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-  background-color: #E4E7EB;
-  color: #1F2933;
+  background: #ececec;
+  color: #222222;
 }
 
 .dark .hidden-when-dark {
@@ -1045,7 +1053,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 /* Code blocks */
 
 pre[class*="language-"] {
-  padding: 1em;
+  padding: 1rem 1.5rem;
   /* margin: .5em 0; */
   overflow: auto;
 }
@@ -1059,22 +1067,22 @@ pre[class*="language-"] {
 
 .token.comment,
 .token.doctype {
-  color: #616E7C;
+  color: #3B3B3B;
 }
 
 .token.punctuation {
-  color: #7B8794;
+  color: #9E9E9E;
 }
 
 .token.tag,
 .token.operator,
 .token.number {
-  color: #27AB83;
+  color: #0C6B58;
 }
 
 .token.property,
 .token.function {
-  color: #E8368F;
+  color: #870557;
 }
 
 
@@ -1084,7 +1092,7 @@ pre[class*="language-"] {
 .token.keyword,
 .token.control,
 .token.atrule {
-  color: #CB6E17;
+  color: #8D2B0B;
 }
 
 
@@ -1097,7 +1105,7 @@ pre[class*="language-"] {
 }
 
 .token.important {
-  color: #47A3F3;
+  color: #01337D;
 }
 
 /* overrides color-values for the Line Numbers plugin
@@ -1112,6 +1120,10 @@ pre[class*="language-"] {
 
 .border-solid {
   border-style: solid;
+}
+
+.border-dotted {
+  border-style: dotted;
 }
 
 .border {
@@ -1144,6 +1156,10 @@ pre[class*="language-"] {
 
 .hidden {
   display: none;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .flex-auto {
@@ -1211,8 +1227,8 @@ pre[class*="language-"] {
   margin-left: auto;
 }
 
-.max-w-lg {
-  max-width: 32rem;
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .p-2 {
@@ -1234,8 +1250,16 @@ pre[class*="language-"] {
   padding-bottom: 2rem;
 }
 
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
 .pl-4 {
   padding-left: 1rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .static {
