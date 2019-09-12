@@ -23,16 +23,31 @@
             </a>
           </h1>
           <nav class="pl-4 flex items-center flex-auto text-right">
-            <ul class="inline-block w-full"><li class="ml-3 inline ">
+            <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
                 <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
                   Blog
                 </a>
-              </li><li class="ml-3 inline">
+              </li> --><li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
+                  Blog
+                </a>
+              </li>
+              <li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                  Download CV
+                </a>
+              </li>
+              <li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
+                  Email Me
+                </a>
+              </li>
+              <!-- <li class="ml-3 inline">
                 <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
                   <span class="hidden-when-dark">Dark mode</span>
                   <span class="hidden shown-when-dark">Light mode</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </nav>
         </div>
@@ -46,7 +61,7 @@
   <tbody>
   <tr>
     <td><a href="/posts/eleventy-travis-ci/"><code>/posts/eleventy-travis-ci/</code></a></td>
-    <td>Statically Deploy Eleventy to Github Pages using Travis</td>
+    <td>Deploying Eleventy to Github Pages using Travis CI</td>
   </tr>
   <tr>
     <td><a href="/about/"><code>/about/</code></a></td>
@@ -73,11 +88,52 @@
 
 
       </main>
-    <footer class="py-8 mt-8 max-w-xl ml-auto mr-auto">
-      <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
+    <footer class="block border-t border-dotted pt-4 pb-8 mt-16 ml-auto mr-auto">
+      <div class="flex items-baseline">
+          <p class="text-xs font-sans">&copy; Aaron Marr 2019.</p>
+          <nav class="pl-4 flex items-center flex-auto text-right">
+              <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
+                    Blog
+                  </a>
+                </li> --><li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/posts">
+                    Blog
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                    Download CV
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
+                    Email Me
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                    <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://twitter.com/_aaronmarr">
+                      Twitter
+                    </a>
+                  </li>
+                  <li class="ml-3 inline ">
+                      <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
+                        LinkedIn
+                      </a>
+                    </li>
+                <li class="ml-3 inline">
+                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-xs ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                    <span class="hidden-when-dark">Dark mode</span>
+                    <span class="hidden shown-when-dark">Light mode</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+      </div>
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
+        event.preventDefault();
         ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
           document.querySelector('body').classList.add('dark') : 
           document.querySelector('body').classList.remove('dark');

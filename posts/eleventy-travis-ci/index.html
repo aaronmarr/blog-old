@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statically Deploy Eleventy to Github Pages using Travis</title>
+    <title>Deploying Eleventy to Github Pages using Travis CI</title>
     <meta name="Description" content="Taking a look at deploying an Eleventy static site to Github Pages using Travis CI">
     <link type="text/css" rel="stylesheet" href="/build/index.css?v=17">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
@@ -23,16 +23,31 @@
             </a>
           </h1>
           <nav class="pl-4 flex items-center flex-auto text-right">
-            <ul class="inline-block w-full"><li class="ml-3 inline ">
+            <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
                 <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
                   Blog
                 </a>
-              </li><li class="ml-3 inline">
+              </li> --><li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
+                  Blog
+                </a>
+              </li>
+              <li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                  Download CV
+                </a>
+              </li>
+              <li class="ml-3 inline ">
+                <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
+                  Email Me
+                </a>
+              </li>
+              <!-- <li class="ml-3 inline">
                 <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
                   <span class="hidden-when-dark">Dark mode</span>
                   <span class="hidden shown-when-dark">Light mode</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </nav>
         </div>
@@ -41,14 +56,14 @@
         <article>
   <header class="border-t border-dotted pt-8 pb-4">
     <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
-      <h2 class="[ banner__headline ] [ font-bold font-sans leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">Statically Deploy Eleventy to Github Pages using Travis</h2>
-      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="2019-07-25">25 Jul 2019</time>
+      <h2 class="[ banner__headline ] [ font-bold font-sans leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">Deploying Eleventy to Github Pages using Travis CI</h2>
+      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="2019-09-12">12 Sep 2019</time>
     </div>
   </header>
   <div class="[ typeset template-post ] [ max-w-xl ml-auto mr-auto ]">
   <p>In this post I'll look at using <a href="https://travis-ci.com/">Travis CI</a> to deploy a static <a href="https://www.11ty.io/">Eleventy</a> website to <a href="https://pages.github.com/">Github Pages</a>.</p>
 <h3 id="set-up-eleventy">Set up Eleventy <a class="hidden" href="#set-up-eleventy" aria-hidden="true">#</a></h3>
-<p>If you’re following along, you’ll need an Eleventy site running on your local machine. There are some excellent <a href="https://www.11ty.io/docs/starter/">starter projects</a> provided by the community which are helpful when getting started. In this post, I'll use <a href="https://github.com/11ty/eleventy-base-blog">Eleventy base blog</a> as a starting point. Clone the repository and then change into that directory:</p>
+<p>If you’re following along, you’ll need an Eleventy site running on your local machine. There are some excellent <a href="https://www.11ty.io/docs/starter/">starter projects</a> provided by the community which are helpful when getting started. In this post, I'll use <a href="https://github.com/11ty/eleventy-base-blog">Eleventy base blog</a> as a starting point. Clone the repository and change into that directory:</p>
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> clone https://github.com/11ty/eleventy-base-blog.git my-blog-name</span><br><span class="highlight-line"><span class="token builtin class-name">cd</span> my-blog-name</span></code></pre>
 <p>Inside the new project directory, <code>npm install</code> dependencies and run <code>eleventy</code> – this will compile the starter project locally into a new <code>_site</code> directory. The <code>_site</code> folder contains the static markup and assets which we'll deploy to Github Pages using Travis:</p>
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">npm</span> <span class="token function">install</span></span><br><span class="highlight-line">npx eleventy</span></code></pre>
@@ -56,7 +71,7 @@
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token punctuation">..</span>.</span><br><span class="highlight-line">Writing _site/about/index.html from ./about/index.md.</span><br><span class="highlight-line">Writing _site/tags/another-tag/index.html from ./tags.njk.</span><br><span class="highlight-line">Writing _site/tags/number-2/index.html from ./tags.njk.</span><br><span class="highlight-line">Copied <span class="token number">2</span> items and Processed <span class="token number">16</span> files <span class="token keyword">in</span> <span class="token number">0.34</span> seconds <span class="token punctuation">(</span><span class="token number">21</span>.3ms each, v0.9.0<span class="token punctuation">)</span></span></code></pre>
 <h3 id="set-up-git">Set up Git <a class="hidden" href="#set-up-git" aria-hidden="true">#</a></h3>
 <p>Next, we'll push the Eleventy project to a new repository on Github. I called mine <code>my-blog-name</code> to match the name of my local project directory.</p>
-<p>Once the repository is set up on Github, create a new repository locally and then push the code.</p>
+<p>Once the repository is set up on Github, create a new repository locally and push the code.</p>
 <pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token comment"># First, remove the existing Eleventy repo</span></span><br><span class="highlight-line"><span class="token function">rm</span> -rf .git</span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token comment"># Next, create a new repo and push to Github</span></span><br><span class="highlight-line"><span class="token function">git</span> init</span><br><span class="highlight-line"><span class="token function">git</span> <span class="token function">add</span> <span class="token builtin class-name">.</span></span><br><span class="highlight-line"><span class="token function">git</span> commit -m <span class="token string">"first commit"</span></span><br><span class="highlight-line"><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/<span class="token punctuation">[</span>your <span class="token function">git</span> username<span class="token punctuation">]</span>/my-blog-name.git</span><br><span class="highlight-line"><span class="token function">git</span> push -u origin master</span></code></pre>
 <p>Now we'll set up Github Pages. Create a new branch called <code>gh-pages</code> in Github, and enable Pages by going to Settings / Github Pages and selecting <code>gh-pages</code> as the source branch.</p>
 <p>We'll also need to create a new access token so Travis can push your site to the <code>gh-pages</code> branch. In Settings / Developer Settings / Personal Access Tokens select &quot;Generate new token.&quot; When prompted, provide a note for this key (e.g., Travis key) and grant access to your public repositories by checking <code>public_repo</code>.</p>
@@ -79,11 +94,52 @@
 
 
       </main>
-    <footer class="py-8 mt-8 max-w-xl ml-auto mr-auto">
-      <p class="text-sm font-sans">&copy; Aaron Marr 2019.</p>
+    <footer class="block border-t border-dotted pt-4 pb-8 mt-16 ml-auto mr-auto">
+      <div class="flex items-baseline">
+          <p class="text-xs font-sans">&copy; Aaron Marr 2019.</p>
+          <nav class="pl-4 flex items-center flex-auto text-right">
+              <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
+                    Blog
+                  </a>
+                </li> --><li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/posts">
+                    Blog
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                    Download CV
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
+                    Email Me
+                  </a>
+                </li>
+                <li class="ml-3 inline ">
+                    <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://twitter.com/_aaronmarr">
+                      Twitter
+                    </a>
+                  </li>
+                  <li class="ml-3 inline ">
+                      <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
+                        LinkedIn
+                      </a>
+                    </li>
+                <li class="ml-3 inline">
+                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-xs ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                    <span class="hidden-when-dark">Dark mode</span>
+                    <span class="hidden shown-when-dark">Light mode</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+      </div>
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function(event) {
+        event.preventDefault();
         ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
           document.querySelector('body').classList.add('dark') : 
           document.querySelector('body').classList.remove('dark');
