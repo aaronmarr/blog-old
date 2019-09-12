@@ -1,7 +1,7 @@
 ---
-title: Statically Deploy Eleventy to Github Pages using Travis
+title: Deploying Eleventy to Github Pages using Travis CI 
 description: Taking a look at deploying an Eleventy static site to Github Pages using Travis CI
-date: 2019-07-25
+date: 2019-09-12
 tags: development
 layout: layouts/post.njk
 ---
@@ -9,7 +9,7 @@ In this post I'll look at using [Travis CI](https://travis-ci.com/) to deploy a 
 
 ### Set up Eleventy
 
-If you’re following along, you’ll need an Eleventy site running on your local machine. There are some excellent [starter projects](https://www.11ty.io/docs/starter/) provided by the community which are helpful when getting started. In this post, I'll use [Eleventy base blog](https://github.com/11ty/eleventy-base-blog) as a starting point. Clone the repository and then change into that directory:
+If you’re following along, you’ll need an Eleventy site running on your local machine. There are some excellent [starter projects](https://www.11ty.io/docs/starter/) provided by the community which are helpful when getting started. In this post, I'll use [Eleventy base blog](https://github.com/11ty/eleventy-base-blog) as a starting point. Clone the repository and change into that directory:
 
 ``` bash
 git clone https://github.com/11ty/eleventy-base-blog.git my-blog-name
@@ -37,7 +37,7 @@ Copied 2 items and Processed 16 files in 0.34 seconds (21.3ms each, v0.9.0)
 
 Next, we'll push the Eleventy project to a new repository on Github. I called mine `my-blog-name` to match the name of my local project directory.
 
-Once the repository is set up on Github, create a new repository locally and then push the code.
+Once the repository is set up on Github, create a new repository locally and push the code.
 
 ``` bash
 # First, remove the existing Eleventy repo
