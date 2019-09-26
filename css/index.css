@@ -215,7 +215,7 @@ body.dark {
 
 @screen sm {
   .typeset p {
-    @apply .leading-relaxed;
+    /* @apply .leading-relaxed; */
   }
 }
 
@@ -250,7 +250,7 @@ body.dark {
 
 .typeset h3 {
   @apply .text-xl;
-  @apply .font-bold;
+  @apply .font-normal;
   @apply .font-sans;
   @apply .text-gray-10;
 }

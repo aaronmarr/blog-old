@@ -8,54 +8,37 @@
     <link type="text/css" rel="stylesheet" href="/build/index.css?v=18">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
   </head>
-  <body class="font-serif px-4">
+  <body class="font-sans px-4 md:px-6 lg:px-12">
     
-    <header class="[ site-header ] [ my-4 ]">
+    <header class="[ site-header ] [ my-4 md:my-6 lg:my-12]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
-      <div class="ml-auto mr-auto">
+      <div class="">
         <div class="flex">
           <h1>
             <a 
               class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
               href="/"
             >
-              <span class="font-bold">Aaron Marr</span>
+              <span class="font-normal">Aaron Marr</span>
             </a>
           </h1>
           <nav class="pl-4 flex items-center flex-auto text-right">
-            <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
-                  Blog
-                </a>
-              </li> --><li class="ml-3 inline ">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
-                  Blog
-                </a>
-              </li>
-              <li class="ml-3 inline ">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
-                  Download CV
-                </a>
-              </li>
-              <li class="ml-3 inline ">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
-                  Email Me
-                </a>
-              </li>
-              <!-- <li class="ml-3 inline">
+            <ul class="inline-block w-full">
+              <li class="ml-3 inline">
                 <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
                   <span class="hidden-when-dark">Dark mode</span>
                   <span class="hidden shown-when-dark">Light mode</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </nav>
         </div>
-      </header>
-      <main id="content">
-        <div class="border-t border-dotted pt-8 pb-4">
-  <div class="[ banner ] [ py-2 max-w-xl ml-auto mr-auto ]">
-    <h2 class="[ banner__headline ] [ font-bold font-sans leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">
+      </div>
+    </header>
+    <main id="content">
+      <div class="pt-8 pb-8">
+  <div class="[ banner ] [ py-2 max-w-xl ]">
+    <h2 class="[ banner__headline ] [ font-normal font-sans leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">
       Front-end Developer
     </h2>
     <p class="[ banner__strapline ] font-sans text-lg leading-snug text-sm">
@@ -65,52 +48,42 @@
 </div>
 
 
-      </main>
-    <footer class="block border-t border-dotted pt-4 pb-8 mt-16 ml-auto mr-auto">
+    </main>
+    <footer class="block pt-4 pb-8">
       <div class="flex items-baseline">
-          <p class="text-xs font-sans">&copy; Aaron Marr 2019.</p>
-          <nav class="pl-4 flex items-center flex-auto text-right">
-              <ul class="inline-block w-full"><!-- <li class="ml-3 inline ">
-                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts/">
-                    Blog
-                  </a>
-                </li> --><li class="ml-3 inline ">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/posts">
-                    Blog
-                  </a>
-                </li>
-                <li class="ml-3 inline ">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
-                    Download CV
-                  </a>
-                </li>
-                <li class="ml-3 inline ">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
-                    Email Me
-                  </a>
-                </li>
-                <li class="ml-3 inline ">
-                    <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://twitter.com/_aaronmarr">
-                      Twitter
-                    </a>
-                  </li>
-                  <li class="ml-3 inline ">
-                      <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
-                        LinkedIn
-                      </a>
-                    </li>
-                <li class="ml-3 inline">
-                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-xs ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                    <span class="hidden-when-dark">Dark mode</span>
-                    <span class="hidden shown-when-dark">Light mode</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+        <nav class="flex items-center flex-auto text-left">
+          <ul class="inline-block w-full">
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                Download CV
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
+                Email Me
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://twitter.com/_aaronmarr">
+                Twitter
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
     <script>
-      document.addEventListener('DOMContentLoaded', function(event) {
+        document.addEventListener('DOMContentLoaded', function(event) {
         event.preventDefault();
         ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
           document.querySelector('body').classList.add('dark') : 
