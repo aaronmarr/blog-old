@@ -8,106 +8,71 @@
     <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=18">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
-  <body class="font-serif px-4">
+  <body class="font-sans px-4 md:px-6 lg:px-12">
     {% set postslist = collections.posts | head(-3) %}
-    <header class="[ site-header ] [ my-4 ]">
+    <header class="[ site-header ] [ my-4 md:my-6 lg:my-12]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
-      <div class="ml-auto mr-auto">
+      <div class="">
         <div class="flex">
           <h1>
             <a 
               class="[ site-header__link ] [ font-sans font-normal text-sm ]" 
               href="/"
             >
-              <span class="font-bold">{{ metadata.title }}</span>
+              <span class="font-normal">{{ metadata.title }}</span>
             </a>
           </h1>
           <nav class="pl-4 flex items-center flex-auto text-right">
             <ul class="inline-block w-full">
-              {%- for nav in collections.nav -%}
-              <!-- <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="{{ nav.url | url }}">
-                  {{ nav.data.navtitle }}
-                </a>
-              </li> -->
-              {%- endfor -%}
-              <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
-                  Blog
-                </a>
-              </li>
-              <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
-                  Download CV
-                </a>
-              </li>
-              <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
-                  Email Me
-                </a>
-              </li>
-              <!-- <li class="ml-3 inline">
+              <li class="ml-3 inline">
                 <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
                   <span class="hidden-when-dark">Dark mode</span>
                   <span class="hidden shown-when-dark">Light mode</span>
                 </a>
-              </li> -->
+              </li>
             </ul>
           </nav>
         </div>
-      </header>
-      <main id="content">
-        {{ content | safe }}
-      </main>
-    <footer class="block border-t border-dotted pt-4 pb-8 mt-16 ml-auto mr-auto">
+      </div>
+    </header>
+    <main id="content">
+      {{ content | safe }}
+    </main>
+    <footer class="block pt-4 pb-8">
       <div class="flex items-baseline">
-          <p class="text-xs font-sans">&copy; Aaron Marr 2019.</p>
-          <nav class="pl-4 flex items-center flex-auto text-right">
-              <ul class="inline-block w-full">
-                {%- for nav in collections.nav -%}
-                <!-- <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                  <a class="[ site-header__link ] [ font-sans text-sm ]" href="{{ nav.url | url }}">
-                    {{ nav.data.navtitle }}
-                  </a>
-                </li> -->
-                {%- endfor -%}
-                <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/posts">
-                    Blog
-                  </a>
-                </li>
-                <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
-                    Download CV
-                  </a>
-                </li>
-                <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                  <a class="[ site-header__link ] [ font-sans text-xs ]" href="mailto:hello@aaronmarr.co.uk">
-                    Email Me
-                  </a>
-                </li>
-                <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                    <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://twitter.com/_aaronmarr">
-                      Twitter
-                    </a>
-                  </li>
-                  <li class="ml-3 inline {% if nav.url == page.url %} underline{% endif %}">
-                      <a class="[ site-header__link ] [ font-sans text-xs ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
-                        LinkedIn
-                      </a>
-                    </li>
-                <li class="ml-3 inline">
-                  <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-xs ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                    <span class="hidden-when-dark">Dark mode</span>
-                    <span class="hidden shown-when-dark">Light mode</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
+        <nav class="flex items-center flex-auto text-left">
+          <ul class="inline-block w-full">
+            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                Download CV
+              </a>
+            </li>
+            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
+                Email Me
+              </a>
+            </li>
+            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://twitter.com/_aaronmarr">
+                Twitter
+              </a>
+            </li>
+            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </footer>
     <script>
-      document.addEventListener('DOMContentLoaded', function(event) {
+        document.addEventListener('DOMContentLoaded', function(event) {
         event.preventDefault();
         ((localStorage.getItem('mode') || 'dark') === 'dark') ? 
           document.querySelector('body').classList.add('dark') : 

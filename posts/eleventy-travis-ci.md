@@ -1,5 +1,5 @@
 ---
-title: Deploying Eleventy to Github Pages using Travis CI 
+title: Deploying Eleventy to Github Pages using Travis
 description: Taking a look at deploying an Eleventy static site to Github Pages using Travis CI
 date: 2019-09-12
 tags: development
