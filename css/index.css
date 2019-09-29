@@ -219,7 +219,8 @@ body.dark {
   }
 }
 
-.typeset p + p {
+.typeset p + p,
+.typeset p + blockquote {
   @apply .mt-4;
 }
 
@@ -266,6 +267,35 @@ body.dark {
 }
 
 .typeset h3 + p {
+  @apply .mt-4;
+}
+
+.typeset blockquote {
+  @apply .border-l-4;
+  @apply .border-gray-2;
+  @apply .pl-4;
+  @apply .py-1;
+}
+
+.typeset blockquote + p,
+.typeset blockquote + pre[class*="language-"] {
+  @apply .mt-4;
+}
+
+.typeset blockquote p {
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+.dark .typeset blockquote {
+  @apply .border-gray-8;
+}
+
+.dark .typeset blockquote p {
+  
+}
+
+.typeset pre[class*="language-"] + blockquote {
   @apply .mt-4;
 }
 
@@ -355,7 +385,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 .dark code[class*="language-"],
 .dark pre[class*="language-"] {
   @apply .font-mono;
-  @apply .text-base;
+  @apply .text-sm;
   /* line-height: 1.375; */
   direction: ltr;
   text-align: left;
@@ -538,7 +568,7 @@ Generated with Base16 Builder (https://github.com/base16-builder/base16-builder)
 code[class*="language-"],
 pre[class*="language-"] {
   @apply .font-mono;
-  @apply .text-base;
+  @apply .text-sm;
   /* line-height: 1.375; */
   direction: ltr;
   text-align: left;
