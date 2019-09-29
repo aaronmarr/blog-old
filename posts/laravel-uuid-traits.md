@@ -32,8 +32,6 @@ public function up()
 Next, we'll override `boot`, and hook into Eloquent's `creating` lifecycle method in the `User` model. We'll return a `uuid` for the primary key when creating new `User` records. 
 
 ``` php
-// User.php
-
 protected static function boot()
 {
     parent::boot();
@@ -47,17 +45,15 @@ protected static function boot()
 We'll also disable incrementing `ids` and specify a key type of `string` (instead of `bigInteger`):
 
 ``` php
-// User.php
+public function getIncrementing()
+{
+    return false;
+}
 
-    public function getIncrementing()
-    {
-        return false;
-    }
-
-    public function getKeyType()
-    {
-        return 'string';
-    }
+public function getKeyType()
+{
+    return 'string';
+}
 ```
 
 With our migration and model updated, go ahead and run the migrations:
@@ -91,8 +87,6 @@ App\User::all()
 While this approach is fine in a simple application with only a couple of models, you may find yourself wanting to share this functionality between more models, and it could become an overhead. This is a good use case for PHP Traits, which allow you to easily share code between independent classes. Let's take a look:
 
 ``` php
-// Traits/HasUuid.php
-
 <?php
 
 namespace App\Traits;
@@ -127,8 +121,6 @@ As you can see, we've moved the `boot` method override, `getIncrementing` and `g
 In the User model we can remove the boot method override, `getIncrementing` and `getKeyType` methods and implement the Trait for our model using `use Traits\HasUuid;` in the class:
 
 ``` php
-// User.php
-
 <?php
 
 namespace App;
