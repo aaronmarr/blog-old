@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="text-base sm:text-base md:text-lg lg:text-xl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laravel User Authentication</title>
+    <meta name="Description" content="Taking a look the authentication framework in Laravel 6">
+    <link type="text/css" rel="stylesheet" href="/build/index.css?v=20">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
+  </head>
+  <body class="font-sans px-4 md:px-6 lg:px-12">
+    
+    <header class="[ site-header ] [ my-4 md:my-6 lg:my-12]">
+      <a href="#content" class="visually-hidden">Skip to main content</a>
+      <div class="">
+        <div class="flex">
+          <h1>
+            <a
+              class="[ site-header__link ] [ font-sans font-normal text-sm ]"
+              href="/"
+            >
+              <span class="font-normal">Aaron Marr</span>
+            </a>
+          </h1>
+          <nav class="pl-4 flex items-center flex-auto text-right">
+            <ul class="inline-block w-full">
+              <li class="ml-3 inline">
+                <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+                  <span class="hidden-when-dark">Dark mode</span>
+                  <span class="hidden shown-when-dark">Light mode</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="content">
+      <article>
+  <header class="pt-8 pb-4">
+    <div class="[ banner ] [ py-2 max-w-xl ]">
+      <h2 class="[ banner__headline ] [ font-normal font-sans leading-tight text-2xl sm:text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">Laravel User Authentication</h2>
+      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="2019-09-12">12 Sep 2019</time>
+    </div>
+  </header>
+  <div class="[ typeset template-post ] [ pb-12 max-w-xl ]">
+    <p>User authentication in Laravel 6 is included out of the box, and it's quick and easy to set up in your applications.</p>
+<p>To get started, you'll need to install the <code>laravel/ui</code> package, which contains the Twitter Bootstrap framework. Bootstrap is used to provide some basic styling to the templates which are included with the  boilerplate.</p>
+<blockquote>
+<p>The <code>laravel/ui</code> package also contains assets for React and Vue, but I'll be looking a more traditional approach using Blade in this post.</p>
+</blockquote>
+<p>Don't worry, if you're not a fan of Bootstrap, all the styling can easily be replaced with your own, if that's what you want to do.</p>
+<p>Go ahead and install the <code>laravel/ui</code> package:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">composer require laravel/ui --dev</span></code></pre>
+<p>Once that's installed, you'll have access to the <code>artisan ui</code> generator. For more information about which options can be passed, check the <a href="https://laravel.com/docs/6.x/frontend">Laravel documentation</a>. We can scaffold with Twitter Bootstrap using the following command:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">php artisan ui bootstrap --auth</span><br><span class="highlight-line"></span><br><span class="highlight-line">Bootstrap scaffolding installed successfully.</span><br><span class="highlight-line">Please run <span class="token string">"npm install &amp;&amp; npm run dev"</span> to compile your fresh scaffolding.</span><br><span class="highlight-line">Authentication scaffolding generated successfully.</span></code></pre>
+<p>Follow the instructions in the output and run <code>npm install &amp;&amp; npm run dev</code> to install dependencies and compile any assets.</p>
+<p>Let's take a quick look at what the scaffolding gives us:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line"><span class="token function">git</span> status</span><br><span class="highlight-line"><span class="token punctuation">..</span>.</span><br><span class="highlight-line">	modified:   resources/js/bootstrap.js</span><br><span class="highlight-line">	modified:   resources/sass/app.scss</span><br><span class="highlight-line">	modified:   routes/web.php</span><br><span class="highlight-line"></span><br><span class="highlight-line">Untracked files:</span><br><span class="highlight-line"><span class="token punctuation">..</span>.</span><br><span class="highlight-line">	app/Http/Controllers/HomeController.php</span><br><span class="highlight-line">	resources/sass/_variables.scss</span><br><span class="highlight-line">	resources/views/auth/</span><br><span class="highlight-line">	resources/views/home.blade.php</span><br><span class="highlight-line">	resources/views/layouts/</span></code></pre>
+<p>We can see that some files in the <code>resources/</code> directory have been updated. There's been a change to the <code>routes/web.php</code> file. The most significant change for us is the change to the routes file, so let's take a look at that.</p>
+<pre class="language-php"><code class="language-php"><span class="highlight-line">Auth<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">routes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">Route<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'/home'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'HomeController@index'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">name</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'home'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p><code>Auth::routes();</code> is a helper class which defines all the routes required for Laravel's authentication system. Run <code>php artisan route:list</code> to see exactly which routes have been added:</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">+--------+----------+----------------------------+------------------+------------------------------------------------------------------------+-------------------------------------------------+</span><br><span class="highlight-line"><span class="token operator">|</span> Domain <span class="token operator">|</span> Method   <span class="token operator">|</span> URI                        <span class="token operator">|</span> Name             <span class="token operator">|</span> Action                                                                 <span class="token operator">|</span> Middleware                                      <span class="token operator">|</span></span><br><span class="highlight-line">+--------+----------+----------------------------+------------------+------------------------------------------------------------------------+-------------------------------------------------+</span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> /                          <span class="token operator">|</span>                  <span class="token operator">|</span> Closure                                                                <span class="token operator">|</span> web                                             <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> _ignition/execute-solution <span class="token operator">|</span>                  <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>ExecuteSolutionController             <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>IgnitionEnabled <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> _ignition/health-check     <span class="token operator">|</span>                  <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>HealthCheckController                 <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>IgnitionEnabled <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> _ignition/scripts/<span class="token punctuation">{</span>script<span class="token punctuation">}</span> <span class="token operator">|</span>                  <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>ScriptController                      <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>IgnitionEnabled <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> _ignition/share-report     <span class="token operator">|</span>                  <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>ShareReportController                 <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>IgnitionEnabled <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> _ignition/styles/<span class="token punctuation">{</span>style<span class="token punctuation">}</span>   <span class="token operator">|</span>                  <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>StyleController                       <span class="token operator">|</span> Facade<span class="token punctuation">\</span>Ignition<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Middleware<span class="token punctuation">\</span>IgnitionEnabled <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> api/user                   <span class="token operator">|</span>                  <span class="token operator">|</span> Closure                                                                <span class="token operator">|</span> api,auth:api                                    <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> home                       <span class="token operator">|</span> home             <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>HomeController@index                              <span class="token operator">|</span> web,auth                                        <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> login                      <span class="token operator">|</span>                  <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>LoginController@login                        <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> login                      <span class="token operator">|</span> login            <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>LoginController@showLoginForm                <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> <span class="token builtin class-name">logout</span>                     <span class="token operator">|</span> <span class="token builtin class-name">logout</span>           <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>LoginController@logout                       <span class="token operator">|</span> web                                             <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> password/email             <span class="token operator">|</span> password.email   <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>ForgotPasswordController@sendResetLinkEmail  <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> password/reset             <span class="token operator">|</span> password.request <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>ForgotPasswordController@showLinkRequestForm <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> password/reset             <span class="token operator">|</span> password.update  <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>ResetPasswordController@reset                <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> password/reset/<span class="token punctuation">{</span>token<span class="token punctuation">}</span>     <span class="token operator">|</span> password.reset   <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>ResetPasswordController@showResetForm        <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> GET<span class="token operator">|</span>HEAD <span class="token operator">|</span> register                   <span class="token operator">|</span> register         <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>RegisterController@showRegistrationForm      <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line"><span class="token operator">|</span>        <span class="token operator">|</span> POST     <span class="token operator">|</span> register                   <span class="token operator">|</span>                  <span class="token operator">|</span> App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Auth<span class="token punctuation">\</span>RegisterController@register                  <span class="token operator">|</span> web,guest                                       <span class="token operator">|</span></span><br><span class="highlight-line">+--------+----------+----------------------------+------------------+------------------------------------------------------------------------+-------------------------------------------------+</span></code></pre>
+<p>You can see that routes have been added for <code>login</code>, <code>logout</code> and <code>register</code>, as well as routes added for managing user passwords.</p>
+<p>The <code>home</code> route will only be accessible by authenticated users. <code>HomeController@index</code> is protected by the authentication middleware that ships with Laravel. Check out the constructor in <code>HomeController.php</code> to see how this is set up:</p>
+<pre class="language-php"><code class="language-php"><span class="highlight-line">    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">__construct</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span><br><span class="highlight-line">    <span class="token punctuation">{</span></span><br><span class="highlight-line">        <span class="token variable">$this</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'auth'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">    <span class="token punctuation">}</span></span></code></pre>
+<blockquote>
+<p>You might also see middleware added directly in the <code>routes</code> file, instead of inside the <code>controller</code>:</p>
+</blockquote>
+<pre class="language-php"><code class="language-php"><span class="highlight-line">Route<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'/example'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'ExampleController@index'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">></span><span class="token function">middleware</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'awesome'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span></code></pre>
+<p>There are also a handful of new templates in <code>resources/views/auth/</code> and <code>resources/views/layouts/</code>. These templates are for the login, logout and register views, as well as reset and forgotten password forms.</p>
+<p>If you've run the boilerplate on a fresh Laravel install, go ahead and migrate your database.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">php artisan migrate</span></code></pre>
+<p>At this point, you should be able to create a new user and log in to your site. If you visit your site in your web browser, you should see the new <code>login</code> and <code>register</code> links which were added by Laravel for us.</p>
+<p>That's all I really want to cover in this post. I suggest also taking a look at the template files to see how those work, and which directives have been added to show and hide the login links. I may cover the details of those in a future post.</p>
+<p>I hope you've found this useful. Please don't hesitate to contact me if you have any questions or comments.</p>
+
+  </div>
+</article>
+
+
+
+    </main>
+    <footer class="block pt-4 pb-8">
+      <div class="flex items-baseline">
+        <nav class="flex items-center flex-auto text-left">
+          <ul class="inline-block w-full">
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
+                Blog
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/Aaron_Marr_Frontend_Developer_CV_Resume_2019.pdf">
+                Download CV
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
+                Email Me
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://twitter.com/_aaronmarr">
+                Twitter
+              </a>
+            </li>
+            <li class="mr-3 inline ">
+              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+        event.preventDefault();
+        ((localStorage.getItem('mode') || 'dark') === 'dark') ?
+          document.querySelector('body').classList.add('dark') :
+          document.querySelector('body').classList.remove('dark');
+      })
+    </script>
+  </body>
+</html>

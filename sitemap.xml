@@ -7,32 +7,42 @@
   </url>
   
   <url>
+    <loc>https://aaronmarr.co.uk/posts/laravel-auth/</loc>
+    <lastmod>2019-09-12</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aaronmarr.co.uk/posts/laravel-uuid-traits/</loc>
+    <lastmod>2019-09-15</lastmod>
+  </url>
+  
+  <url>
     <loc>https://aaronmarr.co.uk/about/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
   
   <url>
     <loc>https://aaronmarr.co.uk/posts/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
   
   <url>
     <loc>https://aaronmarr.co.uk/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
   
   <url>
     <loc>https://aaronmarr.co.uk/page-list/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
   
   <url>
     <loc>https://aaronmarr.co.uk/tags/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
   
   <url>
     <loc>https://aaronmarr.co.uk/tags/development/</loc>
-    <lastmod>2019-09-27</lastmod>
+    <lastmod>2019-09-29</lastmod>
   </url>
 </urlset>
