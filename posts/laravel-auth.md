@@ -89,10 +89,10 @@ You can see that routes have been added for `login`, `logout` and ` register`, a
 The `home` route will only be accessible by authenticated users. `HomeController@index` is protected by the authentication middleware that ships with Laravel. Check out the constructor in `HomeController.php` to see how this is set up:
 
 ``` php
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+public function __construct()
+{
+    $this->middleware('auth');
+}
 ```
 
 > You might also see middleware added directly in the `routes` file, instead of inside the `controller`:

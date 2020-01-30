@@ -35,6 +35,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("build");
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("node_modules/@ibm");
+  eleventyConfig.addPassthroughCopy("node_modules/@fortawesome");
 
   /* Markdown Plugins */
   let markdownIt = require("markdown-it");

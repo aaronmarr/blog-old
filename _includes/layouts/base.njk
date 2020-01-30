@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="text-base sm:text-base md:text-lg lg:text-xl">
+<html lang="en" class="text-lg sm:text-lg md:text-lg lg:text-xl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +8,60 @@
     <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=21">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
   </head>
-  <body class="font-sans px-4 md:px-6 lg:px-12">
+  <body class="font-serif px-4 md:px-6 lg:px-12">
     {% set postslist = collections.posts | head(-3) %}
-    <header class="[ site-header ] [ my-4 md:my-6 lg:my-12 ]">
+    <header class="[ site-header ] [ my-4 md:my-8 max-w-xl m-auto ]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
       <div class="">
-        <div class="flex">
-          <h1>
-            <a
-              class="[ site-header__link ] [ font-sans font-normal text-sm ]"
-              href="/"
-            >
-              <span class="font-normal">{{ metadata.title }}</span>
+        <nav class="flex items-center justify-between flex-wrap bg-teal">
+          <div class="flex items-center flex-no-shrink text-white mr-6">
+            <span class="font-sans font-normal text-xl tracking-tight">Aaron Marr</span>
+          </div>
+          <div class="text-sm ml-auto flex font-sans">
+            <a href="#responsive-header"
+               class="ml-auto text-teal-lighter hover:text-white mr-4">
+              Docs
             </a>
-          </h1>
-          <nav class="pl-4 flex items-center flex-auto text-right">
-            <ul class="inline-block w-full">
-              <li class="ml-3 inline">
-                <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                  <span class="hidden-when-dark">Dark mode</span>
-                  <span class="hidden shown-when-dark">Light mode</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+            <a href="#responsive-header"
+               class="block text-teal-lighter hover:text-white mr-4">
+              Examples
+            </a>
+            <a href="#responsive-header" class="block text-teal-lighter hover:text-white">
+              Blog
+            </a>
+          </div>
+        </nav>
+        <div class="flex">
+          <!-- <h1> -->
+          <!--   <a -->
+          <!--     class="[ site-header__link ] [ font-sans font-normal text-base ]" -->
+          <!--     href="/" -->
+          <!--   > -->
+          <!--     <span class="font-normal">{{ metadata.title }}</span> -->
+          <!--   </a> -->
+          <!-- </h1> -->
+          <!-- <nav class="flex items-center flex-auto text-right"> -->
+
+          <!--    <ul class="inline-block w-full"> -->
+          <!--      <li class="ml-3 inline"> -->
+          <!--        <a href="#" style="line-height: 2.1" class="[ site-header__button ] [ p-0 text-center -->
+          <!--                           w-8 h-8 rounded inline-block  font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light"> -->
+
+          <!--            <i class="hidden-when-dark fas fa-moon"></i> -->
+
+          <!--            <i class="hidden shown-when-dark fas fa-sun"></i> -->
+
+          <!--        </a> -->
+          <!--      </li> -->
+          <!--   </ul> -->
+          <!-- </nav> -->
         </div>
       </div>
     </header>
-    <main id="content">
+    <main id="content" class="max-w-xl m-auto">
       {{ content | safe }}
     </main>
-    <footer class="block pt-4 pb-8">
+    <footer class="block max-w-lg m-auto pt-8 pb-8">
       <div class="flex items-baseline">
         <nav class="flex items-center flex-auto text-left">
           <ul class="inline-block w-full">

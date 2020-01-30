@@ -2,8 +2,8 @@
   <div class="max-w-xl">
     <ul reversed class="postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
     {% for post in postslist | reverse %}
-      <li class="mb-4 postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
-        <a href="{{ post.url | url }}" class="[ postlist__link ] font-sans font-normal text-xl mb-0 block postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+      <li class="mb-6 postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
+        <a href="{{ post.url | url }}" class="[ postlist__link ] font-sans font-bold text-xl mb-0 block postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
         <time class="[ postlist__meta ] font-sans text-sm postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
         {% for tag in post.data.tags %}
           {%- if tag != "posts" -%}
