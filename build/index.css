@@ -914,7 +914,7 @@ body.dark {
   margin-top: 1rem;
 }
 
-.typeset p + h3 {
+.typeset p + h2 {
   margin-top: 2rem;
 }
 
@@ -926,7 +926,7 @@ body.dark {
   margin-top: 1.5rem;
 }
 
-.typeset pre[class*="language-"] + h3 {
+.typeset pre[class*="language-"] + h2 {
   margin-top: 2rem;
 }
 
@@ -938,7 +938,7 @@ body.dark {
   text-decoration: none;
 }
 
-.typeset h3 {
+.typeset h2 {
   font-size: 1.25rem;
   font-weight: 400;
   font-family: "Untitled Sans", sans-serif;
@@ -946,16 +946,16 @@ body.dark {
 }
 
 @media (min-width: 768px) {
-  .typeset h3 {
+  .typeset h2 {
     font-size: 1.5rem;
   }
 }
 
-.dark .typeset h3 {
+.dark .typeset h2 {
   color: #F7F7F7;
 }
 
-.typeset h3 + p {
+.typeset h2 + p {
   margin-top: 1rem;
 }
 
