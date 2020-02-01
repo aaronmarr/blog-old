@@ -6,8 +6,8 @@ navtitle: Blog
 permalink: /posts/
 templateClass: template-archive
 ---
-<div class="pt-8 pb-8">
-  <div class="[ banner ] [ py-2 max-w-xl ]">
+<div class="[ topo ] [ pt-8 pb-8 ]">
+  <div class="[ banner ] [ py-2 max-w-xl m-auto px-4 ]">
     <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">
       Blog
     </h2>
@@ -17,5 +17,7 @@ templateClass: template-archive
   </div>
 </div>
 
-{% set postslist = collections.posts %}
-{% include "postslist.njk" %}
+<div class="max-w-xl m-auto px-4 mt-8">
+  {% set postslist = collections.posts %}
+  {% include "postslist.njk" %}
+</div>

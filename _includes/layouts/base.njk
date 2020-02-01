@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="text-lg sm:text-lg md:text-lg lg:text-xl">
+<html lang="en" class="text-lg sm:text-lg md:text-xl lg:text-xl">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,100 +7,67 @@
     <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
     <link type="text/css" rel="stylesheet" href="{{ '/build/index.css' | url }}?v=21">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6735496/6887412/css/fonts.css" />
   </head>
-  <body class="font-serif px-4 md:px-6 lg:px-12">
+  <body class="font-sans">
     {% set postslist = collections.posts | head(-3) %}
-    <header class="[ site-header ] [ my-4 md:my-8 max-w-xl m-auto ]">
+    <header class="[ site-header ] [ my-4 px-4 max-w-xl m-auto ]">
       <a href="#content" class="visually-hidden">Skip to main content</a>
       <div class="">
-        <nav class="flex items-center justify-between flex-wrap bg-teal">
+        <div class="lg:flex items-center justify-between flex-wrap bg-teal">
           <div class="flex items-center flex-no-shrink text-white mr-6">
-            <span class="font-sans font-normal text-xl tracking-tight">Aaron Marr</span>
+            <a href="/" class="font-sans font-normal text-base tracking-tight">Aaron Marr</a>
           </div>
-          <div class="text-sm ml-auto flex font-sans">
-            <a href="#responsive-header"
-               class="ml-auto text-teal-lighter hover:text-white mr-4">
-              Docs
-            </a>
-            <a href="#responsive-header"
-               class="block text-teal-lighter hover:text-white mr-4">
-              Examples
-            </a>
-            <a href="#responsive-header" class="block text-teal-lighter hover:text-white">
+          <nav class="text-sm ml-auto overflow-x-auto flex font-sans">
+            <a 
+              href="/posts"
+              class="py-2 flex-shrink-0 hover:no-underline ml-0 lg:ml-0 underline"
+            >
               Blog
             </a>
-          </div>
-        </nav>
-        <div class="flex">
-          <!-- <h1> -->
-          <!--   <a -->
-          <!--     class="[ site-header__link ] [ font-sans font-normal text-base ]" -->
-          <!--     href="/" -->
-          <!--   > -->
-          <!--     <span class="font-normal">{{ metadata.title }}</span> -->
-          <!--   </a> -->
-          <!-- </h1> -->
-          <!-- <nav class="flex items-center flex-auto text-right"> -->
-
-          <!--    <ul class="inline-block w-full"> -->
-          <!--      <li class="ml-3 inline"> -->
-          <!--        <a href="#" style="line-height: 2.1" class="[ site-header__button ] [ p-0 text-center -->
-          <!--                           w-8 h-8 rounded inline-block  font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light"> -->
-
-          <!--            <i class="hidden-when-dark fas fa-moon"></i> -->
-
-          <!--            <i class="hidden shown-when-dark fas fa-sun"></i> -->
-
-          <!--        </a> -->
-          <!--      </li> -->
-          <!--   </ul> -->
-          <!-- </nav> -->
+            <a 
+              href="/"
+              class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+            >
+              Download CV
+            </a>
+            <a 
+              href="/" 
+              class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+            >
+              Email Me
+            </a>
+            <a 
+              href="/" 
+              class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+            >
+              Twitter
+            </a>
+            <a 
+              href="/" 
+              class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+            >
+              LinkedIn
+            </a>
+          </nav>
         </div>
       </div>
     </header>
-    <main id="content" class="max-w-xl m-auto">
+    <main id="content">
       {{ content | safe }}
     </main>
-    <footer class="block max-w-lg m-auto pt-8 pb-8">
-      <div class="flex items-baseline">
-        <nav class="flex items-center flex-auto text-left">
-          <ul class="inline-block w-full">
-            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
-                Blog
-              </a>
-            </li>
-            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/aaron-marr-frontend-developer.pdf">
-                Download CV
-              </a>
-            </li>
-            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
-                Email Me
-              </a>
-            </li>
-            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://twitter.com/_aaronmarr">
-                Twitter
-              </a>
-            </li>
-            <li class="mr-3 inline {% if nav.url == page.url %} underline{% endif %}">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </nav>
+    <footer class="block border-t border-nord1">
+      <div class="font-sans text-xs max-w-xl px-4 m-auto pt-8 pb-8">
+        &copy; Aaron Marr 2020.
       </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function(event) {
-        event.preventDefault();
-        ((localStorage.getItem('mode') || 'dark') === 'dark') ?
-          document.querySelector('body').classList.add('dark') :
-          document.querySelector('body').classList.remove('dark');
-      })
+      //   document.addEventListener('DOMContentLoaded', function(event) {
+      //   event.preventDefault();
+      //   ((localStorage.getItem('mode') || 'dark') === 'dark') ?
+      //     document.querySelector('body').classList.add('dark') :
+      //     document.querySelector('body').classList.remove('dark');
+      // })
     </script>
   </body>
 </html>

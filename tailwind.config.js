@@ -6,7 +6,7 @@ module.exports = {
                   "sm": "24rem",
                   "md": "28rem",
                   "lg": "30rem",
-                  "xl": "34rem",
+                  "xl": "38rem",
                   "2xl": "42rem",
                   "3xl": "48rem",
                   "4xl": "56rem",
@@ -17,6 +17,7 @@ module.exports = {
 
     fontFamily: {
       sans: ['"Untitled Sans"', 'sans-serif'],
+      rounded: ['"Gotham Rounded SSm A"', '"Gotham Rounded SSm B"', 'sans-serif'],
           serif: ['"Tiempos Text"', 'serif'],
           mono: ['"Pitch Sans"', 'monospace'],
           headline: ['"Adieu"'],

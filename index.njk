@@ -1,13 +1,27 @@
 ---
 layout: layouts/home.njk
 ---
-<div class="pt-8 pb-8">
-  <div class="[ banner ] [ py-2 max-w-xl ]">
+<div class="[ topo ] [ pt-8 pb-8 ]">
+  <div class="[ banner ] [ py-2 px-4 max-w-xl m-auto ]">
     <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">
-      Front-end Developer
+      Hello, I'm Aaron
     </h2>
-    <p class="[ banner__strapline ] font-sans text-lg leading-snug text-sm">
-      Currently interested in building accessible, user-friendly websites and applications using clean, simple and performant code. Loves React, Functional CSS and Design Systems. Currently learning Laravel and Vue.js.
+    <p class="[ banner__strapline ] font-sans text-base leading-normal mb-2">
+      I'm a Front-End Developer who focuses on modern web and application developmement using JavaScript.
+    </p>
+    <p class="[ banner__strapline ] font-sans text-base leading-normal mb-2">
+      I'm currently looking for a new role as a remote JavaScript developer.
+    </p>
+    <p class="[ banner__strapline ] font-sans text-base leading-normal mb-2">
+      <a href="" class="[ button ] [ mt-4 ]">Contact me</a>
     </p>
   </div>
+</div>
+
+<div class="max-w-xl m-auto px-4 mt-8">
+  <h2 class="font-bold font-serif leading-tight text-xl md:text-2xl tracking-tight mt-0 mb-4">Latest posts</h2>
+  {% set postslist = collections.posts | head(-3) %}
+  {% include "postslist.njk" %}
+
+  <a class="[ button ] [ font-sans mt-0 mb-8 ]" href="/posts">More posts</a>
 </div>
