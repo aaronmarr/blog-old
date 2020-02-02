@@ -8,30 +8,49 @@
     <link type="text/css" rel="stylesheet" href="/build/index.css?v=21">
     <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
   </head>
-  <body class="font-sans px-4 md:px-6 lg:px-12">
+  <body class="font-serif">
     
-    <header class="[ site-header ] [ my-4 md:my-6 lg:my-12 ]">
-      <a href="#content" class="visually-hidden">Skip to main content</a>
-      <div class="">
-        <div class="flex">
-          <h1>
-            <a
-              class="[ site-header__link ] [ font-sans font-normal text-sm ]"
-              href="/"
-            >
-              <span class="font-normal">Aaron Marr</span>
-            </a>
-          </h1>
-          <nav class="pl-4 flex items-center flex-auto text-right">
-            <ul class="inline-block w-full">
-              <li class="ml-3 inline">
-                <a href="#" class="[ site-header__button ] [ p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
-                  <span class="hidden-when-dark">Dark mode</span>
-                  <span class="hidden shown-when-dark">Light mode</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+    <header class="[ site-header ] [ ]">
+      <div class="p-4 max-w-xl m-auto">
+        <a href="#content" class="visually-hidden">Skip to main content</a>
+        <div class="">
+          <div class="lg:flex items-center justify-between flex-wrap bg-teal">
+            <div class="flex items-center flex-no-shrink text-white mr-6">
+              <a href="/" class="font-sans font-normal text-base tracking-tight">Aaron Marr</a>
+            </div>
+            <nav class="text-sm ml-auto overflow-x-auto flex font-sans">
+              <a 
+                href="/posts"
+                class="py-2 flex-shrink-0 hover:no-underline ml-0 lg:ml-0 underline"
+              >
+                Blog
+              </a>
+              <a 
+                href="/assets/aaronmarr_cv.pdf"
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Download CV
+              </a>
+              <a 
+                href="mailto:hello@aaronmarr.co.uk" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Email Me
+              </a>
+              <a 
+                href="https://twitter.com/_aaronmarr" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Twitter
+              </a>
+              <a 
+                href="https://linkedin.com/in/aaron-marr" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                LinkedIn
+              </a>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
@@ -45,37 +64,13 @@
 
 
     </main>
-    <footer class="block pt-4 pb-8">
-      <div class="flex items-baseline">
-        <nav class="flex items-center flex-auto text-left">
-          <ul class="inline-block w-full">
-            <li class="mr-3 inline ">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/posts">
-                Blog
-              </a>
-            </li>
-            <li class="mr-3 inline ">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="/assets/aaron-marr-frontend-developer.pdf">
-                Download CV
-              </a>
-            </li>
-            <li class="mr-3 inline ">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="mailto:hello@aaronmarr.co.uk">
-                Email Me
-              </a>
-            </li>
-            <li class="mr-3 inline ">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://twitter.com/_aaronmarr">
-                Twitter
-              </a>
-            </li>
-            <li class="mr-3 inline ">
-              <a class="[ site-header__link ] [ font-sans text-sm ]" href="https://www.linkedin.com/in/aaron-marr-3062a3192/">
-                LinkedIn
-              </a>
-            </li>
-          </ul>
-        </nav>
+    <footer class="border-t block pt-4 pb-8 mt-16">
+      <div class="max-w-xl m-auto px-4 flex items-baseline">
+        <p class="font-sans text-xs">&copy Aaron Marr 2020.</p>
+        <a href="#" class="[ site-header__button ] [ ml-auto p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+          <span class="hidden-when-dark">Dark mode</span>
+          <span class="hidden shown-when-dark">Light mode</span>
+        </a>
       </div>
     </footer>
     <script>

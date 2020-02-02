@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" class="text-base sm:text-base md:text-lg lg:text-xl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with React Context</title>
+    <meta name="Description" content="Understanding how to use Context in React to manage application state">
+    <link type="text/css" rel="stylesheet" href="/build/index.css?v=21">
+    <link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Aaron Marr">
+  </head>
+  <body class="font-serif">
+    
+    <header class="[ site-header ] [ ]">
+      <div class="p-4 max-w-xl m-auto">
+        <a href="#content" class="visually-hidden">Skip to main content</a>
+        <div class="">
+          <div class="lg:flex items-center justify-between flex-wrap bg-teal">
+            <div class="flex items-center flex-no-shrink text-white mr-6">
+              <a href="/" class="font-sans font-normal text-base tracking-tight">Aaron Marr</a>
+            </div>
+            <nav class="text-sm ml-auto overflow-x-auto flex font-sans">
+              <a 
+                href="/posts"
+                class="py-2 flex-shrink-0 hover:no-underline ml-0 lg:ml-0 underline"
+              >
+                Blog
+              </a>
+              <a 
+                href="/assets/aaronmarr_cv.pdf"
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Download CV
+              </a>
+              <a 
+                href="mailto:hello@aaronmarr.co.uk" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Email Me
+              </a>
+              <a 
+                href="https://twitter.com/_aaronmarr" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                Twitter
+              </a>
+              <a 
+                href="https://linkedin.com/in/aaron-marr" 
+                class="py-2 flex-shrink-0 hover:no-underline ml-2 lg:ml-4 underline"
+              >
+                LinkedIn
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="content">
+      <article>
+  <header class="pt-8 pb-4">
+    <div class="[ banner ] [ py-2 px-4 max-w-xl m-auto ]">
+      <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl sm:text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">Getting Started with React Context</h2>
+      <time class="[ banner__strapline ] [ font-sans text-sm ]" datetime="2020-02-01">1st February 2020</time>
+    </div>
+  </header>
+  <div class="[ typeset template-post ] [ px-4 max-w-xl m-auto ]">
+    <p>Application state can be tricky to manage in React applications. It’s possible to pass data and props down through the component hierarchy, but this can quickly become difficult to manage if there are lots of components, and if component nesting is deep.</p>
+<p>Redux is a popular solution, but it comes with its own set of overheads (i.e., lots of boilerplate code). It can also be overkill for some projects. In this post I’m going to look at using React Context to manage application state. Let’s take a look.</p>
+<blockquote>
+<p>I’ve created a <a href="https://github.com/aaronmarr/react-context-example-counter">Git repository</a> containing all the code in this tutorial. You can also <a href="https://goofy-davinci-aed1d7.netlify.com/">preview the live application</a> if you want a peek at what we’ll be building.</p>
+</blockquote>
+<h2 id="what-is-react-context%3F">What is React Context? <a class="hidden" href="#what-is-react-context%3F">#</a></h2>
+<p>From the React documentation:</p>
+<blockquote>
+<p>Context provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
+</blockquote>
+<p>What this means is that we can define data in one place (usually near the top of the component tree), and then consume this data in any components further down the tree – without having to pass props at every level.</p>
+<h3 id="context-provider">Context Provider <a class="hidden" href="#context-provider">#</a></h3>
+<p>The context provider is a React component which allows consuming components to subscribe to changes. We’ll use this component to pass data and methods to consuming components further down the tree.</p>
+<h3 id="context-consumer">Context Consumer <a class="hidden" href="#context-consumer">#</a></h3>
+<p>The context consumer is a React component which allows you to subscribe to changes in the provider. We’ll use the consumer to make our data available to our child component.</p>
+<h2 id="create-the-application">Create the application <a class="hidden" href="#create-the-application">#</a></h2>
+<p>Let’s start by creating a basic application using <code>create-react-app</code>.</p>
+<pre class="language-bash"><code class="language-bash"><span class="highlight-line">npx create-react-app react-context-example <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> react-context-example</span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token function">yarn</span> start</span><br><span class="highlight-line"></span><br><span class="highlight-line">Compiled successfully<span class="token operator">!</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">You can now view context-example <span class="token keyword">in</span> the browser.</span><br><span class="highlight-line"></span><br><span class="highlight-line">Local: http://localhost:3000/</span><br><span class="highlight-line">On Your Network: http://192.168.0.9:3000/</span><br><span class="highlight-line"></span><br><span class="highlight-line">Note that the development build is not optimized.</span><br><span class="highlight-line">To create a production build, use <span class="token function">yarn</span> build.</span></code></pre>
+<p>If you visit <a href="http://localhost:3000/">http://localhost:3000/</a>, you should see the React application running in your browser.</p>
+<h2 id="create-the-provider-context">Create the Provider Context <a class="hidden" href="#create-the-provider-context">#</a></h2>
+<p>The first thing we’ll look at is the Provider Context. The Provider will encapsulate a simple state object for a <code>counter</code>, as well as <code>handleIncrement</code> and <code>handleDecrement</code> functions for manipulating the state.</p>
+<p>Create a new file called <code>CounterContext.js</code>.</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token punctuation">{</span> Consumer<span class="token punctuation">,</span> Provider <span class="token punctuation">}</span> <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">createContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">class</span> <span class="token class-name">CounterProvider</span> <span class="token keyword">extends</span> <span class="token class-name">React<span class="token punctuation">.</span>Component</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token comment">// Our state object contains a simple 'counter' value, </span></span><br><span class="highlight-line">  <span class="token comment">// which is initialised to '0'</span></span><br><span class="highlight-line">  state <span class="token operator">=</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    counter<span class="token operator">:</span> <span class="token number">0</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token comment">// Our provider privides a 'handleIncrement' method to </span></span><br><span class="highlight-line">  <span class="token comment">// increment the counter</span></span><br><span class="highlight-line">  <span class="token function-variable function">handleIncrement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> counter<span class="token operator">:</span> <span class="token operator">++</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>counter <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token comment">// We also have a decrement handler for decrementing </span></span><br><span class="highlight-line">  <span class="token comment">// the counter</span></span><br><span class="highlight-line">  <span class="token function-variable function">handleDecrement</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> counter<span class="token operator">:</span> <span class="token operator">--</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">.</span>counter <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line">  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">    <span class="token keyword">return</span> <span class="token punctuation">(</span></span><br><span class="highlight-line">      <span class="token comment">// Our privider returns a new React provider context, </span></span><br><span class="highlight-line">      <span class="token comment">// passing any children.</span></span><br><span class="highlight-line">      <span class="token operator">&lt;</span>Provider</span><br><span class="highlight-line">        <span class="token comment">// Any items passed to the 'value' property on the </span></span><br><span class="highlight-line">        <span class="token comment">// provider will be made available in the consumer.  </span></span><br><span class="highlight-line">        <span class="token comment">// In our case, we pass a copy of the state (counter) </span></span><br><span class="highlight-line">        <span class="token comment">// and the increment and decrement handlers.</span></span><br><span class="highlight-line">        value<span class="token operator">=</span><span class="token punctuation">{</span>\<span class="token punctuation">{</span> </span><br><span class="highlight-line">          <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>state<span class="token punctuation">,</span></span><br><span class="highlight-line">          onIncrement<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleIncrement<span class="token punctuation">,</span></span><br><span class="highlight-line">          onDecrement<span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span>handleDecrement<span class="token punctuation">,</span></span><br><span class="highlight-line">        <span class="token punctuation">}</span><span class="token punctuation">}</span> </span><br><span class="highlight-line">      <span class="token operator">></span></span><br><span class="highlight-line">        <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span></span><br><span class="highlight-line">      <span class="token operator">&lt;</span><span class="token operator">/</span>Provider<span class="token operator">></span></span><br><span class="highlight-line">    <span class="token punctuation">)</span></span><br><span class="highlight-line">  <span class="token punctuation">}</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token punctuation">{</span> CounterProvider<span class="token punctuation">,</span> Consumer <span class="token keyword">as</span> CounterConsumer <span class="token punctuation">}</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span></code></pre>
+<p>We’ve implemented our provider component, but we still need to add it to our application’s component tree. Update <code>App.js</code> so that it looks like the following:</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> ‘react’<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> CounterProvider <span class="token punctuation">}</span> <span class="token keyword">from</span> ‘<span class="token punctuation">.</span><span class="token operator">/</span>CounterContext’<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> Counter <span class="token keyword">from</span> <span class="token string">'./Counter'</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">import</span> ‘<span class="token punctuation">.</span><span class="token operator">/</span>App<span class="token punctuation">.</span>css’<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">function</span> <span class="token function">App</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span></span><br><span class="highlight-line">  <span class="token keyword">return</span> <span class="token punctuation">(</span></span><br><span class="highlight-line">    <span class="token operator">&lt;</span>CounterProvider<span class="token operator">></span></span><br><span class="highlight-line">      <span class="token operator">&lt;</span>Counter <span class="token operator">/</span><span class="token operator">></span></span><br><span class="highlight-line">    <span class="token operator">&lt;</span><span class="token operator">/</span>CounterProvider<span class="token operator">></span></span><br><span class="highlight-line">  <span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token punctuation">}</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></span></code></pre>
+<p>As you can see,  <code>CounterProvider</code> is the root component for our application. This will allow us to consume the context in any children further down component tree. In this case, we’ll set up the context consumer in the yet-to-be-defined <code>Counter</code> component.</p>
+<h2 id="create-the-consumer-context">Create the consumer context <a class="hidden" href="#create-the-consumer-context">#</a></h2>
+<p>Let’s create the <code>Counter</code> component now. Create a new file, <code>Counter.js</code>. This component will implement the <code>CounterConsumer</code>. The consumer accepts a single function as its child, and the first argument to this function is the value of the <code>value</code> property of our <code>provider</code> component (i.e., <code>counter</code>, <code>onIncrement</code> and <code>onDecrement</code>).</p>
+<pre class="language-js"><code class="language-js"><span class="highlight-line"><span class="token keyword">import</span> React <span class="token keyword">from</span> ‘react’<span class="token punctuation">;</span></span><br><span class="highlight-line"><span class="token keyword">import</span> <span class="token punctuation">{</span> CounterConsumer <span class="token punctuation">}</span> <span class="token keyword">from</span> ‘<span class="token punctuation">.</span><span class="token operator">/</span>CounterContext’<span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">const</span> <span class="token function-variable function">Counter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br><span class="highlight-line">  <span class="token comment">// Here we’re implementing the consumer, which will give </span></span><br><span class="highlight-line">  <span class="token comment">// us access to anything which was defined in the provider </span></span><br><span class="highlight-line">  <span class="token comment">// context.</span></span><br><span class="highlight-line">  <span class="token comment">// The consumer accepts a single function as it’s child.  </span></span><br><span class="highlight-line">  <span class="token comment">// This function should be used to return any elements or </span></span><br><span class="highlight-line">  <span class="token comment">// fragments.</span></span><br><span class="highlight-line">  <span class="token comment">// The first argument of this function is whatever we passed </span></span><br><span class="highlight-line">  <span class="token comment">// into the 'value' property of the provider. In this case, </span></span><br><span class="highlight-line">  <span class="token comment">// it’s an object with 3 properties which we can destructure </span></span><br><span class="highlight-line">  <span class="token comment">// and utilise within this component</span></span><br><span class="highlight-line">  <span class="token operator">&lt;</span>CounterConsumer<span class="token operator">></span></span><br><span class="highlight-line">    <span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> counter<span class="token punctuation">,</span> onIncrement<span class="token punctuation">,</span> onDecrement <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span></span><br><span class="highlight-line">      <span class="token operator">&lt;</span>div<span class="token operator">></span></span><br><span class="highlight-line">        <span class="token operator">&lt;</span>h1<span class="token operator">></span><span class="token punctuation">{</span>counter<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h1<span class="token operator">></span> </span><br><span class="highlight-line">        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>onIncrement<span class="token punctuation">}</span><span class="token operator">></span><span class="token operator">+</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span> </span><br><span class="highlight-line">        <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>onDecrement<span class="token punctuation">}</span><span class="token operator">></span><span class="token operator">-</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span> </span><br><span class="highlight-line">      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></span><br><span class="highlight-line">    <span class="token punctuation">)</span><span class="token punctuation">}</span></span><br><span class="highlight-line">  <span class="token operator">&lt;</span><span class="token operator">/</span>CounterConsumer<span class="token operator">></span></span><br><span class="highlight-line"><span class="token punctuation">)</span><span class="token punctuation">;</span></span><br><span class="highlight-line"></span><br><span class="highlight-line"><span class="token keyword">export</span> <span class="token keyword">default</span> Counter<span class="token punctuation">;</span></span></code></pre>
+<p>If you run this application you should see that there is a count value printed to the screen. Clicking the buttons will  increment and decrement the count value.</p>
+<p>This has been a super-quick look at React Context. I hope you’ve found it useful. Thanks for reading.</p>
+
+  </div>
+</article>
+
+
+
+    </main>
+    <footer class="border-t block pt-4 pb-8 mt-16">
+      <div class="max-w-xl m-auto px-4 flex items-baseline">
+        <p class="font-sans text-xs">&copy Aaron Marr 2020.</p>
+        <a href="#" class="[ site-header__button ] [ ml-auto p-2 border border-solid font-sans text-sm ]" onclick="localStorage.setItem('mode', (localStorage.getItem('mode') || 'dark') === 'dark' ? 'light' : 'dark'); localStorage.getItem('mode') === 'dark' ? document.querySelector('body').classList.add('dark') : document.querySelector('body').classList.remove('dark')" title="Dark/light">
+          <span class="hidden-when-dark">Dark mode</span>
+          <span class="hidden shown-when-dark">Light mode</span>
+        </a>
+      </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(event) {
+        event.preventDefault();
+        ((localStorage.getItem('mode') || 'dark') === 'dark') ?
+          document.querySelector('body').classList.add('dark') :
+          document.querySelector('body').classList.remove('dark');
+      })
+    </script>
+  </body>
+</html>
