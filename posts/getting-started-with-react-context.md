@@ -6,16 +6,32 @@ tags: development
 layout: layouts/post.njk
 ---
 
-Application state can be tricky to manage in React applications. While it’s possible to pass data down through the component hierarchy, this can quickly become difficult to manage if there are lots of components, and component nesting is quite deep. 
+Application state can be tricky to manage in React applications. It’s possible to pass data and props down through the component hierarchy, but this can quickly become difficult to manage if there are lots of components, and if component nesting is deep. 
 
-Redux is a popular solution, but it comes with its own set of overheads (such as setting up the containers, actions and reducers), and can be overkill for some projects. In this post I’m going to look at using React Context to manage application state. Let’s take a look.
+Redux is a popular solution, but it comes with its own set of overheads (i.e., lots of boilerplate code). It can also be overkill for some projects. In this post I’m going to look at using React Context to manage application state. Let’s take a look.
+
+> I’ve created a [Git repository](https://github.com/aaronmarr/react-context-example-counter) containing all the code in this tutorial. You can also [preview the live application](https://goofy-davinci-aed1d7.netlify.com/) if you want a peek at what we’ll be building.
+
+## What is React Context?
+
+From the React documentation:
+
+> Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+What this means is that we can define data in one place (usually near the top of the component tree), and then consume this data in any components further down the tree – without having to pass props at every level. 
+
+### Context Provider
+
+The context provider is a React component which allows consuming components to subscribe to changes. We’ll use this component to pass data and methods to consuming components further down the tree.
+
+### Context Consumer
+
+The context consumer is a React component which allows you to subscribe to changes in the provider. We’ll use the consumer to make our data available to our child component.
 
 ## Create the application
-We’ll start by initialising a basic application using `create-react-app`. We’ll then create a `CounterContext` component which will encapsulate all the logic and data for maintaining a simple counter. We’ll then `consume` this context within our application, and see how this allows us to manage and update our counter state object. 
+Let’s start by creating a basic application using `create-react-app`. 
 
-To begin, initialise a new React application:
-
-```js
+```bash
 npx create-react-app react-context-example && cd react-context-example
 
 yarn start
@@ -24,17 +40,19 @@ Compiled successfully!
 
 You can now view context-example in the browser.
 
-  Local:            http://localhost:3000/
-  On Your Network:  http://192.168.0.9:3000/
+Local: http://localhost:3000/
+On Your Network: http://192.168.0.9:3000/
 
 Note that the development build is not optimized.
 To create a production build, use yarn build.
 ```
 
-Next, we’ll create our counter context. 
+If you visit http://localhost:3000/, you should see the React application running in your browser. 
 
-## Create the Provider
-Create a new file called `CounterContext.js`. This context will encapsulate a simple state object for the `counter`, as well as `handleIncrement` and `handleDecrement` functions for manipulating the state.
+## Create the Provider Context
+The first thing we’ll look at is the Provider Context. The Provider will encapsulate a simple state object for a `counter`, as well as `handleIncrement` and `handleDecrement` functions for manipulating the state.
+
+Create a new file called `CounterContext.js`.
 
 ```js
 import React from 'react';
@@ -63,17 +81,16 @@ class CounterProvider extends React.Component {
     return (
       // Our privider returns a new React provider context, 
       // passing any children.
-      // The value which this provider provides to the 
-      // consumer is a copy of the state (e.g. the counter) 
-      // and the increment and decrement handlers.
       <Provider
-      // Anything passed to 'value' will be made available 
-      // to consumers
+        // Any items passed to the 'value' property on the 
+        // provider will be made available in the consumer.  
+        // In our case, we pass a copy of the state (counter) 
+        // and the increment and decrement handlers.
         value={\{ 
           ...this.state,
           onIncrement: this.handleIncrement,
           onDecrement: this.handleDecrement,
-        }}
+        }} 
       >
         {this.props.children}
       </Provider>
@@ -85,7 +102,7 @@ export { CounterProvider, Consumer as CounterConsumer };
 
 ```
 
-Now that we’ve created our provider, let’s implement this in our application. Update `App.js` so that it looks like the following:
+We’ve implemented our provider component, but we still need to add it to our application’s component tree. Update `App.js` so that it looks like the following:
 
 ```js
 import React from ‘react’;
@@ -105,10 +122,10 @@ function App() {
 export default App;
 ```
 
-Here, we’ve made our `CounterProvider` the root component. This will later allow us to consume the context in any child components (in this case the yet-to-be-defined `Counter` component). 
+As you can see,  `CounterProvider` is the root component for our application. This will allow us to consume the context in any children further down component tree. In this case, we’ll set up the context consumer in the yet-to-be-defined `Counter` component. 
 
 ## Create the consumer context
-Let’s create the `Counter` component now. Create a new file, `Counter.js`.  This component will implement the `CounterConsumer`. The consumer accepts a single function as it’s child, and the first argument to this function is the value of the `value` property of our `provider`  component (i.e., `counter`, `onIncrement` and `onDecrement`).
+Let’s create the `Counter` component now. Create a new file, `Counter.js`. This component will implement the `CounterConsumer`. The consumer accepts a single function as its child, and the first argument to this function is the value of the `value` property of our `provider` component (i.e., `counter`, `onIncrement` and `onDecrement`).
 
 ```js
 import React from ‘react’;
@@ -118,7 +135,7 @@ const Counter = () => (
   // Here we’re implementing the consumer, which will give 
   // us access to anything which was defined in the provider 
   // context.
-  // The consumer accepts a single function as it’s child. 
+  // The consumer accepts a single function as it’s child.  
   // This function should be used to return any elements or 
   // fragments.
   // The first argument of this function is whatever we passed 
@@ -139,4 +156,6 @@ const Counter = () => (
 export default Counter;
 ```
 
-If you run this application you should see that there is a counter printed to the screen and you can use the buttons to increment and decrement the count. This has been a super-quick look at React Context. I hope you've found it useful. Thanks for reading.
+If you run this application you should see that there is a count value printed to the screen. Clicking the buttons will  increment and decrement the count value. 
+
+This has been a super-quick look at React Context. I hope you’ve found it useful. Thanks for reading.

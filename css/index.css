@@ -270,6 +270,32 @@ body.dark {
   @apply .mt-4;
 }
 
+.typeset h3 {
+  @apply .text-base;
+  @apply .font-normal;
+  @apply .font-sans;
+  @apply .text-gray-10;
+}
+
+@screen md {
+  .typeset h3 {
+    @apply .text-lg;
+  }
+}
+
+.dark .typeset h3 {
+  @apply .text-gray-0;
+}
+
+.typeset h3 + p {
+  @apply .mt-4;
+}
+
+.typeset p + h3 {
+  @apply .mt-8;
+}
+
+
 .typeset blockquote {
   @apply .border-l-4;
   @apply .border-gray-2;
@@ -280,6 +306,10 @@ body.dark {
 .typeset blockquote + p,
 .typeset blockquote + pre[class*="language-"] {
   @apply .mt-4;
+}
+
+.typeset blockquote + h2 {
+  @apply .mt-8;
 }
 
 .typeset blockquote p {
@@ -334,6 +364,11 @@ body.dark {
 
 .dark .banner__strapline {
   @apply .text-gray-3;
+}
+
+.site-header {
+  border-bottom: 1px solid;
+  
 }
 
 .site-header__link {

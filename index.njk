@@ -2,7 +2,7 @@
 layout: layouts/home.njk
 ---
 <div class="pt-8 pb-8">
-  <div class="[ banner ] [ py-2 max-w-xl ]">
+  <div class="[ banner ] [ py-2 m-auto px-4 max-w-xl ]">
     <h2 class="[ banner__headline ] [ font-bold font-serif leading-tight text-2xl md:text-3xl tracking-tight mt-0 mb-2 ]">
       Hello, I'm Aaron
     </h2>
@@ -12,11 +12,17 @@ layout: layouts/home.njk
     <p class="[ banner__strapline ] font-sans text-lg leading-snug text-sm">
       I'm currently looking for a new role as a remote Front-End Developer.
     </p>
-    <p class="[ banner__strapline ] font-sans text-lg leading-snug text-sm">
-      <a class="border px-4 py-2 mt-4 inline-block" href="mailto:hello@aaronmarr.co.uk">Contact me</a>
-    </p>
+    <a class="font-sans border px-4 py-2 mt-4 inline-block" href="mailto:hello@aaronmarr.co.uk">Contact me</a>
   </div>
 </div>
+
+<div class="pt-4 max-w-xl px-4 m-auto">
+  {% set postslist = collections.posts | head(-3) %}
+  <h2 class="[ font-bold font-serif leading-tight text-xl md:text-2xl tracking-tight mt-0 mb-4 ]">Recent posts</h2>
+  {% include "postslist.njk" %}
+  <a class="font-sans border px-4 py-2 mt-0 inline-block" href="/posts">More posts</a>
+</div>
+
 
 
  

@@ -10,8 +10,19 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
 
+  const appendSuffix = n => {
+    var s = ['th', 'st', 'nd', 'rd'],
+      v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  };
+  
   eleventyConfig.addFilter("readableDate", dateObj => {
-    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+    const dateObject = new Date(dateObj);
+
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const dayWithSuffix = appendSuffix(dateObject.getDate());
+  
+    return `${dayWithSuffix} ${months[dateObject.getMonth()]} ${dateObject.getFullYear()}`;
   });
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string

@@ -959,6 +959,31 @@ body.dark {
   margin-top: 1rem;
 }
 
+.typeset h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Untitled Sans", sans-serif;
+  color: #1b1b1b;
+}
+
+@media (min-width: 768px) {
+  .typeset h3 {
+    font-size: 1.125rem;
+  }
+}
+
+.dark .typeset h3 {
+  color: #F7F7F7;
+}
+
+.typeset h3 + p {
+  margin-top: 1rem;
+}
+
+.typeset p + h3 {
+  margin-top: 2rem;
+}
+
 .typeset blockquote {
   border-left-width: 4px;
   border-color: #CFCFCF;
@@ -970,6 +995,10 @@ body.dark {
 .typeset blockquote + p,
 .typeset blockquote + pre[class*="language-"] {
   margin-top: 1rem;
+}
+
+.typeset blockquote + h2 {
+  margin-top: 2rem;
 }
 
 .typeset blockquote p {
@@ -1022,6 +1051,10 @@ body.dark {
 
 .dark .banner__strapline {
   color: #B1B1B1;
+}
+
+.site-header {
+  border-bottom: 1px solid;
 }
 
 .site-header__link {
